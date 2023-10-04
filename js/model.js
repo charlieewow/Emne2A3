@@ -45,7 +45,8 @@ const model = {
         history: {
             summaryGraph: '',
             logDiary: {
-                
+                datePicker: [],
+                dataView: diaryLogData['datepicker']
             }
 
 
@@ -53,7 +54,7 @@ const model = {
         logPage: {
             checkOptions: {
                 plannedAct: ['taskList[1]', 'taskList[2]'],
-                standardAct: ['tasks'],
+                standardAct: ['tasks'], //tenker å få til en måte å refferere denne 
             },
             diary: {
                 monday: { mood: '', progress: '', nextStep: '' },
