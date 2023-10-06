@@ -1,6 +1,5 @@
 // const app = document.getElementById('app');
 //let activity=  model.interface.activity.selectedNK
-
 const model = {
     app: {
         loggedInUser: null,
