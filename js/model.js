@@ -38,7 +38,7 @@ const model = {
             summaryGraph: '',
             logDiary: {
                 datePicker: null,
-                dataView: diaryLogData['datepicker']
+                //dataView: diaryLogData['datepicker']
             }
 
 
@@ -78,7 +78,7 @@ const model = {
                 },
                 repeats: {
                     taskFrequencyUnit: ['Daglig', 'Uke', 'Måned', 'År', '5 år'], 
-                    PerUnit: [0, 1, 2, 3, 4, 5 ++],
+                    PerUnit: [0, 1, 2, 3, 4, 5],
                     fromDate: null,
                     toDate: null,
                 }

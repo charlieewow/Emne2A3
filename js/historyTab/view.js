@@ -1,10 +1,9 @@
-// Model
-const app = document.getElementById('app');
 
-// View
+
+//updateViewHistory();
 function updateViewHistory(){
     html = /*html*/ `
-    
+    <input type="date"/>
     `;
     app.innerHTML = html;
 }

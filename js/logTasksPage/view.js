@@ -1,6 +1,6 @@
 
-//updateView();
-function updateViewLogTab(){
+
+function updateViewTaskPage(){
     html = /*html*/ `
     
     `;
