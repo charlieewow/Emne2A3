@@ -1,12 +1,13 @@
+let view = document.getElementById('app').innerHTML;
 
-
-
-//updateView();
-function updateViewLoginReg(){
-    html = /*html*/ `
-    
+function loginView(){
+    view = /*HTML*/`
+        
     `;
-    app.innerHTML = html;
 }
 
-
+function registerUserView(){
+    view = /*HTML*/`
+        
+    `;
+}
