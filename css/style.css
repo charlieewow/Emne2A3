@@ -43,6 +43,8 @@ background: linear-gradient(146deg, rgba(219,151,0,1) 0%, rgba(15,40,62,1) 55%);
 }
 
 .innerWrapper {
+    background-color: ;
+    height: 400px;
     width: 100%;
     top: 40%;
     position: absolute;
