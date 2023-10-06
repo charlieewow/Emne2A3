@@ -7,45 +7,35 @@ const model = {
     },
     interface: {
         login: {
-            pageTitle,
-            uNameInput,
-            pWordInput,
-            loginButton,
-            registerButton
+            uNameInput: '',
+            pWordInput: '',
 
         },
         registerUser: {
-            pageTitle,
-            uNameInput,
-            pWordInput,
-            repeatPassword,
-            registerButton,
-            backButton
+            uNameInput: '',
+            pWordInput: '',
+            repeatPassword: '',
 
         },
         dashboard: {
-            tabs: "",
-            logPageButton: "",
-            graph: "",
-            statusBar: "",
+            tabIndex: 0,
+            graph: null,
+            statusBar: 0,
 
         },
         activity: {
-            dropdownButton: "",
-            addTask: "",
-
+            selectedNK: "",
         },
         goals: {
-            dateDropDownButton: '',
-            statusBar2: '',
-
-
-
+            selectTimeframe: '',
+            goalText: '',
+            progressBar: 0,
+            progressCircle: 0,
         },
         history: {
             summaryGraph: '',
             logDiary: {
-                datePicker: [],
+                datePicker: null,
                 dataView: diaryLogData['datepicker']
             }
 
@@ -63,18 +53,17 @@ const model = {
                 thursday: { mood: '', progress: '', nextStep: '' },
                 friday: { mood: '', progress: '', nextStep: '' },
             },
-            logDataBtn: 'function diaryLog(){diaryLogData.push(logpage.diary)}',  //grov eksempel kode, den blir nok ikke å være her, men blir knytta til knappen på noe vis :p
+            /* logDataBtn: 'function diaryLog(){diaryLogData.push(logpage.diary)}',  //grov eksempel kode, den blir nok ikke å være her, men blir knytta til knappen på noe vis :p */
 
         },
         addGoalAct: {
-            dropdownButton: '',
-            themes: ['vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
-            dropdownButton2: '',
-            taskCategoriesNor: ['Meditation', 'Pomodoro',],
-            InputText: '',
+            themeSelector: ['vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
+            activitySelector: ['Meditation', 'Pomodoro',],
+            inputTextTheme: '',
+            inputTextActivity: '',
             taskFrequency: {//relasjon mellom "taskPerUnit" og "taskFrequencyUnit": om du velger f.eks 'uke' og setter 'taskPerUnit' til 3, så blir aktiviteten 3 ganger per uke (fra gitt dato, til gitt dato)
                 taskFrequencyUnit: ['Daglig', 'Uke', 'Måned', 'År', '5 år'], 
-                PerUnit: [0, 1, 2, 3, 4, 5 ++],
+                taskPerUnit: [0, 1, 2, 3, 4, 5 /* ++ */],
                 fromDate: null,
                 toDate: null,
             }
@@ -86,20 +75,17 @@ const model = {
 
     data: {
         user: {
-            userId: 1,
             userName: 'Martin',
             email: 'martin@123.no',
             password: '*******',
         },
         taskList: [{
-            taskId: 1,
             name: "jog",
             theme: "habit",
             taskText: "joggetur",
             frequency: { timeUnit: "week", repeatsPr: 3, from: 'date', to: 'date' },
         },
         {
-            taskId: 2,
             name: undefined,
             theme: undefined,
             taskText: undefined,
@@ -107,9 +93,8 @@ const model = {
 
         },
         ],
-        StandardTasks: [
+        standardTasks: [
             {
-                taskId: 1,
                 name: 'jog',
                 theme: undefined,
                 taskText: undefined,
@@ -117,7 +102,6 @@ const model = {
 
             },
             {
-                taskId: 2,
                 name: 'read',
                 theme: undefined,
                 taskText: undefined,
@@ -125,7 +109,6 @@ const model = {
 
             },
             {
-                taskId: 3,
                 name: 'study',
                 theme: 'pomodoro',
                 taskText: undefined,
@@ -133,7 +116,6 @@ const model = {
 
             },
             {
-                taskId: 4,
                 name: 'meditate',
                 theme: undefined,
                 taskText: undefined,
