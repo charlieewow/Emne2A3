@@ -1,4 +1,5 @@
 // const app = document.getElementById('app');
+//let activity=  model.interface.activity.selectedNK
 
 const model = {
     app: {
@@ -26,7 +27,7 @@ const model = {
 
         },
         activity: {
-            selectedNK: "",
+            selectedNK: ['jogge', 'pomodoro', 'lese'],
         },
         goals: {
             selectTimeframe: '',
