@@ -33,7 +33,7 @@ body {
 
 .wrapper {
     background: rgb(219,151,0);
-    background: linear-gradient(146deg, rgba(219,151,0,1) 0%, rgba(15,40,62,1) 55%);
+    background: linear-gradient(146deg, rgba(219,151,0,1) 0%, rgba(37,35,46,1) 55%);
     overflow: hidden;
     height: 700px;
     width: 600px;
