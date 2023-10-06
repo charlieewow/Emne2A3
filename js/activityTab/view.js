@@ -18,3 +18,4 @@ function activityView() {
         document.getElementById("keySkills").innerHTML += `<option value=${activity[i]}>${activity[i]}</option>`;
     }    
 }
+//updateView();
