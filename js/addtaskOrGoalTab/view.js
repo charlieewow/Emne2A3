@@ -2,7 +2,6 @@
 const app = document.getElementById('app');
 
 // View
-updateView();
 function updateView(){
     html = /*html*/ `
     

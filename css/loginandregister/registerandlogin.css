@@ -1,0 +1,50 @@
+input.login {
+    background-color: inherit;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+input.login:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+
+button.login {
+    margin-top: 15px;
+    border-radius: 10lh;
+    width: 60%;
+    color: white;
+    background-color: rgb(51, 48, 63);
+    border: inherit;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+button.login:hover {
+    cursor: pointer;
+    background-color: rgb(173, 113, 0);
+    color: white;
+    transition: 0.2s;
+}
+
+button.signUp {
+    background-color: inherit;
+    border: inherit;
+    color: white;
+    text-transform: uppercase;
+}
+
+p {
+    width: 300px;
+}
+
+
+.signuplocation {
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+}
