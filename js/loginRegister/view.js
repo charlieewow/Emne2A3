@@ -40,7 +40,7 @@ function registerUserView(){
             <div>Already have a user?</div>
         </div>
         <div class="signuplocation transform center">
-            <button class="signUp" onclick="loginView()">Back</button>
+            <button class="signUp" onclick="backToLogin()">Back</button>
         </div>
     </div>
     `;
