@@ -13,8 +13,4 @@ function activityView() {
     `;
     app.innerHTML = html;
 }
-<<<<<<< Updated upstream
-updateView();
-=======
 //updateView();
->>>>>>> Stashed changes
