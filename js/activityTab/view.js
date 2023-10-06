@@ -1,4 +1,4 @@
-function updateView() {
+function activityView() {
     let app = document.getElementById("app");
     let html = /*HTML*/` 
         <form action="...">
@@ -13,4 +13,8 @@ function updateView() {
     `;
     app.innerHTML = html;
 }
+<<<<<<< Updated upstream
 updateView();
+=======
+//updateView();
+>>>>>>> Stashed changes
