@@ -1,4 +1,5 @@
 function activityView() {
+    let activity =  model.interface.activity.selectedNK;
     let app = document.getElementById("app");
     let html = /*HTML*/` 
         <form action="...">
@@ -12,9 +13,8 @@ function activityView() {
         </form>
     `;
     app.innerHTML = html;
+
+    for(i in activity){
+        document.getElementById("keySkills").innerHTML += `<option value=${activity[i]}>${activity[i]}</option>`;
+    }    
 }
-<<<<<<< Updated upstream
-updateView();
-=======
-//updateView();
->>>>>>> Stashed changes
