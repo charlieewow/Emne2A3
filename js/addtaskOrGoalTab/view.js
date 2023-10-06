@@ -17,12 +17,19 @@ function updateViewAddTab(){
         
     </select>
     <br><br>
+    <div id="once">
+    <input type="date" />
+    <input type="time" />
+    </div>
+    <div id="repeating">
+    <label for="points">Points:</label>
+  <input type="number" id="points" name="points" step="3">
+    </div>
+    <div></div>
     <input type="submit" value="Submit">
 </form>
 
-    <div></div>
-    <div></div>
-    <div></div>
+   
     `;
     app.innerHTML = html;
 for(i in theme){
