@@ -1,9 +1,8 @@
-// Model
-const app = document.getElementById('app');
 
-// View
-updateView();
-function updateView(){
+
+
+//updateView();
+function updateViewAddTab(){
     html = /*html*/ `
     
     `;
