@@ -22,8 +22,8 @@ function updateViewAddTab(){
     <input type="time" />
     </div>
     <div id="repeating">
-    <label for="points">Points:</label>
-  <input type="number" id="points" name="points" step="3">
+    <label for="repeats">gjentagelser</label>
+    <input type="number" id="repeats" name="repeats" step="1">
     </div>
     <div></div>
     <input type="submit" value="Submit">
