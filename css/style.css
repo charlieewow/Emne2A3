@@ -1,6 +1,6 @@
 body {
     background-color: rgb(37, 35, 46);
-    color: rgb(255, 163, 43);
+    color: white;
     height: 100%;
 }
 
@@ -19,5 +19,24 @@ body {
 }
 
 .transform {
+    transform: translate(-50%,-50%);
+}
+
+.border {
+    border: solid 2px rgb(23, 22, 29);
+}
+
+.textaligncenter {
+    text-align: center;
+}
+
+.wrapper {
+    cursor: none;
+    overflow: hidden;
+    height: 700px;
+    width: 1400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%,-50%);
 }
