@@ -94,7 +94,7 @@ const model = {
         user: {
             userName: 'Martin',
             email: 'martin@123.no',
-            password: '*******',
+            password: '123',
         },
         taskList: [{
             name: "jog",
