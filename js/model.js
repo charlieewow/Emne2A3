@@ -62,11 +62,28 @@ const model = {
             inputTextTheme: '',
             inputTextActivity: '',
             taskFrequency: {//relasjon mellom "taskPerUnit" og "taskFrequencyUnit": om du velger f.eks 'uke' og setter 'taskPerUnit' til 3, så blir aktiviteten 3 ganger per uke (fra gitt dato, til gitt dato)
-                taskFrequencyUnit: ['Daglig', 'Uke', 'Måned', 'År', '5 år'], 
-                taskPerUnit: [0, 1, 2, 3, 4, 5 /* ++ */],
-                fromDate: null,
-                toDate: null,
-            }
+                once: {
+                    setTime: {
+                        date: '',
+                        time: '',
+                    },
+                    looseTime: {
+                        timeunit: {
+                            week: '',
+                            month: '',
+                        },
+                    },
+                },
+                repeats: {
+                    taskFrequencyUnit: ['Daglig', 'Uke', 'Måned', 'År', '5 år'], 
+                    PerUnit: [0, 1, 2, 3, 4, 5 ++],
+                    fromDate: null,
+                    toDate: null,
+                }
+            },
+           
+        
+            
 
         },
     },
