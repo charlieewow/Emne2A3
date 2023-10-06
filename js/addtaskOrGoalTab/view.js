@@ -2,11 +2,10 @@
 
 
 //updateView();
-function updateViewLoginReg(){
+function updateViewAddTab(){
     html = /*html*/ `
     
     `;
     app.innerHTML = html;
 }
-
 

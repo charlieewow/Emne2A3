@@ -1,8 +1,6 @@
 
 
-
-//updateView();
-function updateViewLoginReg(){
+function updateViewTaskPage(){
     html = /*html*/ `
     
     `;
