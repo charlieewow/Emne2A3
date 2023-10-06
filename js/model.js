@@ -1,3 +1,5 @@
+const app = document.getElementById('app');
+
 const model = {
     app: {
         loggedInUser: null,
