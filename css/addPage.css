@@ -1,3 +1,189 @@
 #repeats{
     width: 5dvh;
 }
+
+#selector{
+    display:flex;
+    position: relative;
+    justify-content: start;
+    
+    color: white;
+    top: 15dvh;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 70dvw;
+    height:65dvh;
+    padding-top:0dvh;
+    
+    
+}
+#selectorA{
+    display:flex;
+    justify-content: space-evenly;
+    justify-self: center;
+    border-bottom: 1px solid orange;
+    flex-flow: row;
+   height: 5dvh;
+   width: 120dvh;
+    
+    color: white;
+    
+   
+    background-color: rgb(37, 35, 46);
+
+}
+#selectorG{
+    display:flex;
+    justify-content: space-evenly;
+    justify-self: center;
+    
+    flex-flow: column;
+   height: 15dvh;
+   width: 30dvh;
+    position: absolute;
+    right: 10dvh;
+    top: 4dvh;
+    color: white;
+    
+   
+    background-color: rgb(37, 35, 46);
+}
+
+#freeDesc{
+    height: 15dvh;
+    width: 40dvw;
+}
+#goalDes{
+    border-right: 1px solid orange;
+    height: 30dvh;
+    width: 70dvh;
+    margin-top: 0%;
+    position: absolute;
+    bottom:39dvh;
+}
+.timingG{
+    display:flex;
+    
+    justify-content: space-evenly;
+    position: absolute;
+    top: 26dvh;
+    border: 1px solid orange;
+    
+    color: white;
+    padding-top: 3dvh;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 70dvw;
+    
+    padding-top: 0dvh;
+    flex-flow: row;
+
+}
+label{
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+}
+.timingA{
+    display:flex;
+    justify-self: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 10dvh;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 68dvw;
+    height: 30dvh;
+    flex-flow: row;
+    margin:0%
+
+}
+
+#once{
+    border-right: 1px solid orange;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    height: 20dvh;
+    padding: 2dvh;
+}
+#repeating{
+    display: flex;
+    flex-flow: column;
+}
+.addbtn{
+    background-color: inherit;
+    color: white;
+    border: 2px outset orange;
+    width: 20dvh;
+}
+.dropdown{
+    width: 10dvw;
+    height: 4dvh
+}
+.container{
+    position: absolute;
+    top: 2dvh;
+    left: 3dvw;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 70dvw;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+   
+}
+.innercontainer{
+    position: absolute;
+    top: 1dvh;
+    border-bottom: 1px solid orange;
+    color: white;
+    padding: 10px;
+    
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 70dvw;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+   
+}
+
+.back{
+    position: absolute;
+    left: 20dvh;
+    background: rgb(219,151,0);
+    background: linear-gradient(146deg, rgba(219,151,0,1) 0%, rgba(37,35,46,1) 55%);
+    height: 90%;
+    width: 80dvw;
+    
+}
+
+body{
+    overflow: hidden;
+}
+
+.decor{
+    height: 100%;
+    width: 80%;
+}
+
+#submitA{
+position: absolute;
+right: 2dvh;
+bottom: 2dvh;
+}
+#submitG{
+    position: absolute;
+    right: 2dvh;
+    bottom: 2dvh;
+}
