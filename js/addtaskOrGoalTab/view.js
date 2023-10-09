@@ -37,13 +37,14 @@ function updateViewAddTab(){
 // View
 
 function addGoalView(){
-const TGForm = document.getElementById("addTGform"); 
+
+
 const selector = document.getElementById('selector');
 let theme = model.interface.addGoalAct.themeSelector;
 let task = model.interface.addGoalAct.activitySelector;
 let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUnit;
     html = /*html*/ `
-    <form action="..." id="addTGform">
+    <form action="..." id="addGform">
 
     <div id="goalDes">
     <label for="freeDesc">Beskriv målet ditt</label>
@@ -84,7 +85,7 @@ let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUni
     </div></div>
     
     <div id="submitG">
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" >
     <div>
 </form>
     `;
@@ -99,6 +100,23 @@ let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUni
     for(i in timeUnit){
         document.getElementById("units").innerHTML += `<option value=${timeUnit[i]}>${timeUnit[i]}</option>`;
     }
+
+const addGForm = document.getElementById("addGform");
+addGForm.addEventListener('submit', function(event){
+    //forhindrer standard innsendelse av data fra form
+    event.preventDefault();
+
+    //bruk formData API til å fange data fra form
+    const addFormGData = new FormData(this);
+
+    //konverter form data til et object
+    const addFormGObject = Object.fromEntries(addFormGData.entries());
+    console.log(addFormGObject);
+
+    //nå kan det brukes i modellen ()?
+    process(addFormGObject, addGForm);
+
+})
 }
 
 
@@ -109,11 +127,12 @@ let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUni
 
 function addActView(){
     const selector = document.getElementById('selector');
+    
     let theme = model.interface.addGoalAct.themeSelector;
     let task = model.interface.addGoalAct.activitySelector;
     let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUnit;
     html = /*html*/ `
-    <form action="..." id="addTGform">
+    <form action="..." id="addTform">
     <div id="selectorA">
     <label for="keyThemes">NK tema:</label>
     <select class="dropdown" name="NKTemaer" id="keyThemes">
@@ -147,7 +166,7 @@ function addActView(){
     <!--<div id="timeframe"><div>-->
     <div id="submitA">
     
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" >
     <div>
 </form>
     `;
@@ -162,24 +181,34 @@ function addActView(){
     for(i in timeUnit){
         document.getElementById("units").innerHTML += `<option value=${timeUnit[i]}>${timeUnit[i]}</option>`;
     }
-}
 
+   const addTForm = document.getElementById("addTform");
+ addTForm.addEventListener('submit', function(event){
+    //forhindrer standard innsendelse av data fra form
+    event.preventDefault();
 
+    //bruk formData API til å fange data fra form
+    const addFormTData = new FormData(this);
 
-
-
-// View
-
-function onceView(){
+    //konverter form data til et object
+    const addFormTObject = Object.fromEntries(addFormTData.entries());
+    console.log(addFormTObject);
     
-    let once=document.getElementById("onetime");
-    once.className = "unhideMe";
-}
-function repeatView(){
 
-    let repeat = document.getElementById("repeating");
-    repeat.className = "unhideMe";
+    //nå kan det brukes i modellen ()?
+    process(addFormTObject, addTForm);
+
+
+})
+ 
+
+   
 }
+
+
+
+
+
 
 
 
