@@ -77,7 +77,7 @@ const model = {
                     },
                 },
                 repeats: {
-                    taskFrequencyUnit: ['Daglig', 'Uke', 'Måned', 'År', '5 år'], 
+                    taskFrequencyUnit: [ 'none','Daglig', 'Uke', 'Måned', 'År', '5 år'], 
                     PerUnit: [0, 1, 2, 3, 4, 5],
                     fromDate: null,
                     toDate: null,
@@ -238,6 +238,15 @@ const model = {
                 ],
 
         },
+        plannedActList:[
+            {
+                taskId: null,
+                name: undefined,
+                theme: undefined,
+                date: undefined,
+                time: undefined,
+            },
+    ], 
         diaryLogData: [  //Her havner dagbok data som blir logget
             {
                 date: '01/01/2023',

@@ -67,17 +67,16 @@ let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUni
     <br><br>
     <!--<button class="addbtn" onclick="onceView(TGForm)">én gang</button>-->
     <div class="timingG">
-    <h3>én gang:</h3>
-    <div id="once">
-    <input type="date"  name="date"/>
-    <input type="time" name="time"/>
-    </div>
-    <br>
+    
+    
+    
     <!--<button class="addbtn" onclick="repeatView(TGform)">Gjentagende</button>-->
-   <h3>Gjentagende:</h3>
+   <h3>Gjentagelser:</h3>
     <div id="repeating">
     <label for="units">tidsenhet</label>
-   <select id="units"></select>
+   <select id="units" class="dropdown" name="selectUnit">
+   
+   </select>
     <label for="fromDate">Fra Dato</label>
     <input id="fromDate" type="date" name="fromDate"/>
     <label for="toDate">Frem til Dato</label>
