@@ -114,6 +114,17 @@ label{
     display: flex;
     flex-flow: column;
 }
+#checkonce{
+position: relative;
+bottom: 11dvh;
+margin: 2dvh;
+
+}
+#checkrep{
+    position: relative;
+    bottom: 11dvh;
+    margin: 2dvh;
+}
 .addbtn{
     background-color: inherit;
     color: white;

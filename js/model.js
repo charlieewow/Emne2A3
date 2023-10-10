@@ -60,7 +60,7 @@ const model = {
         },
         addGoalAct: {
             themeSelector: ['vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
-            activitySelector: ['Meditation', 'Pomodoro',],
+            activitySelector: ['Meditation', 'Pomodoro', 'jogging'],
             inputTextTheme: '',
             inputTextActivity: '',
             taskFrequency: {//relasjon mellom "taskPerUnit" og "taskFrequencyUnit": om du velger f.eks 'uke' og setter 'taskPerUnit' til 3, så blir aktiviteten 3 ganger per uke (fra gitt dato, til gitt dato)
@@ -145,15 +145,9 @@ const model = {
         goalList: {
             daily:
                 [
+                    
                     {
-                        taskId: "D" + 1,
-                        name: undefined,
-                        theme: undefined,
-                        taskText: undefined,
-                        frequency: { repeatsPr: undefined, from: 'time', to: 'time' },
-                    },
-                    {
-                        taskId: "D" + 2,
+                        taskId: "G-D" + 2,
                         name: undefined,
                         theme: undefined,
                         taskText: undefined,
@@ -163,15 +157,9 @@ const model = {
                 ],
             weekly:
                 [
+                    
                     {
-                        taskId: null,
-                        name: undefined,
-                        theme: undefined,
-                        taskText: undefined,
-                        frequency: { repeatsPr: undefined, from: 'time', to: 'time' },
-                    },
-                    {
-                        taskId: null,
+                        taskId: "G-W" +0,
                         name: undefined,
                         theme: undefined,
                         taskText: undefined,
@@ -182,15 +170,9 @@ const model = {
 
             monthly:
                 [
+                    
                     {
-                        taskId: null,
-                        name: undefined,
-                        theme: undefined,
-                        taskText: undefined,
-                        frequency: { repeatsPr: undefined, from: 'time', to: 'time' },
-                    },
-                    {
-                        taskId: null,
+                        taskId: "G-M" +0,
                         name: undefined,
                         theme: undefined,
                         taskText: undefined,
@@ -201,15 +183,9 @@ const model = {
 
             year:
                 [
+                   
                     {
-                        taskId: null,
-                        name: undefined,
-                        theme: undefined,
-                        taskText: undefined,
-                        frequency: { repeatsPr: undefined, from: 'time', to: 'time' },
-                    },
-                    {
-                        taskId: null,
+                        taskId: "G-Y" +0,
                         name: undefined,
                         theme: undefined,
                         taskText: undefined,
@@ -220,15 +196,9 @@ const model = {
 
             fiveYearPlan:
                 [
+                   
                     {
-                        taskId: null,
-                        name: undefined,
-                        theme: undefined,
-                        taskText: undefined,
-                        frequency: { repeatsPr: undefined, from: 'time', to: 'time' },
-                    },
-                    {
-                        taskId: null,
+                        taskId: "G-5" +0,
                         name: undefined,
                         theme: undefined,
                         taskText: undefined,
@@ -238,15 +208,26 @@ const model = {
                 ],
 
         },
-        plannedActList:[
+        plannedActList:{
+            once:
+            [
             {
-                taskId: null,
+                taskId: "A-O" +0,
                 name: undefined,
                 theme: undefined,
                 date: undefined,
                 time: undefined,
             },
-    ], 
+    ],
+            repeat: [{
+                taskId: "A-R" +0,
+                name: undefined,
+                theme: undefined,
+                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined },
+                    
+            },
+        ],
+}, 
         diaryLogData: [  //Her havner dagbok data som blir logget
             {
                 date: '01/01/2023',

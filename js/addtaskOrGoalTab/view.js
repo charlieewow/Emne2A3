@@ -12,8 +12,10 @@ function updateViewAddTab(){
     <img class="decor" id="loginimg" src="img/loginimage.png">
     <div class="container">
     <div class="innercontainer">
+    <button  class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
     <button class="addbtn" id="addAct" onclick="addActView()">Ny Aktivitet</button>
     <button  class="addbtn" id="addGoal" onclick="addGoalView()">Nytt Mål</button>
+   
     </div>
 
     <div id="selector">
@@ -77,6 +79,9 @@ let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUni
    <select id="units" class="dropdown" name="selectUnit">
    
    </select>
+   <label for="unitrep">repitisjoner</label>
+   
+   <input type="number" id="unitrep" name="unitReps" min="1"/>
     <label for="fromDate">Fra Dato</label>
     <input id="fromDate" type="date" name="fromDate"/>
     <label for="toDate">Frem til Dato</label>
@@ -146,16 +151,20 @@ function addActView(){
 
     <br><br>
    <div class="timingA">
-   <h3>én gang:</h3>
+   <h3>én gang:</h3> <input type="checkbox" id="checkonce" value="unchecked" onclick="checkingbox(this)"/>
     <div id="once">
     <input type="date"  name="date"/>
     <input type="time" name="time"/>
     </div>
 <br>
-<h3>Gjentagende:</h3>
+<h3>Gjentagende:</h3> <input type="checkbox" id="checkrep" value="unchecked" onclick="checkingbox(this)"/>
    <div id="repeating">
    <label for="units">tidsenhet</label>
-   <select id="units"></select>
+   <select id="units" class="dropdown" name="selectUnit">
+   </select>
+   <label for="unitrep">repetisjoner</label>
+   
+   <input type="number" id="unitrep" name="unitReps" min="1"/>
     <label for="fromDate">Fra Dato</label>
     <input id="fromDate" type="date" name="fromDate"/>
     <label for="toDate">Frem til Dato</label>

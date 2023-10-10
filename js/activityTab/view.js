@@ -3,6 +3,7 @@ function activityView() {
     let app = document.getElementById("app");
     let html = /*HTML*/` 
     <button onclick="updateViewAddTab()">Legg til oppgave</button>
+    <button onclick="updateViewDash()">Tilbake til Dash</button>
         <form action="...">
             <label for="nøkkelkompetanser">Nøkkelkompetanser:</label>
             <select name="nøkkelkompetanser" id="keySkills">
