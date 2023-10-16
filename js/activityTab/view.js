@@ -13,6 +13,7 @@ function activityView() {
             <br><br>
             <input type="submit" value="Submit">
         </form>
+        <div id="keySkillAdd"></div>
         
     `;
     app.innerHTML = html;
