@@ -1,0 +1,20 @@
+button.dashbutton {
+    margin-top: 10px;
+    padding: 12px;
+    width: 120px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: inherit;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+button.dashbutton:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+
