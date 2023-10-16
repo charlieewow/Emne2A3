@@ -148,9 +148,9 @@ const model = {
                     
                     {
                         taskId: "G-D" + 0,
-                        name: undefined,
-                        theme: undefined,
-                        taskText: undefined,
+                        name: "test",
+                        theme: "testTheme",
+                        taskText: "TestText",
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
