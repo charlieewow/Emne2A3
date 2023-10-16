@@ -14,7 +14,7 @@ function activityView() {
             <input type="submit" value="Submit">
         </form>
         <div id="keySkillAdd"></div>
-        
+        <div id="keySkillAdd2"></div>
     `;
     app.innerHTML = html;
 
