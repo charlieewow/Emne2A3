@@ -98,7 +98,7 @@ const model = {
             email: 'martin@123.no',
             password: '123',
         },
-        taskList: [{
+        taskList: [{ //nono
             name: "jog",
             theme: "habit",
             taskText: "joggetur",
@@ -261,4 +261,27 @@ const model = {
             },
         ]
     }
+}
+
+
+function saveLocalStorage(){
+    let saveData = model.data;
+    let stringArray = JSON.stringify(saveData);
+    localStorage.setItem('TaskArray', stringArray);
+    console.log(stringArray);
+}
+
+function loadLocalStorage(){
+    if(!localStorage.getItem('TaskArray'))return;
+    let storedArray = JSON.parse(localStorage.getItem('TaskArray'));
+    //console.log(storedArray);
+    taskList = storedArray;
+    updateModel();
+    activityView();
+}
+function updateModel(){
+    model.data = taskList;
+}
+function clearLocalStorage(){
+    localStorage.removeItem('TaskArray');
 }
