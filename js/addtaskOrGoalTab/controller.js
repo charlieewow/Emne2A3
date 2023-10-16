@@ -189,7 +189,9 @@ function pro5Year(newData, five) {
     loggedToModel();
 }
 
-function loggedToModel(){alert("new was logged!");}
+function loggedToModel(){alert("new was logged!");
+saveLocalStorage();
+}
 /*
 {
     taskId: "D" + 1,
@@ -211,3 +213,4 @@ toDate: "2023-10-18"
 [[Prototype]]
 : 
 Object*/
+

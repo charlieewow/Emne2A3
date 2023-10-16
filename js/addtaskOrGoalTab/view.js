@@ -119,6 +119,7 @@ addGForm.addEventListener('submit', function(event){
 
     //nå kan det brukes i modellen ()?
     process(addFormGObject, addGForm);
+    
 
 })
 }
