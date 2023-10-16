@@ -1,0 +1,60 @@
+.dashwrapper {
+    background-color: rgb(37, 35, 46);
+    overflow: hidden;
+    height: 700px;
+    width: 1280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.dashnavbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100%;
+    height: 20px;
+}
+
+.dashmiddlesection {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.dashtitle {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+}
+
+.dashtabs {
+    width: 100%;
+    height: 400px;
+}
+
+hr.dashHR {
+    border: orange 1px solid;
+}
+
+.logout {
+    text-decoration: underline orange;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 6%;
+    transition: 0.2s;
+}
+
+.logout:hover {
+    cursor: pointer;
+    color: gray;
+    transition: 0.2s;
+}
+
+#dashimg {
+    opacity: 3%;
+}
