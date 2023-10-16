@@ -7,8 +7,8 @@
     <title>Activity Tracker</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/aktiviteter.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/dashboardtabs.css">
+    <link rel="stylesheet" href="css/dashboard/dashboardtabs.css">
+    <link rel="stylesheet" href="css/dashboard/dashboard.css">
     <link rel="stylesheet" href="css/historik.css">
     <link rel="stylesheet" href="css/logg.css">
     <link rel="stylesheet" href="css/minemaal.css">
@@ -39,8 +39,40 @@
     <script defer src="js/addtaskOrGoalTab/view.js"></script>
 </head>
 
-<body onload="loginView()">
-    <div id="app"></div>
+<body>
+    <div id="app">
+        <div class="dashwrapper transform border">
+            <img src="img/dashboard.png" id="dashimg">
+            <div class="dashmiddlesection textaligncenter">
+                <div class="flex center">
+                    <div class="dashtabs">
+                        <div class="flex center">
+                            <div class="dashtitle">
+                                <h2>Dashboard</h2>
+                            </div>
+                            <div>
+                                <button class="dashbutton">Activities</button>
+                                <button class="dashbutton">Goals</button>
+                                <button class="dashbutton">History</button>
+                                <button class="dashbutton">Daily Log</button>
+                                <button class="dashbutton">Log Activities</button>
+                            </div>
+                            <div class="logout">
+                                Log out
+                            </div>
+                        </div>
+                        <hr class="dashHR">
+                    </div>
+                </div>
+                <div class="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
 </body>
 
 </html>
