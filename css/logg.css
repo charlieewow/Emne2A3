@@ -1,0 +1,17 @@
+
+td{
+    border:  1px solid orange;
+    
+    border-collapse: collapse;
+}
+
+table{
+    position: absolute;
+    border: 1px solid orange;
+    border-collapse: collapse;
+    top: 20dvh;
+    left: 1dvw;
+    width: 70dvw;
+    height: 60dvh;
+}
+
