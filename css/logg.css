@@ -15,3 +15,40 @@ table{
     height: 60dvh;
 }
 
+
+.logSpace{
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+.Monday{
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+.Tuesday{
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+.Wednesday{
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+.Thursday{
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+.Friday{
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+
+#weekBtn{
+    position: absolute;
+    top: 15dvh;
+    left: 1dvw;
+}

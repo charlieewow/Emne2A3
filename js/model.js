@@ -1,4 +1,4 @@
-// const app = document.getElementById('app');
+//const app = document.getElementById('app');
 //let activity=  model.interface.activity.selectedNK
 const model = {
     app: {
@@ -49,6 +49,10 @@ const model = {
                 standardAct: ['tasks'], //tenker å få til en måte å refferere denne 
             },
             diary: {
+            edges:{
+                weekdayNO : ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag'],
+                dailyQuestNO: ['Hvordan er humøret?', 'Hva har du lært?', 'Hva er ditt neste skritt?'],},
+            content: { 
                 monday: { mood: '', progress: '', nextStep: '' },
                 tuesday: { mood: '', progress: '', nextStep: '' },
                 wednesday: { mood: '', progress: '', nextStep: '' },
@@ -57,7 +61,7 @@ const model = {
             },
             /* logDataBtn: 'function diaryLog(){diaryLogData.push(logpage.diary)}',  //grov eksempel kode, den blir nok ikke å være her, men blir knytta til knappen på noe vis :p */
 
-        },
+        }},
         addGoalAct: {
             themeSelector: ['vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
             activitySelector: ['Meditation', 'Pomodoro', 'jogging'],
@@ -277,7 +281,7 @@ function loadLocalStorage(){
     //console.log(storedArray);
     taskList = storedArray;
     updateModel();
-    activityView();
+    
 }
 function updateModel(){
     model.data = taskList;
