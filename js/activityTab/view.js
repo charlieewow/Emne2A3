@@ -2,21 +2,6 @@ function activityView() {
     let activity = model.interface.activity.selectedNK;
     let app = document.getElementById("app");
     let html = /*HTML*/` 
-<<<<<<< Updated upstream
-    <button onclick="updateViewAddTab()">Legg til oppgave</button>
-    <button onclick="updateViewDash()">Tilbake til Dash</button>
-        <form action="...">
-            <label for="nøkkelkompetanser">Nøkkelkompetanser:</label>
-            <select name="nøkkelkompetanser" id="keySkills">
-
-
-            </select>
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-        <div id="keySkillAdd"></div>
-        
-=======
         <div class="wrapper transform border activitywrapper">
             <img src="img/activities.png" id="activitiesimg">
             <div class="inneractivitywrapper">
@@ -52,7 +37,6 @@ function activityView() {
                 </div>
             </div>
         </div>
->>>>>>> Stashed changes
     `;
     app.innerHTML = html;
 
