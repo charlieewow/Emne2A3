@@ -1,0 +1,73 @@
+.activitywrapper {
+    height: fit-content;
+    background: rgb(37, 35, 46);
+}
+
+.inneractivitywrapper {
+    padding: 10px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.activitynavbar {
+    padding: 7px;
+    justify-content: center;
+    align-items: center;
+}
+
+.circleplus {
+    position: absolute;
+    right: 3%;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    font-size: xx-large;
+    background-color: orange;
+    transition: 0.2s;
+}
+
+.circleplus:hover {
+    cursor: pointer;
+    background-color: rgb(167, 74, 3);
+    transition: 0.2s;
+}
+
+.circleplus:active {
+    top: 2%;
+}
+
+.activityprog {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.activitiesTheme {
+    background-color: rgb(167, 74, 3);
+    padding: 10px;
+    border-radius: 10lh;
+    position: relative;
+    margin-top: 30px;
+}
+
+#activitiesimg {
+    opacity: 5%;
+}
+
+progress.prog { 
+    border-radius: 10lh;
+}
+
+progress.prog::-webkit-progress-bar {
+    background-color: orange;
+    border-radius: 10lh;
+}
+
+progress.prog::-webkit-progress-value {
+    background-color: rgb(37, 35, 46);
+    border-radius: 10lh;
+}
