@@ -1,8 +1,9 @@
 //verify username and password and send the user to the dashboard
-let storedUserName = model.data.user.userName;
-let storedPassword = model.data.user.password;
 
 function login() {
+    let storedUserName = model.data.user.userName;
+    let storedPassword = model.data.user.password;
+    
     let username = document.getElementById('uNameIn').value;
     let password = document.getElementById('pWordIn').value;
 
@@ -32,7 +33,7 @@ function createUser() {
     model.data.user.email = email;
     if (password === passwordRepeat) {
         model.data.user.password = password;
-        
+
         document.getElementById('usernameInput').value = '';
         document.getElementById('emailInput').value = '';
         document.getElementById('passwordInput').value = '';
