@@ -20,6 +20,8 @@ function loginView(){
             </div>
         </div>
     `;
+
+    loadLocalStorage();
 }
 
 function registerUserView(){
