@@ -5,7 +5,7 @@ let selectedNK = 'all';
 
 function chooseNK(ddmNK){
     selectedNK = ddmNK.value;
-    activityView();
+    loadActivity();
 }
 
 function loadActivity() {
@@ -37,5 +37,5 @@ let repeatList = '';
         }
     }
 
-    return onceList + repeatList;
+   document.getElementById('keySkillAdd').innerHTML = onceList + repeatList;
 }

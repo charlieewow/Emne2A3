@@ -1,9 +1,9 @@
 function activityView() {
     loadLocalStorage();
-   const mytimeOut = setTimeout("loadActivity", 1000);
+
     let activity = model.interface.activity.selectedNK;
-    let app = document.getElementById("dashcontent");
-    let html = /*HTML*/` 
+    document.getElementById("dashcontent").innerHTML = 
+    /*HTML*/` 
     <div class="wrapper transform border activitywrapper">
     <img src="img/activities.png" id="activitiesimg">
     <div class="inneractivitywrapper">
@@ -17,17 +17,16 @@ function activityView() {
     </div>
     <hr>
     <div id="keySkillAdd">
-    ${loadActivity() || ''} 
     </div>
     </div>
     </div>
     `;
-    app.innerHTML = html;
+  
     
     for (i in activity) {
         document.getElementById("keySkills").innerHTML += `<option value=${activity[i]}>${activity[i]}</option>`;
     }
-    
+    loadActivity()
     //setTimeout(function (){loadActivity("<option value='all'>Alle</option>")}, 1000);
 }
 
