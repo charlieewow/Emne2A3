@@ -32,12 +32,14 @@ function logProcess(){
 
 function weekCounter(btn){
    
-    if(btn.innerHTML == "neste uke⇨" && weekNumber != model.data.diaryLogData.length-1){
+    if(btn.innerHTML == "neste uke⇨" && weekNumber != model.data.diaryLogData.length){
         console.log("true")
         weekNumber++;
         logDiaryView();
     }
-    else if(btn.innerHTML == "neste uke⇨" && weekNumber == model.data.diaryLogData.length-1){
+     if(btn.innerHTML == "neste uke⇨" && weekNumber == model.data.diaryLogData.length){
+        
+        logDiaryView();
         console.log("hoho");
         console.log(model.data.diaryLogData[weekNumber-1]);
         model.data.diaryLogData[weekNumber] = 
@@ -52,8 +54,7 @@ function weekCounter(btn){
             }
   };
   console.log(model.data.diaryLogData[weekNumber]);
-  weekNumber++;
-  logDiaryView();
+  
     }
     else{console.log("Nope");
 console.log(btn.innerHTML);}
