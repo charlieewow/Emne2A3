@@ -1,4 +1,4 @@
-let view = document.getElementById('app');
+//let view = document.getElementById('app');
 function loginView(){
     view.innerHTML = /*HTML*/`
         <div class="wrapper border transform">
