@@ -1,11 +1,10 @@
+td {
+    border: 1px solid orange;
 
-td{
-    border:  1px solid orange;
-    
     border-collapse: collapse;
 }
 
-table{
+table {
     position: absolute;
     border: 1px solid orange;
     border-collapse: collapse;
@@ -16,44 +15,49 @@ table{
 }
 
 
-.logSpace{
-    background-color: inherit;
-    height: 9dvh;
-    width: 20dvw;
-}
-.Monday{
-    background-color: inherit;
-    height: 9dvh;
-    width: 20dvw;
-}
-.Tuesday{
-    background-color: inherit;
-    height: 9dvh;
-    width: 20dvw;
-}
-.Wednesday{
-    background-color: inherit;
-    height: 9dvh;
-    width: 20dvw;
-}
-.Thursday{
-    background-color: inherit;
-    height: 9dvh;
-    width: 20dvw;
-}
-.Friday{
+.logSpace {
     background-color: inherit;
     height: 9dvh;
     width: 20dvw;
 }
 
-#weekBtn{
+.Monday {
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+
+.Tuesday {
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+
+.Wednesday {
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+
+.Thursday {
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+
+.Friday {
+    background-color: inherit;
+    height: 9dvh;
+    width: 20dvw;
+}
+
+#weekBtn {
     position: absolute;
     top: 10dvh;
     left: 1dvw;
 }
 
-.addbtnlog{
+.addbtnlog {
     background-color: inherit;
     color: white;
     border: 2px outset orange;
@@ -73,6 +77,21 @@ table{
     height: 72dvh;
 }
 
+.AlogContainer {
+    position: relative;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 67dvw;
+    height: 60dvh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .logInnercontainer {
     border-bottom: 1px solid orange;
     color: white;
@@ -85,6 +104,33 @@ table{
     justify-content: space-evenly;
 }
 
+
+#logPlan {
+    width: 50dvw;
+
+    border-right: 1px solid orange;
+}
+
+#logSpontan {
+    width: 50dvw;
+    border-left: 1px solid orange;
+
+}
+
+#logPlanIn {
+    padding-top: 1dvh;
+}
+
+#logSpontanIn {
+    padding-top: 1dvh;
+    padding-left: 1.5dvh;
+}
+
+.logh3 {
+    border-bottom: 1px solid orange;
+    margin: 0dvh;
+}
+
 .logBack {
     position: relative;
     bottom: 12dvh;
@@ -92,5 +138,16 @@ table{
     background: linear-gradient(146deg, rgba(219, 151, 0, 1) 0%, rgba(37, 35, 46, 1) 55%);
     height: 78dvh;
     width: 100%;
-    
+
 }
+
+.logOption {
+    width: 30dvw;
+    margin: 1px;
+    padding-inline: 1dvh;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logCheck {}
