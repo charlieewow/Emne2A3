@@ -16,7 +16,7 @@ function dashView() {
                             <button class="dashbutton">Daily Log</button>
                             <button class="dashbutton" onclick="updateViewTaskPage()">Log Activities</button>
                         </div>
-                        <div class="logout" onclick="backToLogin()>
+                        <div class="logout" onclick="backToLogin()">
                             Log out
                         </div>
                     </div>
