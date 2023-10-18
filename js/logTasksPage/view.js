@@ -1,16 +1,17 @@
 
 
 function updateViewTaskPage() {
+    let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
     
-    <div class="back border">
-    <img class="decor" id="loginimg" src="img/loginimage.png">
-    <div class="container">
-    <div class="innercontainer">
-    <button  class="addbtn" id="backtoAct" onclick="updateViewDash()">Avslutt</button>
-    <button class="addbtn" id="addAct" onclick="logActView()">Logg aktivitet</button>
-    <button  class="addbtn" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>
-   <button class="addbtn" onclick="logProcess()">lagre logg</button>
+    <div class="logBack border">
+    <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
+    <div class="logContainer">
+    <div class="logInnercontainer">
+    <button  class="addbtnlog" id="backtoAct" onclick="updateViewDash()">Avslutt</button>
+    <button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>
+    <button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>
+   <button class="addbtnlog" onclick="logProcess()">lagre logg</button>
     </div>
 
     <div id="logview">

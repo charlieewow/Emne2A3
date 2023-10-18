@@ -17,7 +17,7 @@ function activityView() {
                     <div class="circleplus flex center" onclick="updateViewAddTab(); ">+</div>
                 </div>
                 <hr>
-                <div onload="" id="keySkillAdd" class="">
+                <div  id="keySkillAdd" class="">
                     </div>
 
                 </div>

@@ -9,10 +9,10 @@ table{
     position: absolute;
     border: 1px solid orange;
     border-collapse: collapse;
-    top: 20dvh;
+    top: 15dvh;
     left: 1dvw;
     width: 70dvw;
-    height: 60dvh;
+    height: 40dvh;
 }
 
 
@@ -49,6 +49,48 @@ table{
 
 #weekBtn{
     position: absolute;
-    top: 15dvh;
+    top: 10dvh;
     left: 1dvw;
+}
+
+.addbtnlog{
+    background-color: inherit;
+    color: white;
+    border: 2px outset orange;
+    width: 20dvh;
+    height: 4dvh;
+}
+
+.logContainer {
+    position: relative;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    width: 70dvw;
+    height: 72dvh;
+}
+
+.logInnercontainer {
+    border-bottom: 1px solid orange;
+    color: white;
+    padding: 1dvh;
+    transition: 0.2s;
+    background-color: rgb(37, 35, 46);
+    height: 4dvh;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.logBack {
+    position: relative;
+    bottom: 12dvh;
+    background: rgb(219, 151, 0);
+    background: linear-gradient(146deg, rgba(219, 151, 0, 1) 0%, rgba(37, 35, 46, 1) 55%);
+    height: 78dvh;
+    width: 100%;
+    
 }
