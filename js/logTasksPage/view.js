@@ -51,7 +51,7 @@ function logActView() {
         if (myOnceTasks[i + 1]?.name) {
             onceArrayName.push(myOnceTasks[i + 1].name);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
-            <div ><p>${onceArrayName[i]}</p></div><input class="logCheck"  type="checkbox"/>
+            <div ><p>${myOnceTasks[i +1].name}</p></div><input class="logCheck"  type="checkbox"/>
            
             </div>`;
         }
@@ -59,8 +59,9 @@ function logActView() {
     for (let i = 0; i < myRepeatTasks?.length; i++) {
         if (myRepeatTasks[i + 1]?.name) {
             repeatArrayName.push(myRepeatTasks[i + 1].name);
-            document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
-            <div><p>${repeatArrayName[i]}</p></div><input class="logCheck" type="checkbox"/>
+            let passport = myRepeatTasks[i + 1].taskId;
+            document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i+1})">
+            <div><p>${myRepeatTasks[i+1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i +1].frequency.unit}  gjentagelser: ${myRepeatTasks[i +1].frequency.repeatsPr}</p></div><input class="logCheck" type="checkbox"/>
             
             </div>`;
         }
@@ -69,7 +70,7 @@ function logActView() {
         if (myStandardTasks[i]?.name) {
             standardTaskArray.push(myStandardTasks[i].name);
             document.getElementById('logSpontanIn').innerHTML += `<div class="flex border logOption">
-            <div><p>${standardTaskArray[i]}</p></div><input class="logCheck" type="checkbox"/>
+            <div><p>${myStandardTasks[i].name}</p></div><input class="logCheck" type="checkbox"/>
             
             </div>`;
         }

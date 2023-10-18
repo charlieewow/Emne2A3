@@ -63,6 +63,7 @@ table {
     border: 2px outset orange;
     width: 20dvh;
     height: 4dvh;
+    cursor: pointer;
 }
 
 .logContainer {
@@ -147,7 +148,13 @@ table {
     padding-inline: 1dvh;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    cursor: pointer;
 
 }
 
-.logCheck {}
+
+
+.hideLogInfo{
+    display: none;
+}
