@@ -10,30 +10,14 @@ function activityView() {
                         <label for="nøkkelkompetanser">Nøkkelkompetanser:</label>
                         <select name="nøkkelkompetanser" id="keySkills">
     
-    
-                        </select>
+                           </select>
                     </form>
-                    <div ></div>
                     <div class="circleplus flex center" onclick="updateViewAddTab()">+</div>
                 </div>
                 <hr>
                 <div id="keySkillAdd" class="">
-                    <div class="flex activitiesTheme border">
-                        <div ><p>Trygghet</p></div>
-                        <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
                     </div>
-                    <div class="flex activitiesTheme border">
-                        <div><p>Trygghet</p></div>
-                        <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
-                    </div>
-                    <div class="flex activitiesTheme border">
-                        <div><p>Trygghet</p></div>
-                        <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
-                    </div>
-                    <div class="flex activitiesTheme border">
-                        <div><p>Trygghet</p></div>
-                        <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -44,4 +28,3 @@ function activityView() {
         document.getElementById("keySkills").innerHTML += `<option value=${activity[i]}>${activity[i]}</option>`;
     }
 }
-//updateView();

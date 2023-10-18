@@ -7,7 +7,7 @@ function login() {
     let password = document.getElementById('pWordIn').value;
 
     if (username == storedUserName && password == storedPassword) {
-        //send user to dashboard
+        dashView();
     }
 }
 
@@ -32,12 +32,13 @@ function createUser() {
     model.data.user.email = email;
     if (password === passwordRepeat) {
         model.data.user.password = password;
+        
+        document.getElementById('usernameInput').value = '';
+        document.getElementById('emailInput').value = '';
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInputRepeat').value = '';
+    
+        loginView();
     }
 
-    document.getElementById('usernameInput').value = '';
-    document.getElementById('emainInput').value = '';
-    document.getElementById('passwordInput').value = '';
-    document.getElementById('passwordInputRepeat').value = '';
-
-    loginView();
 }

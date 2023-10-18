@@ -5,7 +5,7 @@ function loginView(){
             <img id="loginimg" src="img/loginimage.png">
             <div class="innerWrapper textaligncenter transform">
                 <h1>Welcome to the activity tracker</h1>
-                <div><input class="login" type="text" placeholder="Username" id="uNameIn"> </div>
+                <div><input class="login" type="text" placeholder="Username" id="uNameIn"></div>
                 <div><input class="login" type="password" placeholder="Password" id="pWordIn"></div>
                 <p class="forgotPW">Forgot Password?</p>
                 <div>
