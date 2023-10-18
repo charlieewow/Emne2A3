@@ -231,7 +231,28 @@ const model = {
                     
             },
         ],
-}, 
+},
+activityHistory: {
+    planned:
+    [
+    {
+        taskId: "A-O" +0,
+        name: undefined,
+        theme: undefined,
+        date: undefined,
+        time: undefined,
+        done: {time: ' ', date: ' '},
+    },
+],
+    spontan: [{
+        taskId: "A-R" +0,
+        name: undefined,
+        theme: undefined,
+        done: {time: ' ', date: ' '},
+            
+    },
+],
+},
         diaryLogData: [  //Her havner dagbok data som blir logget
             {
                 date: '01/01/2023',

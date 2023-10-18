@@ -1,6 +1,8 @@
 function activityView() {
+    loadLocalStorage();
+   const mytimeOut = setTimeout("loadActivity", 1000);
     let activity = model.interface.activity.selectedNK;
-    let app = document.getElementById("app");
+    let app = document.getElementById("dashcontent");
     let html = /*HTML*/` 
     <div class="wrapper transform border activitywrapper">
     <img src="img/activities.png" id="activitiesimg">

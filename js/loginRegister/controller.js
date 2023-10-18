@@ -3,7 +3,7 @@
 function login() {
     let storedUserName = model.data.user.userName;
     let storedPassword = model.data.user.password;
-    
+
     let username = document.getElementById('uNameIn').value;
     let password = document.getElementById('pWordIn').value;
 
@@ -38,6 +38,8 @@ function createUser() {
         document.getElementById('emailInput').value = '';
         document.getElementById('passwordInput').value = '';
         document.getElementById('passwordInputRepeat').value = '';
+
+        saveLocalStorage();
     
         loginView();
     }
