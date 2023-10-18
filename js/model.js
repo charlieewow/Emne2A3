@@ -26,7 +26,7 @@ const model = {
 
         },
         activity: {
-            selectedNK: ['vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
+            selectedNK: ['all', 'vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
         },
         goals: {
             selectTimeframe: '',
@@ -217,16 +217,16 @@ const model = {
             [
             {
                 taskId: "A-O" +0,
-                name: undefined,
-                theme: undefined,
+                name: "Jogge",
+                theme: "vanedanning",
                 date: undefined,
                 time: undefined,
             },
     ],
             repeat: [{
                 taskId: "A-R" +0,
-                name: undefined,
-                theme: undefined,
+                name: "Løpe",
+                theme: "vanedanning",
                 frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined },
                     
             },
