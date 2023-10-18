@@ -13,13 +13,13 @@ function activityView() {
     
                         </select>
                     </form>
-                    <div id="keySkillAdd"></div>
+                    <div ></div>
                     <div class="circleplus flex center" onclick="updateViewAddTab()">+</div>
                 </div>
                 <hr>
-                <div class="">
+                <div id="keySkillAdd" class="">
                     <div class="flex activitiesTheme border">
-                        <div><p>Trygghet</p></div>
+                        <div ><p>Trygghet</p></div>
                         <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
                     </div>
                     <div class="flex activitiesTheme border">
