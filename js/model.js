@@ -26,7 +26,7 @@ const model = {
 
         },
         activity: {
-            selectedNK: ['jogge', 'pomodoro', 'lese'],
+            selectedNK: ['vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
         },
         goals: {
             selectTimeframe: '',
