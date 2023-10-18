@@ -1,4 +1,6 @@
-function loadActivity() {
+//loadActivity();
+/*function loadActivity() {
+    loadLocalStorage();
     let myOnceTasks = model.data.plannedActList?.once;
     let myRepeatTasks = model.data.plannedActList?.repeat;
     let onceArrayTheme = [];
@@ -9,7 +11,7 @@ function loadActivity() {
         if (myOnceTasks[i + 1]?.name) {
             onceArrayName.push(myOnceTasks[i + 1].name);
             document.getElementById('keySkillAdd').innerHTML += `<div class="flex activitiesTheme border">
-            <div><p>${onceArrayName[i]}</p></div>
+            <div ><p>${onceArrayName[i]}</p></div>
             <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
             </div>`;
         }
@@ -24,3 +26,5 @@ function loadActivity() {
         }
     }
 }
+*/
+

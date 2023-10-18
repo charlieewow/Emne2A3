@@ -15,6 +15,7 @@ function updateViewAddTab(){
     <button  class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
     <button class="addbtn" id="addAct" onclick="addActView()">Ny Aktivitet</button>
     <button  class="addbtn" id="addGoal" onclick="addGoalView()">Nytt Mål</button>
+    <button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>
    
     </div>
 
