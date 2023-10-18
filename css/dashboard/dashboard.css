@@ -1,8 +1,8 @@
 .dashwrapper {
     background-color: rgb(37, 35, 46);
     overflow: hidden;
-    height: 700px;
-    width: 1280px;
+    height: 90%;
+    width: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,4 +57,11 @@ hr.dashHR {
 
 #dashimg {
     opacity: 3%;
+}
+
+#dashcontent {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

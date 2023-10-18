@@ -1,4 +1,5 @@
-//let view = document.getElementById('app');
+let view = document.getElementById('app');
+loginView()
 function loginView(){
     view.innerHTML = /*HTML*/`
         <div class="wrapper border transform">
@@ -19,6 +20,7 @@ function loginView(){
                 <button class="signUp" onclick="sendToRegisterUser()">Sign up</button>
             </div>
         </div>
+        <button onclick="dashView()">To Dash</button>
     `;
 
     loadLocalStorage();

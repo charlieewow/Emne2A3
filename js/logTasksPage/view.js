@@ -1,7 +1,7 @@
 
 
 function updateViewTaskPage() {
-    html = /*html*/ `
+    document.getElementById("dashcontent").innerHTML = /*html*/ `
     
     <div class="back border">
     <img class="decor" id="loginimg" src="img/loginimage.png">
@@ -21,7 +21,6 @@ function updateViewTaskPage() {
 </div>
 </div>
     `;
-    app.innerHTML = html;
 }
 
 function logActView() {
