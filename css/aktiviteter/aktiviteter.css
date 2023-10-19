@@ -1,6 +1,8 @@
 .activitywrapper {
     height: fit-content;
+    
     background: rgb(37, 35, 46);
+    
     position: relative;
     top: 25dvh;
     overflow-y: scroll;
@@ -11,17 +13,17 @@
 
 .styled-scrollbars {
     /* Foreground, Background */
-    scrollbar-color: rgb(37, 35, 46) rgb(23, 22, 29);
+    scrollbar-color: transparent transparent;
   }
   .styled-scrollbars::-webkit-scrollbar {
     width: 10px; /* Mostly for vertical scrollbars */
-    height: 10px; /* Mostly for horizontal scrollbars */
+    
   }
   .styled-scrollbars::-webkit-scrollbar-thumb { /* Foreground */
-    background: rgb(37, 35, 46);
+    background: transparent;
   }
   .styled-scrollbars::-webkit-scrollbar-track { /* Background */
-    background: rgb(37, 35, 46);
+    background: transparent;
   }
 
 .inneractivitywrapper {
