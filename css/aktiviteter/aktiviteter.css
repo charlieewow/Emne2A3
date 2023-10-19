@@ -1,21 +1,49 @@
 .activitywrapper {
     height: fit-content;
     background: rgb(37, 35, 46);
+    position: relative;
+    top: 25dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 600px;
+    left: 50%;
 }
+
+.styled-scrollbars {
+    /* Foreground, Background */
+    scrollbar-color: rgb(37, 35, 46) rgb(23, 22, 29);
+  }
+  .styled-scrollbars::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+  .styled-scrollbars::-webkit-scrollbar-thumb { /* Foreground */
+    background: rgb(37, 35, 46);
+  }
+  .styled-scrollbars::-webkit-scrollbar-track { /* Background */
+    background: rgb(37, 35, 46);
+  }
 
 .inneractivitywrapper {
     padding: 10px;
     width: 90%;
     position: absolute;
-    top: 50%;
+    top: 40dvh;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 1dvh;
+    
+    
 }
 
 .activitynavbar {
     padding: 7px;
     justify-content: center;
     align-items: center;
+    position: relative;
+    bottom: 35dvh;
+  
+    
 }
 
 .circleplus {
@@ -56,6 +84,9 @@
 
 #activitiesimg {
     opacity: 5%;
+    position: static;
+    
+    
 }
 
 progress.prog { 
@@ -70,4 +101,14 @@ progress.prog::-webkit-progress-bar {
 progress.prog::-webkit-progress-value {
     background-color: rgb(37, 35, 46);
     border-radius: 10lh;
+}
+
+#keySkillAdd{
+    position: relative;
+    bottom:35dvh;
+}
+
+hr{
+    position: relative;
+    bottom: 35dvh;
 }

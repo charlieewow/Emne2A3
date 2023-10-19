@@ -4,7 +4,7 @@ function activityView() {
     let activity = model.interface.activity.selectedNK;
     document.getElementById("dashcontent").innerHTML = 
     /*HTML*/` 
-    <div class="wrapper transform border activitywrapper">
+    <div class="wrapper transform border activitywrapper styled-scrollbars">
     <img src="img/activities.png" id="activitiesimg">
     <div class="inneractivitywrapper">
     <div class="activitynavbar flex">

@@ -8,3 +8,5 @@ function toggleHideInfo(ele){
 console.log(model.data.plannedActList.repeat[ele].taskId);
 document.getElementById(model.data.plannedActList.repeat[ele].taskId).classList.toggle("hideLogInfo");
 }
+
+model.data.plannedActList.repeat[i].frequency.totalReps

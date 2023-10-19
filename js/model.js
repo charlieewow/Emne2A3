@@ -227,7 +227,7 @@ const model = {
                 taskId: "A-R" +0,
                 name: "Løpe",
                 theme: "vanedanning",
-                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined },
+                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined, totalReps: '' },
                     
             },
         ],
