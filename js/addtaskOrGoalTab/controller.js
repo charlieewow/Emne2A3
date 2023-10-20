@@ -45,10 +45,10 @@ function process(object, form) {
         let repeatbox = document.getElementById("checkrep");
         let oncebox = document.getElementById("checkonce");
 
-        if(oncebox.checked == true){
+        if (oncebox.checked == true) {
             proOnce(workObject);
         }
-        if(repeatbox.checked == true){
+        if (repeatbox.checked == true) {
             proRep(workObject);
         }
     }
@@ -86,28 +86,29 @@ function process(object, form) {
 
 //disse hører til aktivitet
 
-function proOnce(newData){
-let oneTime = model.data.plannedActList.once;
-let i = oneTime.length;
-oneTime.push({
-    
-        taskId: "A-O" +i,
+function proOnce(newData) {
+    let oneTime = model.data.plannedActList.once;
+    let i = oneTime.length;
+    oneTime.push({
+
+        taskId: "A-O" + i,
         name: newData.NKActivity,
         theme: newData.NKTemaer,
         date: newData.date,
         time: newData.time,
-    
-},);
-loggedToModel();}
-function proRep(newData){
+
+    },);
+    loggedToModel();
+}
+function proRep(newData) {
     let repTime = model.data.plannedActList.repeat;
     let i = repTime.length;
     repTime.push({
-        taskId: "A-R" +i,
+        taskId: "A-R" + i,
         name: newData.NKActivity,
         theme: newData.NKTemaer,
         frequency: { unit: newData.selectUnit, repeatsPr: newData.unitReps, from: newData.fromDate, to: newData.toDate },
-          
+
     },);
     loggedToModel();
 }
@@ -189,8 +190,10 @@ function pro5Year(newData, five) {
     loggedToModel();
 }
 
-function loggedToModel(){alert("new was logged!");
-saveLocalStorage();
+function loggedToModel() {
+    alert("new was logged!");
+    countUp();
+    saveLocalStorage();
 }
 /*
 {
@@ -213,4 +216,71 @@ toDate: "2023-10-18"
 [[Prototype]]
 : 
 Object*/
+function countUp(){
+for (ele in model.data.plannedActList.repeat) {
+    console.log(model.data.plannedActList.repeat[ele].frequency);
+    let startDate = new Date(model.data.plannedActList.repeat[ele].frequency.from);
+    let endDate = new Date(model.data.plannedActList.repeat[ele].frequency.to);
+    let startTime = startDate.getTime();
+    let endTime = endDate.getTime();
+    let differenceInMilliseconds = endTime - startTime;
 
+
+    //pr day:
+    let differenceInDays = differenceInMilliseconds / (1000 * 60 * 60 * 24);
+    if (model.data.plannedActList.repeat[ele].frequency.unit == 'Daglig') {
+        let repsPrDay = model.data.plannedActList.repeat[ele].frequency.repeatsPr;
+        let totalRepsD = differenceInDays * repsPrDay
+        differenceInDays = Math.round(differenceInDays);
+        totalRepsD = Math.round(totalRepsD);
+        console.log("day", totalRepsD);
+        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsD;
+    }
+
+
+
+
+    //pr week
+    let differenceInWeeks = differenceInDays / 7;
+    if (model.data.plannedActList.repeat[ele].frequency.unit == 'Uke') {
+        repsPrWeek = model.data.plannedActList.repeat[ele].frequency.repeatsPr;
+        totalRepsU = differenceInWeeks * repsPrWeek;
+        differenceInWeeks = Math.round(differenceInWeeks);
+        totalRepsU = Math.round(totalRepsU);
+        console.log("week", totalRepsU);
+        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsU;
+    }
+
+    //pr Month
+    let differenceInMonths = differenceInDays / 30.44;
+
+    if (model.data.plannedActList.repeat[ele].frequency.unit == 'Måned') {
+        repsPrMonth = model.data.plannedActList.repeat[ele].frequency.repeatsPr;
+        totalRepsM = differenceInMonths * repsPrMonth;
+        differenceInMonths = Math.round(differenceInMonths);
+        totalRepsM = Math.round(totalRepsM);
+        console.log("Måned", totalRepsM);
+        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsM;
+    }
+//pr Year
+    let differenceInYears = differenceInMonths / 12;
+    if(model.data.plannedActList.repeat[ele].frequency.unit == "År"){
+        repsPrYear = model.data.plannedActList.repeat[ele].frequency.repeatsPr;
+        totalRepsY = differenceInYears * repsPrYear;
+        differenceInYears = Math.round(differenceInYears);
+        totalRepsY = Math.round(totalRepsY);
+        console.log("År", totalRepsY);
+        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsY;
+    }
+//pr 5Year
+    let differenceIn5Years = differenceInYears / 5;
+    if(model.data.plannedActList.repeat[ele].frequency.unit == "5 År"){
+        repsPr5Year = model.data.plannedActList.repeat[ele].frequency.repeatsPr;
+        totalReps5Y = differenceIn5Years * repsPr5Year;
+        differenceIn5Years = Math.round(differenceIn5Years);
+        totalReps5Y = Math.round(totalReps5Y);
+        console.log("5 År", totalReps5Y);
+        model.data.plannedActList.repeat[ele].frequency.totalReps = totalReps5Y;
+    }
+   // console.log(totalRepsD)
+}}

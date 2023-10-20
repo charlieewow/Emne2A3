@@ -228,6 +228,8 @@ const model = {
                 name: "Løpe",
                 theme: "vanedanning",
                 frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined, totalReps: '' },
+                repsDone: '',
+                repsLeft: '',
                     
             },
         ],

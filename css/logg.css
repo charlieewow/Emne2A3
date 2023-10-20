@@ -106,25 +106,18 @@ table {
 }
 
 
-#logPlan {
-    width: 50dvw;
-
-    border-right: 1px solid orange;
-}
-
-#logSpontan {
-    width: 50dvw;
-    border-left: 1px solid orange;
-
-}
 
 #logPlanIn {
     padding-top: 1dvh;
+    padding-left: 1dvh;
+    height: 50dvh;
+    overflow-y: scroll;
 }
 
 #logSpontanIn {
     padding-top: 1dvh;
     padding-left: 1.5dvh;
+    padding-right: 1dvh;
 }
 
 .logh3 {
@@ -157,4 +150,25 @@ table {
 
 .hideLogInfo{
     display: none;
+}
+
+#logTform{
+border-right: 1px solid orange;
+width: 35dvw;
+}
+#logTSform{
+width: 35dvw; 
+border-left: 1px solid orange;
+}
+
+#submitA{
+    position: absolute;
+    margin-inline: 0%;
+    top: 150dvh;
+    
+}
+#submitAS{
+position: absolute;
+top: 55dvh;
+left: 98dvh;
 }
