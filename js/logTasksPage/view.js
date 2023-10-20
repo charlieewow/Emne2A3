@@ -61,7 +61,7 @@ function logActView() {
         if (myOnceTasks[i + 1]?.name) {
             onceArrayName.push(myOnceTasks[i + 1].name);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
-            <div ><p>${myOnceTasks[i + 1].name}</p></div><input id=${myOnceTasks[i+1].taskId} name='${myOnceTasks[i + 1].name}' index=${i +1}} class="logCheck"  type="checkbox"/>
+            <div ><p>${myOnceTasks[i + 1].name}</p></div><input id=${myOnceTasks[i+1].taskId} name='{"name":"${myOnceTasks[i + 1].name}", "id":"${myOnceTasks[i + 1].taskId}", "index":${i +1}}' class="logCheck"  type="checkbox"/>
            
             </div>`;
         }
@@ -71,7 +71,7 @@ function logActView() {
             repeatArrayName.push(myRepeatTasks[i + 1].name);
             let passport = myRepeatTasks[i + 1].taskId;
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
-            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} </p></div><input  name='{name:${myRepeatTasks[i +1].name}, id:${myRepeatTasks[i+1].taskId}, index: ${i+1}}' class="logCheck" type="checkbox"/>
+            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} </p></div><input  name='{"name":"${myRepeatTasks[i +1].name}", "id":"${myRepeatTasks[i+1].taskId}", "index": ${i+1}}' class="logCheck" type="checkbox"/>
             
             </div>`;
            

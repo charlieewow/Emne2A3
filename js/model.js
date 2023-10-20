@@ -227,9 +227,10 @@ const model = {
                 taskId: "A-R" +0,
                 name: "Løpe",
                 theme: "vanedanning",
-                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined, totalReps: '' },
-                repsDone: '',
+                repsDone: 0,
                 repsLeft: '',
+                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined, totalReps: '' },
+                
                     
             },
         ],
@@ -311,4 +312,9 @@ function updateModel(){
 }
 function clearLocalStorage(){
     localStorage.removeItem('TaskArray');
+}
+
+
+for(entry in model.data.plannedActList.repeat){
+    model.data.plannedActList.repeat[entry].repsLeft = model.data.plannedActList.repeat[entry].frequency.totalReps - model.data.plannedActList.repeat[entry].repsDone;
 }
