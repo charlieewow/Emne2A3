@@ -30,20 +30,20 @@ function updateViewTaskPage() {
 function logActView() {
     html = /*html*/`
 <div class="AlogContainer">
-    
+    <div id="posOne">
 <form action="..." id="logTform">
-<div id="logPlan"><h3 class="logh3">planlagte aktiviteter</h3><div class="styled-scrollbars" id="logPlanIn"></div></div>
-<div id="submitA">
-    <input type="submit" value="Submit planlagt"/>
-    </div>
-    </form>
-
+<div id="logPlan"><h3 class="logh3">planlagte aktiviteter</h3><div class="styled-scrollbars" id="logPlanIn">    
+</div><br></div>
+<input id="submitA" class="addbtnlog" type="submit" value="Submit planlagt"/>
+    
+    </form></div>
+<div id="posTwo">
 <form action="..." id="logTSform">
-<div id="logSpontan"><h3 class="logh3">spontane aktiviteter</h3> <div class="styled-scrollbars" id="logSpontanIn"></div></div>
-<div id="submitAS">
-    <input type="submit" value="Submit spontan"/>
-    </div>
-    </form>
+<div id="logSpontan"><h3 class="logh3">spontane aktiviteter</h3> <div class="styled-scrollbars" id="logSpontanIn"></div><input id="submitAS" class="addbtnlog" type="submit" value="Submit spontan"/>    
+</div>
+
+    
+    </form></div>
     </div>
     `;
     logview.innerHTML = html;

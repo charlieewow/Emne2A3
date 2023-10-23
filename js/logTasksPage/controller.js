@@ -1,4 +1,6 @@
 function processActLog(workObject, form){
+
+ if(form.id == "logTform"){   
 let yaya = Object.keys(workObject);
 console.log(yaya);
 console.log(yaya[0])
@@ -8,6 +10,10 @@ for(ya in yaya){
     let newstring = yaya[ya];
     newObj = JSON.parse(newstring);
     console.log(newObj);
+
+}}
+if(form.id == "logTSform"){
+    console.log(workObject);
 }
 //newObj = yaya[0];
 //console.log(newObj[0])
@@ -15,6 +21,10 @@ for(ya in yaya){
 
 //console.log(newnew);
 //if(workObject.id)
+}
+
+function processActLogTS(workObject, form){
+    
 }
 
 

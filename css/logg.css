@@ -108,21 +108,44 @@ table {
 
 
 #logPlanIn {
+    border-right: 1px solid orange;
     padding-top: 1dvh;
-    padding-left: 1dvh;
+    padding-right: 0dvh;
     height: 50dvh;
     overflow-y: scroll;
+    margin-right: 0%;
+    border-collapse: collapse;
+    position: relative;
+    right: 0.5dvh;
+    width: 33dvw;
 }
 
 #logSpontanIn {
+    border-left: 1px solid orange;
     padding-top: 1dvh;
-    padding-left: 1.5dvh;
+    padding-left: 2dvh;
     padding-right: 1dvh;
+    border-collapse: collapse;
+    position: relative;
+    left: 0.5dvh;
+    width: 33dvw;
+    
+    
 }
-
+#logPlan{
+    height: 50dvh;
+    width: 35dvw;
+}
+#logSpontan{
+    height: 50dvh;
+    width: 35dvw;
+}
 .logh3 {
     border-bottom: 1px solid orange;
     margin: 0dvh;
+    position: relative;
+    right: 0dvw;
+    width: 33.3dvw;
 }
 
 .logBack {
@@ -153,22 +176,47 @@ table {
 }
 
 #logTform{
-border-right: 1px solid orange;
+
 width: 35dvw;
+height: 5dvh;
 }
 #logTSform{
 width: 35dvw; 
-border-left: 1px solid orange;
+
 }
 
-#submitA{
+.myspan{
     position: absolute;
-    margin-inline: 0%;
-    top: 150dvh;
-    
+    top: 57dvh;
+    left: 20dvh;
+    width: 10dvw;
+    height: 5dvh;
+   
 }
 #submitAS{
-position: absolute;
-top: 55dvh;
-left: 98dvh;
+margin: 0%;
+
+}
+#submitA{
+    z-index: 1000;
+    background-color: inherit;
+    margin-top: 5dvh;
+margin-right: 20dvh;
+
+}
+#posOne{
+    
+    width: 45dvw;
+    margin:0%;
+    position: relative;
+    left: 2dvw;
+    
+   
+}
+#posTwo{
+    
+    width: 45dvw; 
+position: relative;
+right: 0.5dvw;
+
 }
