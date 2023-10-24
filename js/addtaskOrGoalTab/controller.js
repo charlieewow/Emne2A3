@@ -107,6 +107,7 @@ function proRep(newData) {
         taskId: "A-R" + i,
         name: newData.NKActivity,
         theme: newData.NKTemaer,
+        reps: {totalReps: '', repsDone: 0, repsLeft: '', },
         frequency: { unit: newData.selectUnit, repeatsPr: newData.unitReps, from: newData.fromDate, to: newData.toDate },
 
     },);
@@ -234,7 +235,8 @@ for (ele in model.data.plannedActList.repeat) {
         differenceInDays = Math.round(differenceInDays);
         totalRepsD = Math.round(totalRepsD);
         console.log("day", totalRepsD);
-        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsD;
+        model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsD;
+        model.data.activityHistory.planned[ele].reps.totalReps = totalRepsD;
     }
 
 
@@ -248,7 +250,8 @@ for (ele in model.data.plannedActList.repeat) {
         differenceInWeeks = Math.round(differenceInWeeks);
         totalRepsU = Math.round(totalRepsU);
         console.log("week", totalRepsU);
-        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsU;
+        model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsU;
+        model.data.activityHistory.planned[ele].reps.totalReps = totalRepsU;
     }
 
     //pr Month
@@ -260,7 +263,8 @@ for (ele in model.data.plannedActList.repeat) {
         differenceInMonths = Math.round(differenceInMonths);
         totalRepsM = Math.round(totalRepsM);
         console.log("Måned", totalRepsM);
-        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsM;
+        model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsM;
+        model.data.activityHistory.planned[ele].reps.totalReps = totalRepsM;
     }
 //pr Year
     let differenceInYears = differenceInMonths / 12;
@@ -270,7 +274,8 @@ for (ele in model.data.plannedActList.repeat) {
         differenceInYears = Math.round(differenceInYears);
         totalRepsY = Math.round(totalRepsY);
         console.log("År", totalRepsY);
-        model.data.plannedActList.repeat[ele].frequency.totalReps = totalRepsY;
+        model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsY;
+        model.data.activityHistory.planned[ele].reps.totalReps = totalRepsY;
     }
 //pr 5Year
     let differenceIn5Years = differenceInYears / 5;
@@ -280,7 +285,8 @@ for (ele in model.data.plannedActList.repeat) {
         differenceIn5Years = Math.round(differenceIn5Years);
         totalReps5Y = Math.round(totalReps5Y);
         console.log("5 År", totalReps5Y);
-        model.data.plannedActList.repeat[ele].frequency.totalReps = totalReps5Y;
+        model.data.plannedActList.repeat[ele].reps.totalReps = totalReps5Y;
+        model.data.activityHistory.planned[ele].reps.totalReps = totalReps5Y;
     }
    // console.log(totalRepsD)
 }}

@@ -225,11 +225,11 @@ const model = {
     ],
             repeat: [{
                 taskId: "A-R" +0,
+                oldID: '',
                 name: "Løpe",
                 theme: "vanedanning",
-                repsDone: 0,
-                repsLeft: '',
-                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined, totalReps: '' },
+                reps: {totalReps: '',repsDone: 0,repsLeft: '', },
+                frequency: { unit: undefined, repeatsPr: undefined, from: undefined, to: undefined,  },
                 
                     
             },
@@ -239,16 +239,19 @@ activityHistory: {
     planned:
     [
     {
-        taskId: "A-O" +0,
+        taskId: "A-H-P" +0,
+        oldId: '',
         name: undefined,
         theme: undefined,
-        date: undefined,
+        reps: { total: '', repsDone: 0, repsLeft: '' },
+        date: {from: '', to:''},
         time: undefined,
-        done: {time: ' ', date: ' '},
+        isDone: 'False', //true/False 
+        wasDone: {time: ' ', date: ' '},
     },
 ],
     spontan: [{
-        taskId: "A-R" +0,
+        taskId: "A-H-S" +0,
         name: undefined,
         theme: undefined,
         done: {time: ' ', date: ' '},
@@ -314,7 +317,7 @@ function clearLocalStorage(){
     localStorage.removeItem('TaskArray');
 }
 
-
+/*
 for(entry in model.data.plannedActList.repeat){
     model.data.plannedActList.repeat[entry].repsLeft = model.data.plannedActList.repeat[entry].frequency.totalReps - model.data.plannedActList.repeat[entry].repsDone;
-}
+}*/
