@@ -50,6 +50,7 @@ const model = {
             },
             diary: {
             edges:{
+                weekNumber: 1,
                 weekdayNO : ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag'],
                 dailyQuestNO: ['Hvordan er humøret?', 'Hva har du lært?', 'Hva er ditt neste skritt?'],},
             content: { 

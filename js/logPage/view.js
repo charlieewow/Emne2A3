@@ -1,6 +1,7 @@
 
 //updateView();
-function updateViewLogTab(){
+function updateViewLogTab() {
+    
     html = /*html*/ `
     <button onclick="updateViewDash()">Tilbake til Dash</button>
     
@@ -10,6 +11,9 @@ function updateViewLogTab(){
 
 
 function updateViewDiaryPage() {
+    loadLocalStorage();
+    weekNumber = 1;
+    
     let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
     
@@ -17,13 +21,44 @@ function updateViewDiaryPage() {
     <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
     <div class="logContainer">
     <div class="logInnercontainer">
-    <button  class="addbtnlog" id="backtoAct" onclick="dashView()">Avslutt</button>
+    <button  class="addbtnlog" id="backtoAct" onclick="confirmQuit()">Avslutt</button>
     <!--<button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>-->
     <button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>
    <button class="addbtnlog" onclick="logProcess()">lagre logg</button>
     </div>
 
     <div id="logview">
+     <div id="weekBtn">
+    <button class="addbtn" onclick="weekCounterDisplay(this)">⇦forrige uke</button>
+    <button class="addbtn" onclick="weekCounterDisplay(this)">neste uke⇨</button></div>
+    <table id="diaryTable">
+    <tr id="y0">
+    <td>Uke ${weekNrDisplay}</td>
+    <td>${model.interface.logPage.diary.edges.dailyQuestNO[0]}</td>
+    <td>${model.interface.logPage.diary.edges.dailyQuestNO[1]}</td>
+    <td>${model.interface.logPage.diary.edges.dailyQuestNO[2]}</td>
+    </tr>
+    <tr id="y1">
+    <td>${model.interface.logPage.diary.edges.weekdayNO[0]}</td>
+    
+    </tr>
+    <tr id="y2">
+    <td>${model.interface.logPage.diary.edges.weekdayNO[1]}</td>
+    
+    </tr>
+    <tr id="y3">
+    <td>${model.interface.logPage.diary.edges.weekdayNO[2]}</td>
+    
+    </tr>
+    <tr id="y4">
+    <td>${model.interface.logPage.diary.edges.weekdayNO[3]}</td>
+    
+    </tr>
+    <tr id="y5">
+    <td>${model.interface.logPage.diary.edges.weekdayNO[4]}</td>
+    
+    </tr>
+    </table>
     
     
     </div>
@@ -31,30 +66,56 @@ function updateViewDiaryPage() {
 </div>
 </div>
     `;
+    let theDays = Object.keys(model.interface.logPage.diary.content);
+    console.log(theDays);
+
+    for (let y = 1; y <= 5; y++) {
+        let key = "y" + y;
+        if (model.data.diaryLogData[weekNrDisplay - 1] != undefined) {
+            let theMood = model.data.diaryLogData[weekNrDisplay - 1].diary[theDays[y - 1]].mood;
+            let theProg = model.data.diaryLogData[weekNrDisplay - 1].diary[theDays[y - 1]].progress;
+            let theNext = model.data.diaryLogData[weekNrDisplay - 1].diary[theDays[y - 1]].nextStep;
+            let state = [theMood, theProg, theNext];
+            for (let x = 1; x <= 3; x++) {
+                let lock = "x" + x + key;
+                document.getElementById(key).innerHTML += `<td id=${lock}>${state[x - 1]}</td>`;
+
+            }
+        }
+        else {
+            let theMood = '';
+            let theProg = '';
+            let theNext = '';
+            let state = [theMood, theProg, theNext];
+            for (let x = 1; x <= 3; x++) {
+                let lock = "x" + x + key;
+                document.getElementById(key).innerHTML += `<td id=${lock}>${state[x - 1]}</td>`;
+
+            }
+        }
+
+
+    }
+
 }
 
 
 
 function logDiaryView() {
-    loadLocalStorage();
-    html = /*HTML*/ `
-    <div id="weekBtn">
-    <button class="addbtn" onclick="weekCounter(this)">⇦forrige uke</button>
-    <button class="addbtn" onclick="weekCounter(this)">neste uke⇨</button></div>
-    <table id="diaryTable">
-    
-    </table>
-    
-    `;
 
-    logview.innerHTML = html;
+
+    document.getElementById("logview").innerHTML = `<div id="weekBtn">
+<button class="addbtn" onclick="weekCounter(this)">⇦forrige uke</button>
+<button class="addbtn" onclick="weekCounter(this)">neste uke⇨</button></div>
+<table id="diaryTable"></table>`;
+
     for (let i = 0; i < 6; i++) {
         let trId = "y" + i;
         document.getElementById("diaryTable").innerHTML += `<tr id=${trId} class="tableD"></tr>`;
         for (let y = 0; y < 4; y++) {
             let tdId = "x" + y + "y" + i;
             if (i == 0 && y == 0) {
-                document.getElementById(trId).innerHTML += `<td class="weekNrSquare" id=${tdId}>Uke ${ weekNumber}</td>`;
+                document.getElementById(trId).innerHTML += `<td class="weekNrSquare" id=${tdId}>Uke ${weekNumber}</td>`;
             }
             else if (i == 0) {
                 questArray.push(tdId);
@@ -68,76 +129,76 @@ function logDiaryView() {
                 if (i == 1) {
                     let monday = tdId + "inp";
                     if (i == 1 && y == 1) {
-                        let mondayMood = model.data.diaryLogData[ weekNumber -1].diary.monday.mood;
+                        let mondayMood = model.data.diaryLogData[weekNumber - 1].diary.monday.mood;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Monday" id=${monday} type="text" value="${mondayMood}"  /></td>`;
                     }
                     else if (i == 1 && y == 2) {
-                        let mondayProg = model.data.diaryLogData[ weekNumber -1].diary.monday.progress;
+                        let mondayProg = model.data.diaryLogData[weekNumber - 1].diary.monday.progress;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Monday" id=${monday} type="text" value="${mondayProg}" /></td>`;
                     }
                     else if (i == 1 && y == 3) {
-                        let mondayNext = model.data.diaryLogData[ weekNumber -1].diary.monday.nextStep;
+                        let mondayNext = model.data.diaryLogData[weekNumber - 1].diary.monday.nextStep;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Monday" id=${monday} type="text" value="${mondayNext}" /></td>`;
                     }
-                    
+
                 }
                 if (i == 2) {
                     let tuesday = tdId + "inp";
-                    if(i ==2 && y == 1){
-                        let tuesdayMood = model.data.diaryLogData[ weekNumber -1].diary.tuesday.mood;
+                    if (i == 2 && y == 1) {
+                        let tuesdayMood = model.data.diaryLogData[weekNumber - 1].diary.tuesday.mood;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Tuesday" id=${tuesday}  type="text" value="${tuesdayMood}" /></td>`;
                     }
-                    else if(i==2 && y == 2){
-                        let tuesdayProg = model.data.diaryLogData[ weekNumber -1].diary.tuesday.progress;
+                    else if (i == 2 && y == 2) {
+                        let tuesdayProg = model.data.diaryLogData[weekNumber - 1].diary.tuesday.progress;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Tuesday" id=${tuesday}  type="text" value="${tuesdayProg}" /></td>`;
                     }
-                    else if(i ==2 && y == 3){
-                        let tuesdayNext = model.data.diaryLogData[ weekNumber -1].diary.tuesday.nextStep;
+                    else if (i == 2 && y == 3) {
+                        let tuesdayNext = model.data.diaryLogData[weekNumber - 1].diary.tuesday.nextStep;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Tuesday" id=${tuesday}  type="text" value="${tuesdayNext}" /></td>`;
                     }
                 }
                 if (i == 3) {
                     let wednesday = tdId + "inp";
-                    if(i==3 && y == 1){
-                        let wednesdayMood = model.data.diaryLogData[ weekNumber -1].diary.wednesday.mood;
+                    if (i == 3 && y == 1) {
+                        let wednesdayMood = model.data.diaryLogData[weekNumber - 1].diary.wednesday.mood;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Wednesday" id=${wednesday} type="text" value="${wednesdayMood}"  /></td>`;
                     }
-                    else if(i==3 && y == 2){
-                        let wednesdayProg = model.data.diaryLogData[ weekNumber -1].diary.wednesday.progress;
+                    else if (i == 3 && y == 2) {
+                        let wednesdayProg = model.data.diaryLogData[weekNumber - 1].diary.wednesday.progress;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Wednesday" id=${wednesday} type="text" value="${wednesdayProg}"  /></td>`;
                     }
-                    else if(i== 3 && y == 3){
-                        let wednesNext = model.data.diaryLogData[ weekNumber -1].diary.wednesday.nextStep;
+                    else if (i == 3 && y == 3) {
+                        let wednesNext = model.data.diaryLogData[weekNumber - 1].diary.wednesday.nextStep;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Wednesday" id=${wednesday} type="text"  value="${wednesNext}" /></td>`;
                     }
                 }
                 if (i == 4) {
                     let thursday = tdId + "inp";
-                    if(i==4 && y == 1){
-                        let thursdayMood = model.data.diaryLogData[ weekNumber -1].diary.thursday.mood;
+                    if (i == 4 && y == 1) {
+                        let thursdayMood = model.data.diaryLogData[weekNumber - 1].diary.thursday.mood;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Thursday" id=${thursday} type="text" value="${thursdayMood}"  /></td>`;
                     }
-                    else if(i==4 && y == 2){
-                        let thursdayProg = model.data.diaryLogData[ weekNumber -1].diary.thursday.progress;
+                    else if (i == 4 && y == 2) {
+                        let thursdayProg = model.data.diaryLogData[weekNumber - 1].diary.thursday.progress;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Thursday" id=${thursday} type="text" value="${thursdayProg}"  /></td>`;
                     }
-                    else if(i==4 && y == 3){
-                        let thursdayNext = model.data.diaryLogData[ weekNumber -1].diary.thursday.nextStep;
+                    else if (i == 4 && y == 3) {
+                        let thursdayNext = model.data.diaryLogData[weekNumber - 1].diary.thursday.nextStep;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Thursday" id=${thursday}  type="text" value="${thursdayNext}" /></td>`;
                     }
                 }
                 if (i == 5) {
                     let friday = tdId + "inp";
-                    if(i==5 && y == 1){
-                        let fridayMood = model.data.diaryLogData[ weekNumber -1].diary.friday.mood;
+                    if (i == 5 && y == 1) {
+                        let fridayMood = model.data.diaryLogData[weekNumber - 1].diary.friday.mood;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Friday" id=${friday}  type="text" value="${fridayMood}" /></td>`;
                     }
-                    else if(i ==5 && y == 2){
-                        let fridayProg = model.data.diaryLogData[ weekNumber -1].diary.friday.progress;
+                    else if (i == 5 && y == 2) {
+                        let fridayProg = model.data.diaryLogData[weekNumber - 1].diary.friday.progress;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Friday" id=${friday}  type="text" value="${fridayProg}" /></td>`;
                     }
-                    else if(i ==5 && y == 3){
-                        let fridayNext = model.data.diaryLogData[ weekNumber -1].diary.friday.nextStep;
+                    else if (i == 5 && y == 3) {
+                        let fridayNext = model.data.diaryLogData[weekNumber - 1].diary.friday.nextStep;
                         document.getElementById(trId).innerHTML += `<td  id=${tdId}><input class="logSpace, Friday" id=${friday}  type="text" value="${fridayNext}" /></td>`;
                     }
                 }
@@ -145,6 +206,7 @@ function logDiaryView() {
 
         }
     }
+
     let u = 0;
     for (day in model.interface.logPage.diary.edges.weekdayNO) {
         document.getElementById(weekArray[u]).innerHTML = model.interface.logPage.diary.edges.weekdayNO[day];
