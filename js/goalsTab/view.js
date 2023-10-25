@@ -1,5 +1,5 @@
 function goalsView(){
-    document.getElementById('app').innerHTML = /*HTML*/`
+    document.getElementById("dashcontent").innerHTML = /*HTML*/`
         <h1>Mine Mål</h1>
         <form action="...">
             <label for="Velg tidsrom">Tidsrom:</label>

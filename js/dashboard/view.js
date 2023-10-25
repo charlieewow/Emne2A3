@@ -11,8 +11,8 @@ function dashView() {
                         </div>
                         <div>
                             <button class="dashbutton" onclick="activityView()">Activities</button>
-                            <button class="dashbutton">Goals</button>
-                            <button class="dashbutton">History</button>
+                            <button class="dashbutton" onclick="goalsView()">Goals</button>
+                            <button class="dashbutton" onclick="updateViewHistory()">History</button>
                             <button class="dashbutton" onclick="updateViewDiaryPage()">Daily Log</button>
                             <button class="dashbutton" onclick="updateViewTaskPage()">Log Activities</button>
                         </div>

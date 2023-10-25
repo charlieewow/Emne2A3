@@ -2,11 +2,11 @@
 
 //updateViewHistory();
 function updateViewHistory(){
-    html = /*html*/ `
+    document.getElementById("dashcontent").innerHTML = /*html*/ `
     <button onclick="updateViewDash()">Tilbake til Dash</button>
     <input type="date"/>
     `;
-    app.innerHTML = html;
+    //app.innerHTML = html;
 }
 
 
