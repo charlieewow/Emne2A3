@@ -263,6 +263,7 @@ activityHistory: {
         diaryLogData: [  //Her havner dagbok data som blir logget
             {
                 date: '01/01/2023',
+                uke: 1,
                 diary: {
                     monday: { mood: '', progress: '', nextStep: '' },
                     tuesday: { mood: '', progress: '', nextStep: '' },
@@ -273,6 +274,7 @@ activityHistory: {
             },
             {
                 date: '02/01/2023',
+                uke: 2,
                 diary: {
                     monday: { mood: '', progress: '', nextStep: '' },
                     tuesday: { mood: '', progress: '', nextStep: '' },
@@ -283,6 +285,7 @@ activityHistory: {
             },
             {
                 date: '03/01/2023',
+                uke: 3,
                 diary: {
                     monday: { mood: '', progress: '', nextStep: '' },
                     tuesday: { mood: '', progress: '', nextStep: '' },

@@ -23,7 +23,7 @@ function updateViewDiaryPage() {
     <div class="logInnercontainer">
     <button  class="addbtnlog" id="backtoAct" onclick="confirmQuit()">Avslutt</button>
     <!--<button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>-->
-    <button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>
+    <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>-->
    <button class="addbtnlog" onclick="logProcess()">lagre logg</button>
     </div>
 
@@ -78,7 +78,7 @@ function updateViewDiaryPage() {
             let state = [theMood, theProg, theNext];
             for (let x = 1; x <= 3; x++) {
                 let lock = "x" + x + key;
-                document.getElementById(key).innerHTML += `<td id=${lock}>${state[x - 1]}</td>`;
+                document.getElementById(key).innerHTML += `<td onclick="inputGen(this)" id=${lock}>${state[x - 1]}</td>`;
 
             }
         }
@@ -89,7 +89,7 @@ function updateViewDiaryPage() {
             let state = [theMood, theProg, theNext];
             for (let x = 1; x <= 3; x++) {
                 let lock = "x" + x + key;
-                document.getElementById(key).innerHTML += `<td id=${lock}>${state[x - 1]}</td>`;
+                document.getElementById(key).innerHTML += `<td onclick="inputGen(this)" id=${lock}>${state[x - 1]}</td>`;
 
             }
         }
