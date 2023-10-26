@@ -29,7 +29,7 @@ const model = {
             selectedNK: ['all', 'vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
         },
         goals: {
-            selectTimeframe: '',
+            timeframe: ["Alle", "siste Måned", "siste 3 Måneder", "siste 6 Måneder", "siste Året", "5 års Mål"],
             goalText: '',
             progressBar: 0,
             progressCircle: 0,
