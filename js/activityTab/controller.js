@@ -1,16 +1,18 @@
-let myOnceTasks = model.data.plannedActList?.once;
-let myRepeatTasks = model.data.plannedActList?.repeat;
 
 let selectedNK = 'all';
 
-function chooseNK(ddmNK){
+function chooseNK(ddmNK) {
     selectedNK = ddmNK.value;
     loadActivity();
 }
 
 function loadActivity() {
-let onceList = '';
-let repeatList = '';
+    let myOnceTasks = model.data.plannedActList?.once;
+    let myRepeatTasks = model.data.plannedActList?.repeat;
+
+
+    let onceList = '';
+    let repeatList = '';
 
     //console.log(myOnceTasks?.length)
 
@@ -23,10 +25,11 @@ let repeatList = '';
             <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
             </div>`;
             console.log(1);
+            console.log(onceList);
         }
 
         //console.log(1); finn ut hvordan å få "all" til å fungere
-    }
+    } console.log(myRepeatTasks.length);
     for (let i = 1; i < myRepeatTasks.length; i++) {
         if (myRepeatTasks[i].name && (selectedNK == myRepeatTasks[i].theme || selectedNK == 'all')) {
             repeatList += `<div class="flex activitiesTheme border">
@@ -34,8 +37,10 @@ let repeatList = '';
             <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
             </div>`;
             console.log(2);
+            console.log(repeatList);
         }
     }
 
-   document.getElementById('keySkillAdd').innerHTML = onceList + repeatList;
+    document.getElementById('keySkillAdd').innerHTML = onceList + repeatList;
+
 }
