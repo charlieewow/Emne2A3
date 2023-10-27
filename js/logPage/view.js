@@ -29,8 +29,8 @@ function updateViewDiaryPage() {
 
     <div id="logview">
      <div id="weekBtn">
-    <button class="addbtn" onclick="weekCounterDisplay(this)">⇦forrige uke</button>
-    <button class="addbtn" onclick="weekCounterDisplay(this)">neste uke⇨</button></div>
+    <button class="addbtn weekbtnheight" onclick="weekCounterDisplay(this)">⇦forrige uke</button>
+    <button class="addbtn weekbtnheight" onclick="weekCounterDisplay(this)">neste uke⇨</button></div>
     <table id="diaryTable">
     <tr id="y0">
     <td>Uke ${weekNrDisplay}</td>
@@ -65,20 +65,6 @@ function updateViewDiaryPage() {
     
 </div>
 </div>
-        <div class="logBack">
-            <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
-            <div class="logContainer">
-                <div class="logInnercontainer">
-                    <button class="addbtnlog" id="backtoAct" onclick="dashView()">Avslutt</button>
-                    <!--<button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>-->
-                    <button class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg
-                        dagbok</button>
-                    <button class="addbtnlog" onclick="logProcess()">lagre logg</button>
-                </div>
-                <div id="logview">
-                </div>
-            </div>
-        </div>
     `;
     let theDays = Object.keys(model.interface.logPage.diary.content);
     console.log(theDays);
@@ -117,19 +103,11 @@ function updateViewDiaryPage() {
 
 function logDiaryView() {
     loadLocalStorage();
-    html = /*HTML*/ `
+    document.getElementById("logview").innerHTML = `
     <div id="weekBtn">
-        <button class="addbtn weekbtn" onclick="weekCounter(this)">⇦forrige uke</button>
-        <button class="addbtn weekbtn" onclick="weekCounter(this)">neste uke⇨</button>
-    </div>
-    <table id="diaryTable"></table>
-    `;
-
-
-    document.getElementById("logview").innerHTML = `<div id="weekBtn">
-<button class="addbtn" onclick="weekCounter(this)">⇦forrige uke</button>
-<button class="addbtn" onclick="weekCounter(this)">neste uke⇨</button></div>
-<table id="diaryTable"></table>`;
+        <button class="addbtn weekbtnheight" onclick="weekCounter(this)">⇦forrige uke</button>
+        <button class="addbtn weekbtnheight" onclick="weekCounter(this)">neste uke⇨</button></div>
+    <table id="diaryTable"></table>`;
 
     for (let i = 0; i < 6; i++) {
         let trId = "y" + i;
