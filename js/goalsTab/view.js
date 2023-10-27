@@ -6,8 +6,8 @@
 
 function goalsView() {
     document.getElementById("dashcontent").innerHTML = /*HTML*/`
-      <div class="goalback">
-        <div class="goalwrapper">
+      <div class="goalback styled-scrollbars">
+        <div class="goalwrapper ">
 
             <div class="goalnavbar">
                 <button class="addbtnG" onclick="dashView()">Avslutt</button>
@@ -21,7 +21,7 @@ function goalsView() {
                         </form> <hr class="goalhr">
 </div>
 
-</div><div id="viewGoals" class="innergoalwrapper, styled-scrollbars2">
+</div><div id="viewGoals" class="innergoalwrapper ">
 
 
 </div></div>

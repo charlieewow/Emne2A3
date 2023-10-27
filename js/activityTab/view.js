@@ -6,7 +6,8 @@ function activityView() {
     /*HTML*/` 
     <div class="activitywrapper styled-scrollbars">
         <div class="inneractivitywrapper">
-            <div class="activitynavbar flex">
+            <div class="activitynavbar">
+            <button class="addbtnA" onclick="dashView()">Avslutt</button>
                 <form action="...">
                     <label for="keySkills"></label>
                     <select name="nøkkelkompetanser" id="keySkills" onchange='chooseNK(this)'></select>
@@ -14,8 +15,8 @@ function activityView() {
                 <div class="circleplus flex center" onclick="updateViewAddTab()">+</div>
             </div>
             <hr class="activityhr">
-            <div id="keySkillAdd">
-            </div>
+           
+           </div>  <div id="keySkillAdd">
         </div>
     </div>
     `;

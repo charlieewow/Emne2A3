@@ -5,7 +5,7 @@
 .innergoalwrapper {
    
    height: 400px;
-    overflow-y: scroll;
+   
     
 }
 
@@ -41,20 +41,20 @@
     cursor: pointer;
     height: 4dvh;
     position: absolute;
-    right: 100dvh;
+    right: 70dvh;
 }
 
 .styled-scrollbars2 {
     /* Foreground, Background */
-    scrollbar-color: transparent transparent;
+    scrollbar-color: yellow red;
   }
   .styled-scrollbars2::-webkit-scrollbar {
     width: 10px; /* Mostly for vertical scrollbars */
     
   }
   .styled-scrollbars2::-webkit-scrollbar-thumb { /* Foreground */
-    background: transparent;
+    background: green;
   }
   .styled-scrollbars2::-webkit-scrollbar-track { /* Background */
-    background: transparent;
+    background: purple;
   }
