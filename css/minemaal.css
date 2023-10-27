@@ -1,0 +1,60 @@
+.goalwrapper {
+   
+}
+
+.innergoalwrapper {
+   
+   height: 400px;
+    overflow-y: scroll;
+    
+}
+
+
+.goalnavbar {
+   
+   width: 600px;
+   height: 150px;
+   top: 20dvh;
+   position: fixed;
+   overflow-x: hidden;
+   overflow-y: hidden;
+    
+}
+.goalhr{
+    position: absolute;
+    top: 18dvh;
+    width: 600px;
+}
+.goalback{
+    height: 350px;
+    position: fixed;
+    top: 40dvh;
+   overflow-y: scroll;
+    width: 600px;
+}
+
+.addbtnG{
+    background-color: inherit;
+    color: white;
+    border: 2px outset orange;
+    width: 20dvh;
+    cursor: pointer;
+    height: 4dvh;
+    position: absolute;
+    right: 100dvh;
+}
+
+.styled-scrollbars2 {
+    /* Foreground, Background */
+    scrollbar-color: transparent transparent;
+  }
+  .styled-scrollbars2::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    
+  }
+  .styled-scrollbars2::-webkit-scrollbar-thumb { /* Foreground */
+    background: transparent;
+  }
+  .styled-scrollbars2::-webkit-scrollbar-track { /* Background */
+    background: transparent;
+  }

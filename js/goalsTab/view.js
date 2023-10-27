@@ -6,23 +6,43 @@
 
 function goalsView() {
     document.getElementById("dashcontent").innerHTML = /*HTML*/`
-    <button class="addbtn" onclick="dashView()">Avslutt</button>
-    <h1>Mine Mål</h1>
-        <form id="goalForm" action="...">
-            <label for="DDMgoals">Tidsrom:</label>
-            <select name="mål" id="DDMgoals" onchange="selectTimeframe(this)">
-            
-            </select>
-            <input type="submit" value="vis valgte"/>
-        </form>
+      <div class="goalback">
+        <div class="goalwrapper">
+
+            <div class="goalnavbar">
+                <button class="addbtnG" onclick="dashView()">Avslutt</button>
+                    <h1>Mine Mål</h1>
+                        <form id="goalForm" action="...">
+                            <label for="DDMgoals">Tidsrom:</label>
+                            <select name="mål" id="DDMgoals" onchange="selectTimeframe(this)">
+                            
+                            </select>
+                            <input type="submit" value="vis valgte"/>
+                        </form> <hr class="goalhr">
+</div>
+
+</div><div id="viewGoals" class="innergoalwrapper, styled-scrollbars2">
+
+
+</div></div>
 
        
     `;
     let timeKeys = model.interface.goals.timeframe;
+    let modelKeys = Object.keys(model.data.goalList);
+    console.log(modelKeys);
     for (key in timeKeys) {
-        console.log(timeKeys);
-        document.getElementById("DDMgoals").innerHTML += `
-    <option>${timeKeys[key]}</option>`;
+        console.log(modelKeys[key - 1]);
+        console.log(timeKeys[key]);
+        if (timeKeys[key] == 'Alle') {
+            document.getElementById("DDMgoals").innerHTML += `
+    <option value="Alle">${timeKeys[key]}</option>`;
+        }
+        else {
+            document.getElementById("DDMgoals").innerHTML += `
+            <option value="${modelKeys[key - 1]}">${timeKeys[key]}</option>`;
+        }
+
     }
     const FormG = document.getElementById("goalForm");
     FormG.addEventListener('submit', function (event) {
