@@ -1,8 +1,12 @@
 let goalsList = model.data.goalList;
-let timeframe = 'all';
+//let timeframe = 'all';
+
+function processGoals(object, form){
+    console.log(object);
+}
 
 function selectTimeframe(selection){
-    if(selection.value == 'all'){
+    /*if(selection.value == 'all'){
         console.log('all');
         timeframe = 'all';
     }
@@ -22,7 +26,7 @@ function selectTimeframe(selection){
         //console.log('month');
         timeframe = 'month';
     }
-    goalsView();
+    goalsView();*/
 }
 
 function loadGoals(selectedTimeframe){

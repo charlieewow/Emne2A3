@@ -29,7 +29,7 @@ const model = {
             selectedNK: ['all', 'vanedanning', 'growth mindset', 'studieteknikk', 'psykologisk trygghet', 'karakterstyrker'],
         },
         goals: {
-            selectTimeframe: '',
+            timeframe: ["Alle", "siste Måned", "siste 3 Måneder", "siste 6 Måneder", "siste Året", "5 års Mål"],
             goalText: '',
             progressBar: 0,
             progressCircle: 0,
@@ -50,6 +50,7 @@ const model = {
             },
             diary: {
             edges:{
+                weekNumber: 1,
                 weekdayNO : ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag'],
                 dailyQuestNO: ['Hvordan er humøret?', 'Hva har du lært?', 'Hva er ditt neste skritt?'],},
             content: { 
@@ -262,6 +263,7 @@ activityHistory: {
         diaryLogData: [  //Her havner dagbok data som blir logget
             {
                 date: '01/01/2023',
+                uke: 1,
                 diary: {
                     monday: { mood: '', progress: '', nextStep: '' },
                     tuesday: { mood: '', progress: '', nextStep: '' },
@@ -272,6 +274,7 @@ activityHistory: {
             },
             {
                 date: '02/01/2023',
+                uke: 2,
                 diary: {
                     monday: { mood: '', progress: '', nextStep: '' },
                     tuesday: { mood: '', progress: '', nextStep: '' },
@@ -282,6 +285,7 @@ activityHistory: {
             },
             {
                 date: '03/01/2023',
+                uke: 3,
                 diary: {
                     monday: { mood: '', progress: '', nextStep: '' },
                     tuesday: { mood: '', progress: '', nextStep: '' },
