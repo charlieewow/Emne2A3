@@ -10,7 +10,6 @@
     color: white;
     top: 15dvh;
     transition: 0.2s;
-    background-color: rgb(37, 35, 46);
     width: 70dvw;
     padding-top: 0dvh;
 }
@@ -60,9 +59,8 @@
     color: white;
     padding-top: 3dvh;
     transition: 0.2s;
-    background-color: rgb(37, 35, 46);
     width: 70dvw;
-    padding-top: 0dvh;
+    padding: 10px;
     flex-flow: row;
 }
 
@@ -80,7 +78,6 @@ label {
     padding: 10px;
     margin: 10px;
     transition: 0.2s;
-    background-color: rgb(37, 35, 46);
     width: 68dvw;
     height: 30dvh;
     flex-flow: row;
@@ -105,22 +102,12 @@ label {
 #checkonce {
     position: relative;
     bottom: 11dvh;
-    margin: 2dvh;
 
 }
 
 #checkrep {
     position: relative;
     bottom: 11dvh;
-    margin: 2dvh;
-}
-
-.addbtn {
-    background-color: inherit;
-    color: white;
-    border: 2px outset orange;
-    width: 20dvh;
-    cursor: pointer;
 }
 
 .dropdown {
@@ -136,7 +123,6 @@ label {
     padding: 10px;
     margin: 10px;
     transition: 0.2s;
-    background-color: rgb(37, 35, 46);
     width: 70dvw;
     height: 90%;
 }
@@ -146,7 +132,6 @@ label {
     color: white;
     padding: 10px;
     transition: 0.2s;
-    background-color: rgb(37, 35, 46);
     height: 10%;
     display: flex;
     justify-content: center;
@@ -154,11 +139,7 @@ label {
 }
 
 .back {
-    background: rgb(219, 151, 0);
-    background: linear-gradient(146deg, rgba(219, 151, 0, 1) 0%, rgba(37, 35, 46, 1) 55%);
     height: 77dvh;
-    width: 100%;
-    position: relative;
     bottom: 12dvh;
 }
 
@@ -166,7 +147,20 @@ label {
 #submitA {
     position: absolute;
     right: 2dvh;
-    top: 50dvh;
+    top: 33dvh;
+    height: 30px;
+}
+
+input.innersubmitA {
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+input.innersubmitA:hover {
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 #submitG {
@@ -174,3 +168,19 @@ label {
     right: 2dvh;
     top: 50dvh;
 }
+
+.addbtn {
+    background-color: inherit;
+    color: white;
+    border: 2px outset orange;
+    width: 20dvh;
+    cursor: pointer;
+}
+
+.addbtn:hover {
+    background-color: rgb(45, 43, 56);
+    transition: 0.2s;
+}
+
+
+

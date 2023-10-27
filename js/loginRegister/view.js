@@ -4,7 +4,7 @@ function loginView(){
     view.innerHTML = /*HTML*/`
         <div class="wrapper border transform">
             <img id="loginimg" src="img/loginimage.png">
-            <div class="innerWrapper textaligncenter transform">
+            <div class="innerWrapper loginbackground textaligncenter transform">
                 <h1>Welcome to the activity tracker</h1>
                 <div><input class="login" type="text" placeholder="Username" id="uNameIn"></div>
                 <div><input class="login" type="password" placeholder="Password" id="pWordIn"></div>

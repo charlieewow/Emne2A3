@@ -5,7 +5,7 @@
 function updateViewAddTab() {
     const selector = document.getElementById('selector');
     document.getElementById("dashcontent").innerHTML = /*html*/ `
-    <div class="back border">
+    <div class="back">
         <img class="decor" id="loginimg" src="">
         <div class="container">
             <div class="innercontainer">
@@ -70,7 +70,7 @@ function addGoalView() {
             </div>
             <div id="submitG">
                 <input type="submit" value="Submit">
-                <div>
+            <div>
         </form>
     `;
     selector.innerHTML = html;
@@ -151,9 +151,8 @@ function addActView() {
             </div>
             <!--<div id="timeframe"><div>-->
             <div id="submitA">
-
-                <input type="submit" value="Submit">
-                <div>
+                <input class="innersubmitA" type="submit" value="Submit">
+            <div>
         </form>
     `;
     selector.innerHTML = html;

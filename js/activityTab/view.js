@@ -4,21 +4,19 @@ function activityView() {
     let activity = model.interface.activity.selectedNK;
     document.getElementById("dashcontent").innerHTML = 
     /*HTML*/` 
-    <div class="wrapper transform border activitywrapper styled-scrollbars">
-    <img src="img/activities.png" id="activitiesimg">
-    <div class="inneractivitywrapper">
-    <div class="activitynavbar flex">
-    <form action="...">
-    <label for="nøkkelkompetanser">Nøkkelkompetanser:</label>
-    <select name="nøkkelkompetanser" id="keySkills" onchange='chooseNK(this)'>
-    </select>
-    </form>
-    <div class="circleplus flex center" onclick="updateViewAddTab()">+</div>
-    </div>
-    <hr>
-    <div id="keySkillAdd">
-    </div>
-    </div>
+    <div class="activitywrapper styled-scrollbars">
+        <div class="inneractivitywrapper">
+            <div class="activitynavbar flex">
+                <form action="...">
+                    <label for="nøkkelkompetanser"></label>
+                    <select name="nøkkelkompetanser" id="keySkills" onchange='chooseNK(this)'></select>
+                </form>
+                <div class="circleplus flex center" onclick="updateViewAddTab()">+</div>
+            </div>
+            <hr class="activityhr">
+            <div id="keySkillAdd">
+            </div>
+        </div>
     </div>
     `;
   

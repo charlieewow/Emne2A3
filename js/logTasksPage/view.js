@@ -8,7 +8,7 @@ function updateViewTaskPage() {
     let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
     
-    <div class="logBack border">
+    <div class="logBack">
     <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
     <div class="logContainer">
     <div class="logInnercontainer">

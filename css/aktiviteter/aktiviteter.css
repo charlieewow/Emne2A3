@@ -1,14 +1,9 @@
 .activitywrapper {
-    height: fit-content;
-    
-    background: rgb(37, 35, 46);
-    
+    height: 400px;
     position: relative;
-    top: 25dvh;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 600px;
-    left: 50%;
 }
 
 .styled-scrollbars {
@@ -44,8 +39,6 @@
     align-items: center;
     position: relative;
     bottom: 35dvh;
-  
-    
 }
 
 .circleplus {
@@ -87,8 +80,6 @@
 #activitiesimg {
     opacity: 5%;
     position: static;
-    
-    
 }
 
 progress.prog { 
@@ -110,7 +101,14 @@ progress.prog::-webkit-progress-value {
     bottom:35dvh;
 }
 
-hr{
+#keySkills {
+    text-align: center;
+    width: 200px;
+    height: 34px;
+    text-transform: capitalize;
+}
+
+hr.activityhr{
     position: relative;
     bottom: 35dvh;
 }

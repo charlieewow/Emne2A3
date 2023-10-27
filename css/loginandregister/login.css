@@ -84,3 +84,7 @@ p.forgotPW:hover {
 #loginimg {
     opacity: 10%;
 }
+
+.loginbackground {
+    background-color: rgb(37, 35, 46);
+}

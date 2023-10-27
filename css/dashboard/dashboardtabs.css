@@ -1,5 +1,6 @@
-button.dashbutton {
-    margin-top: 10px;
+div.dashbutton {
+    text-align: center;
+    font-size: small;
     padding: 12px;
     width: 120px;
     margin-left: 5px;
@@ -12,7 +13,7 @@ button.dashbutton {
 
 }
 
-button.dashbutton:hover {
+div.dashbutton:hover {
     background-color: white;
     color: black;
     transition: 0.2s;
