@@ -244,7 +244,7 @@ activityHistory: {
         oldId: '',
         name: undefined,
         theme: undefined,
-        reps: { total: '', repsDone: 0, repsLeft: '' },
+        reps: { totalReps: '', repsDone: 0, repsLeft: '' },
         date: {from: '', to:''},
         time: undefined,
         isDone: 'False', //true/False 

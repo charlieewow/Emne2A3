@@ -16,7 +16,7 @@ let repeatList = '';
 
     //document.getElementById('keySkillAdd').innerHTML = '';
 
-    for (let i = 0; i < myOnceTasks.length; i++) {
+    for (let i = 1; i < myOnceTasks.length; i++) {
         if (myOnceTasks[i].name && (selectedNK == myOnceTasks[i].theme || selectedNK == 'all')) {
             onceList += `<div class="flex activitiesTheme border">
             <div><p>${myOnceTasks[i]?.name}</p></div>
@@ -27,7 +27,7 @@ let repeatList = '';
 
         //console.log(1); finn ut hvordan å få "all" til å fungere
     }
-    for (let i = 0; i < myRepeatTasks.length; i++) {
+    for (let i = 1; i < myRepeatTasks.length; i++) {
         if (myRepeatTasks[i].name && (selectedNK == myRepeatTasks[i].theme || selectedNK == 'all')) {
             repeatList += `<div class="flex activitiesTheme border">
             <div><p>${myRepeatTasks[i]?.name}</p></div>

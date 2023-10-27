@@ -8,7 +8,7 @@ function activityView() {
         <div class="inneractivitywrapper">
             <div class="activitynavbar flex">
                 <form action="...">
-                    <label for="nøkkelkompetanser"></label>
+                    <label for="keySkills"></label>
                     <select name="nøkkelkompetanser" id="keySkills" onchange='chooseNK(this)'></select>
                 </form>
                 <div class="circleplus flex center" onclick="updateViewAddTab()">+</div>
@@ -22,7 +22,7 @@ function activityView() {
   
     
     for (i in activity) {
-        document.getElementById("keySkills").innerHTML += `<option value=${activity[i]}>${activity[i]}</option>`;
+        document.getElementById("keySkills").innerHTML += `<option value="${activity[i]}">${activity[i]}</option>`;
     }
     loadActivity()
     //setTimeout(function (){loadActivity("<option value='all'>Alle</option>")}, 1000);

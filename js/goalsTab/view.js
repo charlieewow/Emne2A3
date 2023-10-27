@@ -9,7 +9,7 @@ function goalsView() {
     <button class="addbtn" onclick="dashView()">Avslutt</button>
     <h1>Mine Mål</h1>
         <form id="goalForm" action="...">
-            <label for="Velg tidsrom">Tidsrom:</label>
+            <label for="DDMgoals">Tidsrom:</label>
             <select name="mål" id="DDMgoals" onchange="selectTimeframe(this)">
             
             </select>
