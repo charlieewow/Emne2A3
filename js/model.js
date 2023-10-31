@@ -153,9 +153,16 @@ const model = {
                     
                     {
                         taskId: "G-D" + 0,
-                        name: "test",
+                        name: "testDaily",
                         theme: "testTheme",
                         taskText: "TestText",
+                        frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                    },
+                    {
+                        taskId: "G-D" + 1,
+                        name: "testDaily2",
+                        theme: "testTheme2",
+                        taskText: "TestText2",
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
@@ -165,7 +172,7 @@ const model = {
                     
                     {
                         taskId: "G-W" +0,
-                        name: undefined,
+                        name: "testWeekly",
                         theme: undefined,
                         taskText: undefined,
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
@@ -178,7 +185,7 @@ const model = {
                     
                     {
                         taskId: "G-M" +0,
-                        name: undefined,
+                        name: "testMonthly",
                         theme: undefined,
                         taskText: undefined,
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
@@ -191,7 +198,7 @@ const model = {
                    
                     {
                         taskId: "G-Y" +0,
-                        name: undefined,
+                        name: "testYearly",
                         theme: undefined,
                         taskText: undefined,
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
@@ -204,7 +211,7 @@ const model = {
                    
                     {
                         taskId: "G-5" +0,
-                        name: undefined,
+                        name: "test5Yearly",
                         theme: undefined,
                         taskText: undefined,
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
