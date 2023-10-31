@@ -33,7 +33,7 @@ function processActLog(workObject, form) {
                     theme: objects.theme,
                     date: { from: objects.frequency.from, to: objects.frequency.to },
                     time: undefined,
-                    reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps-1 },
+                    reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps - 1 },
                     isDone: 'False', //true/False 
                     wasDone: { time: ' ', date: ' ' },
                 })
@@ -43,23 +43,23 @@ function processActLog(workObject, form) {
                 let taskId = newObj.id; // replace this with your taskId
                 let index = histArray.findIndex(obj => obj.oldId === taskId);
                 console.log(index);
-                history[index].reps.repsDone+=1;
-                history[index].reps.repsLeft-=1;
+                history[index].reps.repsDone += 1;
+                history[index].reps.repsLeft -= 1;
 
             }
 
             let actArray = model.data.plannedActList.repeat;
             let actId = newObj.id;
             let actIndex = actArray.findIndex(obj => obj.taskId === actId);
-            if(overviewTwo[actIndex].reps.repsLeft == ''){
-              overviewTwo[actIndex].reps.repsDone+=1;
-            overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;  
+            if (overviewTwo[actIndex].reps.repsLeft == '') {
+                overviewTwo[actIndex].reps.repsDone += 1;
+                overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;
             }
-            else{
-                overviewTwo[actIndex].reps.repsLeft +=1;
-                overviewTwo[actIndex].reps.repsLeft -=1;
+            else {
+                overviewTwo[actIndex].reps.repsLeft += 1;
+                overviewTwo[actIndex].reps.repsLeft -= 1;
             }
-            
+
             for (task in overviewTwo) {
                 console.log(overviewTwo[task].taskId);
                 console.log(history[task]);
@@ -128,4 +128,20 @@ function logProcessAct() {
 
 function sendName(obj) {
     console.log(obj);
+}
+
+function loadoptions(i) {
+        console.log("loaded");
+        let theme = model.interface.addGoalAct.themeSelector;
+        let keyRing = "id" + i;
+        for (let T of theme) {
+            let element = document.getElementById(keyRing);
+            if (element && element.innerHTML.length < 284) {
+                element.innerHTML += `<option value=${T}>${T}</option>`;
+            } 
+
+
+        }
+    
+
 }

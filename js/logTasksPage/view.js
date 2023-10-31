@@ -63,7 +63,7 @@ function logActView() {
     let onceArrayName = [];
     let repeatArrayName = [];
     //disse for løkkene printer ut informasjon om aktiviteter fra model.data
-    console.log(myOnceTasks?.length)
+    //console.log(myOnceTasks?.length)
     for (let i = 0; i < myOnceTasks?.length; i++) {
         if (myOnceTasks[i + 1]?.name) {
             onceArrayName.push(myOnceTasks[i + 1].name);
@@ -78,27 +78,39 @@ function logActView() {
             repeatArrayName.push(myRepeatTasks[i + 1].name);
             let passport = myRepeatTasks[i + 1].taskId;
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
-            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} </p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i+1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
+            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} </p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
             
             </div>`;
 
         }
     }
-    for (let i = 0; i < myStandardTasks?.length; i++) {
-        if (myStandardTasks[i]?.name) {
-            let passkey = "id" + i;
-            standardTaskArray.push(myStandardTasks[i].name);
-            document.getElementById('logSpontanIn').innerHTML += `<div class="flex border logOption">
-            <div><p>${myStandardTasks[i].name}</p></div> <label for="keyThemes">tema:</label>
-            <select class="dropdown" name='{"name":"NKTemaer"}' id=${passkey}>
+    if (myStandardTasks) {
+        for (let i = 0; i < myStandardTasks.length; i++) {
+            if (myStandardTasks[i]?.name) {
+                let passkey = "id" + i;
+                standardTaskArray.push(myStandardTasks[i].name);
+                document.getElementById('logSpontanIn').innerHTML += `<div class="flex border logOption">
+            <div><p>${myStandardTasks[i].name}</p></div> <label for="${passkey}">tema:</label>
+            <select class="dropdown" name='{"name":"NKTemaer"}' onclick="loadoptions(${i})"id=${passkey}>
  </select><input name='{"name":"${myStandardTasks[i].name}", "index":"${i + 1}", "type":"standard"}' class="logCheck" type="checkbox"/>
            
             
             </div>`;
 
+            }
+            /*if(i ==  myStandardTasks.length-1){
+                console.log("confirm");
+                for(let i=0; i<=4; i++){
+                    let theme = model.interface.addGoalAct.themeSelector;  
+                    let keyRing = "id" + i;
+                    for (let T of theme) {
+                      document.getElementById(keyRing).innerHTML += `<option value=${theme[T]}>${theme[T]}</option>`;
+                  }
+                  }  
+            }*/
         }
     }
-
+   
 
 
 
@@ -137,21 +149,30 @@ function logActView() {
 
 
     })
-    
-    
-    
-    
 
-        
-        for(let i=0; i<=4; i++){
-      let theme = model.interface.addGoalAct.themeSelector;  
-      let keyRing = "id" + i;
-      for (T in theme) {
-        document.getElementById(keyRing).innerHTML += `<option value=${theme[T]}>${theme[T]}</option>`;
-    }
-    }
-   
-      
-      
+
+
+
+ document.getElementById('logSpontanIn').addEventListener("load", function () {
+        console.log("loaded");
+        for (let i = 0; i <= 4; i++) {
+            let theme = model.interface.addGoalAct.themeSelector;
+            let keyRing = "id" + i;
+            for (let T of theme) {
+                let element = document.getElementById(keyRing);
+                if (element) {
+                    //element.innerHTML += `<option value=${T}>${T}</option>`;
+                    document.getElementById(keyRing).innerHTML += `<option value=${theme[T]}>${theme[T]}</option>`;
+                }
+
+            }
+        }
+    })
+
+
+
+
+
+
 }
 
