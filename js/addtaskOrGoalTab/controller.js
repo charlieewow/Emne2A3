@@ -37,7 +37,7 @@ function checkingbox(box) {
 
 function process(object, form) {
     console.log(form.id);
-    console.log(object);
+    console.log(object.date);
     let workObject = object;
     if (form.id == "addTform") {
         console.log("aktivitet");

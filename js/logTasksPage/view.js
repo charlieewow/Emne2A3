@@ -13,7 +13,6 @@ function updateViewTaskPage() {
     <div class="logContainer">
     <div class="logInnercontainer">
     <button  class="addbtnlog" id="backtoAct" onclick="dashView()">Avslutt</button>
-    <button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>
     <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>-->
    <button class="addbtnlog" onclick="saveLocalStorage()">lagre logg</button>
     </div>
@@ -26,6 +25,7 @@ function updateViewTaskPage() {
 </div>
 </div>
     `;
+    logActView();
 }
 
 function logActView() {

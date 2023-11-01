@@ -1,6 +1,12 @@
-function processActLog(workObject, form) {
+function processActLog(workObject, form) {  //denne funksjonen tar i mot data fra aktivitetsloggings siden og behandler den og oppdaterer modellen. Forandringen er ikke permanent/lagret i localstorage før man trykker på "lagre" knappen på siden
 
     if (form.id == "logTform") {
+        let rightNow = new Date();
+        console.log(rightNow);
+        let newTime = rightNow.toLocaleTimeString();
+        console.log(newTime);
+        let newDate = rightNow.toLocaleDateString();
+        console.log(newDate);
         let yaya = Object.keys(workObject);
         console.log(yaya);
         console.log(yaya[0])
@@ -23,7 +29,7 @@ function processActLog(workObject, form) {
             }
             let filterId = newObj.id; // replace this with your taskId
             let objects = array.find(obj => obj.taskId === filterId);
-            console.log(objects.taskId);
+            console.log(objects);
 
             //let history = model.data.activityHistory.planned;
 
@@ -34,21 +40,44 @@ function processActLog(workObject, form) {
             let filterBy = newObj.id;
             let historyObj = historyArray.find(obj => obj.oldId === filterBy);
             console.log(historyObj);
-            if (historyObj == undefined) {
-                historyArray.push({
-                    taskId: taskID,
-                    oldId: newObj.id,
-                    name: objects.name,
-                    theme: objects.theme,
-                    date: { from: objects.frequency.from, to: objects.frequency.to },
-                    time: undefined,
-                    reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps - 1 },
-                    isDone: 'False', //true/False 
-                    wasDone: { time: ' ', date: ' ' },
-                });
-                console.log(historyArray);
+            if (historyObj == undefined) { //hvis det ikke allerede finnes et object i history knyttet til den aktuelle aktiviteten, og det er snakk om en gjentagende aktivitet ( har en property = frequency), lages en ny entry i history
+                console.log('hello?');
+                let yesorno = Boolean(objects.time);
+                console.log(yesorno);
+                if (objects.frequency) {
+                    historyArray.push({
+                        taskId: taskID,
+                        oldId: newObj.id,
+                        name: objects.name,
+                        theme: objects.theme,
+                        date: { from: objects.frequency.from, to: objects.frequency.to },
+                        time: undefined,
+                        reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps - 1 },
+                        isDone: 'False', //true/False 
+                        wasDone: { time: ' ', date: ' ' },
+                    });
+                    console.log(historyArray);
+                }
+                if (objects.time) {  //hvis det er snakk om en oppgave som gjøres én gang, vil den ha egenskapen "time" i stedet for "frequency". Engangsoppgaver pushes direkte til history.
+
+
+                    historyArray.push({
+                        taskId: taskID,
+                        oldId: newObj.id,
+                        name: objects.name,
+                        theme: objects.theme,
+                        date: { from: objects.date, to: objects.date },
+                        time: objects.time,
+                        reps: { totalReps: '0', repsDone: '1', repsLeft: '0' },
+                        isDone: 'True', //true/False 
+                        wasDone: { time: newTime, date: newDate },
+                    });
+                    console.log(historyArray);
+                }
             }
-            else {
+            else if (historyObj !== undefined && objects.frequency) { //om det allerede finnes en entry i history for den aktuelle gjentagende aktiviteten, blar du opp i history og finner entry knytta til aktiviteten og teller opp og ned på antall ganger gjort og antall gjenstående ganger 
+                console.log('works');
+                console.log(history[index].reps.repsLeft);
                 let histArray = model.data.activityHistory.planned;
                 let taskId = newObj.id; // replace this with your taskId
                 let index = histArray.findIndex(obj => obj.oldId === taskId);
@@ -57,6 +86,7 @@ function processActLog(workObject, form) {
                 history[index].reps.repsLeft -= 1;
 
             }
+
             if (newObj.type == 'repeat') {
                 let actArray = model.data.plannedActList.repeat;
                 let actId = newObj.id;

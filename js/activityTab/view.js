@@ -23,9 +23,9 @@ function activityView() {
   
     
     for (i in activity) {
-        document.getElementById("keySkills").innerHTML += `<option value="${activity[i]}">${activity[i]}</option>`;
+        document.getElementById("keySkills").innerHTML += `<option  value="${activity[i]}">${activity[i]}</option>`;
     }
-    loadActivity()
+    loadActivity();
     //setTimeout(function (){loadActivity("<option value='all'>Alle</option>")}, 1000);
 }
 

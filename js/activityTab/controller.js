@@ -13,15 +13,17 @@ function loadActivity() {
 
     let onceList = '';
     let repeatList = '';
-
+    document.getElementById('keySkillAdd').innerHTML = '';
     //console.log(myOnceTasks?.length)
 
-    //document.getElementById('keySkillAdd').innerHTML = '';
+    
 
     for (let i = 1; i < myOnceTasks.length; i++) {
         if (myOnceTasks[i].name && (selectedNK == myOnceTasks[i].theme || selectedNK == 'all')) {
+            console.log('start1', i);
+            console.log(myOnceTasks[i].name)
             onceList += `<div class="flex activitiesTheme border">
-            <div><p>${myOnceTasks[i]?.name}</p></div>
+            <div><p>${myOnceTasks[i].name}</p></div>
             <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
             </div>`;
             console.log(1);
@@ -30,10 +32,12 @@ function loadActivity() {
 
         //console.log(1); finn ut hvordan å få "all" til å fungere
     } console.log(myRepeatTasks.length);
-    for (let i = 1; i < myRepeatTasks.length; i++) {
-        if (myRepeatTasks[i].name && (selectedNK == myRepeatTasks[i].theme || selectedNK == 'all')) {
+    for (let y = 1; y < myRepeatTasks.length; y++) {
+        if (myRepeatTasks[y].name && (selectedNK == myRepeatTasks[y].theme || selectedNK == 'all')) {
+            console.log('start2', y);
+            console.log(myRepeatTasks[y].name);
             repeatList += `<div class="flex activitiesTheme border">
-            <div><p>${myRepeatTasks[i]?.name}</p></div>
+            <div><p>${myRepeatTasks[y].name}</p></div>
             <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
             </div>`;
             console.log(2);
@@ -41,6 +45,6 @@ function loadActivity() {
         }
     }
 
-    document.getElementById('keySkillAdd').innerHTML = onceList + repeatList;
+    document.getElementById('keySkillAdd').innerHTML = `${onceList}  ${repeatList}  `;
 
 }
