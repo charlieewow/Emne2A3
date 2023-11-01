@@ -10,14 +10,30 @@ function updateViewAddTab() {
         <div class="container">
             <div class="innercontainer">
                 <button  class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
-                <button class="addbtn" id="addAct" onclick="addActView()">Ny Aktivitet</button>
-                <button  class="addbtn" id="addGoal" onclick="addGoalView()">Nytt Mål</button>
     <button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>
             </div>
             <div id="selector"></div>
         </div>
     </div>
     `;
+addActView();
+}
+
+function updateViewAddTabG() {
+    const selector = document.getElementById('selector');
+    document.getElementById("dashcontent").innerHTML = /*html*/ `
+    <div class="back">
+        <img class="decor" id="loginimg" src="">
+        <div class="container">
+            <div class="innercontainer">
+                <button  class="addbtn" id="backtoAct" onclick="goalsView()">Avslutt</button>
+    <button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>
+            </div>
+            <div id="selector"></div>
+        </div>
+    </div>
+    `;
+    addGoalView();
 }
 
 

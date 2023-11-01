@@ -4,6 +4,8 @@ function goalsView() {
             <div class="goalwrapper ">
                 <div class="goalnavbar">
                     <button class="addbtnG" onclick="dashView()">Avslutt</button>
+                    <div class="circleplus flex center" onclick="updateViewAddTabG()">+</div>
+
                     <h1>Mine Mål</h1>
                     <form id="goalForm" action="...">
                         <label for="DDMgoals">Tidsrom:</label>
