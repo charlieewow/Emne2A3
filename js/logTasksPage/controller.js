@@ -68,7 +68,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                         theme: objects.theme,
                         date: { from: objects.date, to: objects.date },
                         time: objects.time,
-                        reps: { totalReps: '0', repsDone: '1', repsLeft: '0' },
+                        reps: { totalReps: '1', repsDone: '1', repsLeft: '0' },
                         isDone: 'True', //true/False 
                         wasDone: { time: newTime, date: newDate },
                     });
@@ -77,17 +77,18 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
             }
             else if (historyObj !== undefined && objects.frequency) { //om det allerede finnes en entry i history for den aktuelle gjentagende aktiviteten, blar du opp i history og finner entry knytta til aktiviteten og teller opp og ned på antall ganger gjort og antall gjenstående ganger 
                 console.log('works');
-                console.log(history[index].reps.repsLeft);
+                //console.log(history[index].reps.repsLeft);
                 let histArray = model.data.activityHistory.planned;
                 let taskId = newObj.id; // replace this with your taskId
                 let index = histArray.findIndex(obj => obj.oldId === taskId);
                 console.log(index);
-                history[index].reps.repsDone += 1;
-                history[index].reps.repsLeft -= 1;
+                historyArray[index].reps.repsDone += 1;
+                historyArray[index].reps.repsLeft -= 1;
 
             }
 
             if (newObj.type == 'repeat') {
+                console.log('tell da!');
                 let actArray = model.data.plannedActList.repeat;
                 let actId = newObj.id;
                 let actIndex = actArray.findIndex(obj => obj.taskId === actId);
@@ -102,7 +103,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
 
                 for (task in overviewTwo) {
                     console.log(overviewTwo[task].taskId);
-                    console.log(history[task]);
+                    console.log(historyArray[task]);
                     if (overviewTwo[task].taskId[3] == taskID[5]) {
                         console.log(taskID);
                     }

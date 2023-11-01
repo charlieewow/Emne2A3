@@ -1,9 +1,4 @@
-var nameObject = [
-    {
-        name: '',
-        id: '',
-        index: '',
-    },];
+
 function updateViewTaskPage() {
     let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
@@ -65,7 +60,13 @@ function logActView() {
     //disse for løkkene printer ut informasjon om aktiviteter fra model.data
     //console.log(myOnceTasks?.length)
     for (let i = 0; i < myOnceTasks?.length; i++) {
-        if (myOnceTasks[i + 1]?.name) {
+        let histArray = model.data.activityHistory.planned;
+        let taskId = myOnceTasks[i + 1]?.taskId; // replace this with your taskId
+        let histindex = histArray.findIndex(obj => obj.oldId === taskId);
+        console.log(histindex);
+        console.log(histArray[histindex]);
+        if (myOnceTasks[i + 1]?.name && !histArray[histindex]) {
+
             onceArrayName.push(myOnceTasks[i + 1].name);
             console.log(myOnceTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
@@ -75,12 +76,13 @@ function logActView() {
         }
     }
     for (let i = 0; i < myRepeatTasks?.length; i++) {
-        if (myRepeatTasks[i + 1]?.name) {
+        if (myRepeatTasks[i + 1]?.name && myRepeatTasks[i + 1].reps.repsDone < myRepeatTasks[i + 1].reps.totalReps) {
+            console.log(myRepeatTasks[i + 1].reps);
             repeatArrayName.push(myRepeatTasks[i + 1].name);
             let passport = myRepeatTasks[i + 1].taskId;
             console.log(myRepeatTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
-            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} </p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
+            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} <br> gjort ${myRepeatTasks[i+1].reps.repsDone} av ${myRepeatTasks[i+1].reps.totalReps}</p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
             
             </div>`;
 
@@ -112,7 +114,7 @@ function logActView() {
             }*/
         }
     }
-   
+
 
 
 
@@ -155,7 +157,7 @@ function logActView() {
 
 
 
- document.getElementById('logSpontanIn').addEventListener("load", function () {
+    document.getElementById('logSpontanIn').addEventListener("load", function () {
         console.log("loaded");
         for (let i = 0; i <= 4; i++) {
             let theme = model.interface.addGoalAct.themeSelector;

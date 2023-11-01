@@ -156,6 +156,7 @@ const model = {
                         name: "testDaily",
                         theme: "testTheme",
                         taskText: "TestText",
+                        reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
                     {
@@ -163,6 +164,7 @@ const model = {
                         name: "testDaily2",
                         theme: "testTheme2",
                         taskText: "TestText2",
+                        reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
@@ -175,6 +177,7 @@ const model = {
                         name: "testWeekly",
                         theme: undefined,
                         taskText: undefined,
+                        reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
@@ -188,6 +191,7 @@ const model = {
                         name: "testMonthly",
                         theme: undefined,
                         taskText: undefined,
+                        reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
@@ -201,6 +205,7 @@ const model = {
                         name: "testYearly",
                         theme: undefined,
                         taskText: undefined,
+                        reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
@@ -214,6 +219,7 @@ const model = {
                         name: "test5Yearly",
                         theme: undefined,
                         taskText: undefined,
+                        reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
                     },
 
@@ -254,7 +260,8 @@ activityHistory: {
         reps: { totalReps: '', repsDone: 0, repsLeft: '' },
         date: {from: '', to:''},
         time: undefined,
-        isDone: 'False', //true/False 
+        isDone: 'False', //true/False
+        lastlogged: [], 
         wasDone: {time: ' ', date: ' '},
     },
 ],
