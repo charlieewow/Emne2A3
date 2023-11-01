@@ -54,6 +54,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                         time: undefined,
                         reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps - 1 },
                         isDone: 'False', //true/False 
+                        lastlogged: [rightNow], 
                         wasDone: { time: ' ', date: ' ' },
                     });
                     console.log(historyArray);
@@ -84,6 +85,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                 console.log(index);
                 historyArray[index].reps.repsDone += 1;
                 historyArray[index].reps.repsLeft -= 1;
+                historyArray[index].lastlogged.push(rightNow);
 
             }
 
@@ -92,13 +94,15 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                 let actArray = model.data.plannedActList.repeat;
                 let actId = newObj.id;
                 let actIndex = actArray.findIndex(obj => obj.taskId === actId);
-                if (overviewTwo[actIndex].reps.repsLeft == '') {
+                if (overviewTwo[actIndex].reps.repsDone == 0) {
                     overviewTwo[actIndex].reps.repsDone += 1;
                     overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;
+                console.log(overviewTwo[actIndex].reps);
                 }
                 else {
-                    overviewTwo[actIndex].reps.repsLeft += 1;
+                    overviewTwo[actIndex].reps.repsDone += 1;
                     overviewTwo[actIndex].reps.repsLeft -= 1;
+                    console.log(overviewTwo[actIndex].reps);
                 }
 
                 for (task in overviewTwo) {
