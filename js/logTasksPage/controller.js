@@ -10,23 +10,32 @@ function processActLog(workObject, form) {
         for (ya in yaya) {
             let newstring = yaya[ya];
             newObj = JSON.parse(newstring);
+            console.log(newObj.type);
             console.log(newObj.id);
-            let array = model.data.plannedActList.repeat;
+            let array;
+            if (newObj.type == 'repeat') {
+                array = model.data.plannedActList.repeat;
+                console.log(array);
+            }
+            else if (newObj.type == 'once') {
+                array = model.data.plannedActList.once;
+                console.log(array);
+            }
             let filterId = newObj.id; // replace this with your taskId
             let objects = array.find(obj => obj.taskId === filterId);
-            console.log(objects.frequency);
+            console.log(objects.taskId);
 
-            console.log(objects);
-            let history = model.data.activityHistory.planned;
+            //let history = model.data.activityHistory.planned;
+
             let overviewOne = model.data.plannedActList.once;
-
             let overviewTwo = model.data.plannedActList.repeat;
             let historyArray = model.data.activityHistory.planned;
+            console.log(historyArray);
             let filterBy = newObj.id;
             let historyObj = historyArray.find(obj => obj.oldId === filterBy);
             console.log(historyObj);
             if (historyObj == undefined) {
-                history.push({
+                historyArray.push({
                     taskId: taskID,
                     oldId: newObj.id,
                     name: objects.name,
@@ -36,7 +45,8 @@ function processActLog(workObject, form) {
                     reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps - 1 },
                     isDone: 'False', //true/False 
                     wasDone: { time: ' ', date: ' ' },
-                })
+                });
+                console.log(historyArray);
             }
             else {
                 let histArray = model.data.activityHistory.planned;
@@ -47,29 +57,32 @@ function processActLog(workObject, form) {
                 history[index].reps.repsLeft -= 1;
 
             }
+            if (newObj.type == 'repeat') {
+                let actArray = model.data.plannedActList.repeat;
+                let actId = newObj.id;
+                let actIndex = actArray.findIndex(obj => obj.taskId === actId);
+                if (overviewTwo[actIndex].reps.repsLeft == '') {
+                    overviewTwo[actIndex].reps.repsDone += 1;
+                    overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;
+                }
+                else {
+                    overviewTwo[actIndex].reps.repsLeft += 1;
+                    overviewTwo[actIndex].reps.repsLeft -= 1;
+                }
 
-            let actArray = model.data.plannedActList.repeat;
-            let actId = newObj.id;
-            let actIndex = actArray.findIndex(obj => obj.taskId === actId);
-            if (overviewTwo[actIndex].reps.repsLeft == '') {
-                overviewTwo[actIndex].reps.repsDone += 1;
-                overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;
-            }
-            else {
-                overviewTwo[actIndex].reps.repsLeft += 1;
-                overviewTwo[actIndex].reps.repsLeft -= 1;
-            }
-
-            for (task in overviewTwo) {
-                console.log(overviewTwo[task].taskId);
-                console.log(history[task]);
-                if (overviewTwo[task].taskId[3] == taskID[5]) {
-                    console.log(taskID);
+                for (task in overviewTwo) {
+                    console.log(overviewTwo[task].taskId);
+                    console.log(history[task]);
+                    if (overviewTwo[task].taskId[3] == taskID[5]) {
+                        console.log(taskID);
+                    }
                 }
             }
 
+
             /*history.push({"taskId":taskID,"name":newObj.name, "theme":entry[0][1], "done":{"time": nowTime, "date":nowDate}});
             console.log(history[1]);*/
+
 
         }
     }
@@ -131,17 +144,17 @@ function sendName(obj) {
 }
 
 function loadoptions(i) {
-        console.log("loaded");
-        let theme = model.interface.addGoalAct.themeSelector;
-        let keyRing = "id" + i;
-        for (let T of theme) {
-            let element = document.getElementById(keyRing);
-            if (element && element.innerHTML.length < 284) {
-                element.innerHTML += `<option value=${T}>${T}</option>`;
-            } 
-
-
+    console.log("loaded");
+    let theme = model.interface.addGoalAct.themeSelector;
+    let keyRing = "id" + i;
+    for (let T of theme) {
+        let element = document.getElementById(keyRing);
+        if (element && element.innerHTML.length < 284) {
+            element.innerHTML += `<option value=${T}>${T}</option>`;
         }
-    
+
+
+    }
+
 
 }

@@ -67,6 +67,7 @@ function logActView() {
     for (let i = 0; i < myOnceTasks?.length; i++) {
         if (myOnceTasks[i + 1]?.name) {
             onceArrayName.push(myOnceTasks[i + 1].name);
+            console.log(myOnceTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
             <div ><p>${myOnceTasks[i + 1].name}</p></div><input id=${myOnceTasks[i + 1].taskId} name='{"name":"${myOnceTasks[i + 1].name}", "id":"${myOnceTasks[i + 1].taskId}", "index":${i + 1}, "type":"once"}' class="logCheck"  type="checkbox"/>
            
@@ -77,6 +78,7 @@ function logActView() {
         if (myRepeatTasks[i + 1]?.name) {
             repeatArrayName.push(myRepeatTasks[i + 1].name);
             let passport = myRepeatTasks[i + 1].taskId;
+            console.log(myRepeatTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
             <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} </p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
             
