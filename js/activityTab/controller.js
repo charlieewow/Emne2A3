@@ -9,7 +9,7 @@ function chooseNK(ddmNK) {
 function loadActivity() {
     let myOnceTasks = model.data.plannedActList?.once;
     let myRepeatTasks = model.data.plannedActList?.repeat;
-
+    console.log(myRepeatTasks[1].reps);
 
     let onceList = '';
     let repeatList = '';
@@ -20,11 +20,12 @@ function loadActivity() {
 
     for (let i = 1; i < myOnceTasks.length; i++) {
         if (myOnceTasks[i].name && (selectedNK == myOnceTasks[i].theme || selectedNK == 'all')) {
+
             console.log('start1', i);
             console.log(myOnceTasks[i].name)
             onceList += `<div class="flex activitiesTheme border">
             <div><p>${myOnceTasks[i].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"></div>
             </div>`;
             console.log(1);
             console.log(onceList);
@@ -34,11 +35,13 @@ function loadActivity() {
     } console.log(myRepeatTasks.length);
     for (let y = 1; y < myRepeatTasks.length; y++) {
         if (myRepeatTasks[y].name && (selectedNK == myRepeatTasks[y].theme || selectedNK == 'all')) {
+            let progValue = (myRepeatTasks[y].reps.repsDone / myRepeatTasks[y].reps.totalReps)*100;
+            console.log(progValue); 
             console.log('start2', y);
             console.log(myRepeatTasks[y].name);
             repeatList += `<div class="flex activitiesTheme border">
             <div><p>${myRepeatTasks[y].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"><progress class="prog border" id="" value="${progValue}" max="100"></progress></div>
             </div>`;
             console.log(2);
             console.log(repeatList);
@@ -48,3 +51,9 @@ function loadActivity() {
     document.getElementById('keySkillAdd').innerHTML = `${onceList}  ${repeatList}  `;
 
 }
+
+
+//reps: {totalReps: '',repsDone: 0,repsLeft: '', },
+//totalreps == 100%
+//repsDone == value
+// repsDone/totalreps = x*100
