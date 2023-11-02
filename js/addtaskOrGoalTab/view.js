@@ -9,7 +9,7 @@ function updateViewAddTab() {
         <img class="decor" id="loginimg" src="">
         <div class="container">
             <div class="innercontainer">
-                <button  class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
+                <button  type="button" class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
     <!--<button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>-->
             </div>
             <div id="selector"></div>
@@ -164,7 +164,7 @@ function addActView() {
             </div>
             <!--<div id="timeframe"><div>-->
             <div id="submitA">
-                <input class="innersubmitA" type="submit" value="Submit" onclick="saveLocalStorage(); updateViewAddTab()">
+                <input class="innersubmitA" type="submit" value="Submit">
             <div>
         </form>
     `;
