@@ -22,7 +22,7 @@ function updateViewTaskPage() {
     `;
     logActView();
 }
-
+ //let standardTaskArrayID = [];
 function logActView() {
     let logview = document.getElementById("logview");
     html = /*html*/`
@@ -54,6 +54,7 @@ function logActView() {
     let myRepeatTasks = model.data.plannedActList?.repeat;
     let myStandardTasks = model.data.standardTasks;
     let standardTaskArray = [];
+   
     let onceArrayTheme = [];
     let onceArrayName = [];
     let repeatArrayName = [];
@@ -66,11 +67,12 @@ function logActView() {
         console.log(histindex);
         console.log(histArray[histindex]);
         if (myOnceTasks[i + 1]?.name && !histArray[histindex]) {
-
+            let thisID = myOnceTasks[i + 1].taskId;
+            validAArr.push(thisID);
             onceArrayName.push(myOnceTasks[i + 1].name);
             console.log(myOnceTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
-            <div ><p>${myOnceTasks[i + 1].name}</p></div><input id=${myOnceTasks[i + 1].taskId} name='{"name":"${myOnceTasks[i + 1].name}", "id":"${myOnceTasks[i + 1].taskId}", "index":${i + 1}, "type":"once"}' class="logCheck"  type="checkbox"/>
+            <div ><p>${myOnceTasks[i + 1].name}</p></div><input id="${myOnceTasks[i + 1].taskId}" name='{"name":"${myOnceTasks[i + 1].name}", "id":"${myOnceTasks[i + 1].taskId}", "index":${i + 1}, "type":"once"}' class="logCheck"  type="checkbox"/>
            
             </div>`;
         }
@@ -80,9 +82,11 @@ function logActView() {
             console.log(myRepeatTasks[i + 1].reps);
             repeatArrayName.push(myRepeatTasks[i + 1].name);
             let passport = myRepeatTasks[i + 1].taskId;
+            let checkID = passport + "check";
+            validAArr.push(checkID);
             console.log(myRepeatTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
-            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} <br> gjort ${myRepeatTasks[i + 1].reps.repsDone} av ${myRepeatTasks[i + 1].reps.totalReps}</p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
+            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} <br> gjort ${myRepeatTasks[i + 1].reps.repsDone} av ${myRepeatTasks[i + 1].reps.totalReps}</p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox" id="${checkID}"/>
             
             </div>`;
 
@@ -92,16 +96,20 @@ function logActView() {
         for (let i = 0; i < myStandardTasks.length; i++) {
             if (myStandardTasks[i]?.name) {
                 let passkey = "id" + i;
+                let validID = "valid" + passkey;
+                validIDArr.push(validID);
+                standardTaskArrayID.push(passkey);
                 standardTaskArray.push(myStandardTasks[i].name);
                 document.getElementById('logSpontanIn').innerHTML += `<div class="flex border logOption">
             <div><p>${myStandardTasks[i].name}</p></div> <label for="${passkey}">tema:</label>
             <select class="dropdown" name='{"name":"NKTemaer"}' onclick="loadoptions(${i})"id=${passkey}>
- </select><input name='{"name":"${myStandardTasks[i].name}", "index":"${i + 1}", "type":"standard"}' class="logCheck" type="checkbox"/>
+ </select><input id="valid${passkey}" name='{"name":"${myStandardTasks[i].name}", "index":"${i + 1}", "type":"standard"}' class="logCheck" type="checkbox" onclick="makeReq(${passkey}, ${validID})"/>
            
             
             </div>`;
 
             }
+            
             /*if(i ==  myStandardTasks.length-1){
                 console.log("confirm");
                 for(let i=0; i<=4; i++){
@@ -129,10 +137,11 @@ function logActView() {
 
         //konverter form data til et object
         const logFormTObject = Object.fromEntries(logFormTData.entries());
-        console.log(logFormTObject);
+        //console.log(logFormTObject);
 
         //nå kan det brukes i modellen ()?
-        processActLog(logFormTObject, logTForm);
+        //processActLog(logFormTObject, logTForm);
+        validAcheck(logFormTObject, logTForm);
 
 
     })
@@ -149,8 +158,9 @@ function logActView() {
         console.log(logFormTSObject);
 
         //nå kan det brukes i modellen ()?
-        processActLogTS(logFormTSObject, logTSForm);
 
+        //processActLogTS(logFormTSObject, logTSForm);
+        validTS(logFormTSObject, logTSForm);
 
     })
 

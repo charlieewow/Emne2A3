@@ -23,45 +23,71 @@ function checkingbox(box) { //sørger for at begge boksene ikke kan være checke
     let idArrayRep = ["units", "unitrep", "fromDate", "toDate"];
     //box.value = "checked";
     if (box == repeatbox) {
-        if (oncebox.checked == true) {
+
+        if (oncebox.checked && box.checked) {
             //oncebox.value = "unchecked";
+            console.log("hey");
             oncebox.checked = false;
             for (let IDF of idArrayOnce) {
                 let elementF = document.getElementById(IDF);
                 elementF.required = false;
+                //console.log(elementF);
             }
         }
-        for (let ID of idArrayRep) {
-            let element = document.getElementById(ID);
-            element.required = true;
+        if (box.checked) {
+            for (let ID of idArrayRep) {
+                let element = document.getElementById(ID);
+                element.required = true;
+                //console.log(element);
+            }
         }
+        if (!box.checked) {
+            for (let ID of idArrayRep) {
+                let element = document.getElementById(ID);
+                element.required = false;
+                //console.log(element);
+            }
+        }
+
     }
     else if (box == oncebox) {
-        if (repeatbox.checked == true) {
+        if (repeatbox.checked && box.checked) {
             //repeatbox.value = "unchecked";
             repeatbox.checked = false;
             for (let IDF of idArrayRep) {
                 let elementF = document.getElementById(IDF);
                 elementF.required = false;
+                //console.log(elementF);
             }
         }
-        for (let ID of idArrayOnce) {
-            let element = document.getElementById(ID);
-            element.required = true;
+        if (box.checked) {
+            for (let ID of idArrayOnce) {
+                let element = document.getElementById(ID);
+                element.required = true;
+                //console.log(element);
+            }
         }
+        if (!box.checked) {
+            for (let ID of idArrayOnce) {
+                let element = document.getElementById(ID);
+                element.required = false;
+                //console.log(element);
+            }
+        }
+
     }
 
 }
 
-function validA(addFormTObject, addTForm){ //om du har trykket på submit uten å fylle ut skjema, blir data ikke sendt videre til processA
-    
-    let idArr= ["checkonce","checkrep"]
+function validA(addFormTObject, addTForm) { //om du har trykket på submit uten å fylle ut skjema, blir data ikke sendt videre til processA
+
+    let idArr = ["checkonce", "checkrep"]
     let validOnce = document.getElementById(idArr[0]);
     let validRep = document.getElementById(idArr[1]);
-    if(validOnce.checked || validRep.checked){
+    if (validOnce.checked || validRep.checked) {
         processA(addFormTObject, addTForm);
     }
-    else{alert('velg "én gang" eller "gjentagende"');}
+    else { alert('velg "én gang" eller "gjentagende"'); }
 }
 
 function processA(object, form) { //data fra legg til aktivitet

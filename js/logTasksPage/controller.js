@@ -1,49 +1,64 @@
+let validAArr = [];
+function validAcheck(workObject, form){
+let count = 0;
+for( let U of validAArr){
+    let options = document.getElementById(U);
+    if(options.checked){
+        count++;
+    }
+}
+if(count > 0){
+    processActLog(workObject, form);
+}
+else{alert('Du har ikke valgt noe')}
+}
+
 function processActLog(workObject, form) {  //denne funksjonen tar i mot data fra aktivitetsloggings siden og behandler den og oppdaterer modellen. Forandringen er ikke permanent/lagret i localstorage før man trykker på "lagre" knappen på siden
 
     if (form.id == "logTform") {
         let rightNow = new Date();
-        console.log(rightNow);
+        //console.log(rightNow);
         let newTime = rightNow.toLocaleTimeString();
-        console.log(newTime);
+        //console.log(newTime);
         let newDate = rightNow.toLocaleDateString();
-        console.log(newDate);
+        //console.log(newDate);
         let yaya = Object.keys(workObject);
-        console.log(yaya);
-        console.log(yaya[0])
-        console.log(form);
+        //console.log(yaya);
+        //console.log(yaya[0])
+       // console.log(form);
         let newObj = [];
         let taskID = "A-H-P" + model.data.activityHistory.planned.length;
         for (ya in yaya) {
             let newstring = yaya[ya];
             newObj = JSON.parse(newstring);
-            console.log(newObj.type);
-            console.log(newObj.id);
+            //console.log(newObj.type);
+            //console.log(newObj.id);
             let array;
             if (newObj.type == 'repeat') {
                 array = model.data.plannedActList.repeat;
-                console.log(array);
+                //console.log(array);
             }
             else if (newObj.type == 'once') {
                 array = model.data.plannedActList.once;
-                console.log(array);
+                //console.log(array);
             }
             let filterId = newObj.id; // replace this with your taskId
             let objects = array.find(obj => obj.taskId === filterId);
-            console.log(objects);
+            //console.log(objects);
 
             //let history = model.data.activityHistory.planned;
 
             let overviewOne = model.data.plannedActList.once;
             let overviewTwo = model.data.plannedActList.repeat;
             let historyArray = model.data.activityHistory.planned;
-            console.log(historyArray);
+           // console.log(historyArray);
             let filterBy = newObj.id;
             let historyObj = historyArray.find(obj => obj.oldId === filterBy);
-            console.log(historyObj);
+           // console.log(historyObj);
             if (historyObj == undefined) { //hvis det ikke allerede finnes et object i history knyttet til den aktuelle aktiviteten, og det er snakk om en gjentagende aktivitet ( har en property = frequency), lages en ny entry i history
-                console.log('hello?');
+                //console.log('hello?');
                 let yesorno = Boolean(objects.time);
-                console.log(yesorno);
+                //console.log(yesorno);
                 if (objects.frequency) {
                     historyArray.push({
                         taskId: taskID,
@@ -57,7 +72,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                         lastlogged: [rightNow],
                         wasDone: { time: ' ', date: ' ' },
                     });
-                    console.log(historyArray);
+                    //console.log(historyArray);
                 }
                 if (objects.time) {  //hvis det er snakk om en oppgave som gjøres én gang, vil den ha egenskapen "time" i stedet for "frequency". Engangsoppgaver pushes direkte til history.
 
@@ -73,16 +88,16 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                         isDone: 'True', //true/False 
                         wasDone: { time: newTime, date: newDate },
                     });
-                    console.log(historyArray);
+                    //console.log(historyArray);
                 }
             }
             else if (historyObj !== undefined && objects.frequency) { //om det allerede finnes en entry i history for den aktuelle gjentagende aktiviteten, blar du opp i history og finner entry knytta til aktiviteten og teller opp og ned på antall ganger gjort og antall gjenstående ganger 
-                console.log('works');
+                //console.log('works');
                 //console.log(history[index].reps.repsLeft);
                 let histArray = model.data.activityHistory.planned;
                 let taskId = newObj.id; // replace this with your taskId
                 let index = histArray.findIndex(obj => obj.oldId === taskId);
-                console.log(index);
+                //console.log(index);
                 historyArray[index].reps.repsDone += 1;
                 historyArray[index].reps.repsLeft -= 1;
                 historyArray[index].lastlogged.push(rightNow);
@@ -90,26 +105,26 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
             }
 
             if (newObj.type == 'repeat') {
-                console.log('tell da!');
+                //console.log('tell da!');
                 let actArray = model.data.plannedActList.repeat;
                 let actId = newObj.id;
                 let actIndex = actArray.findIndex(obj => obj.taskId === actId);
                 if (overviewTwo[actIndex].reps.repsDone == 0) {
                     overviewTwo[actIndex].reps.repsDone += 1;
                     overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;
-                    console.log(overviewTwo[actIndex].reps);
+                    //console.log(overviewTwo[actIndex].reps);
                 }
                 else {
                     overviewTwo[actIndex].reps.repsDone += 1;
                     overviewTwo[actIndex].reps.repsLeft -= 1;
-                    console.log(overviewTwo[actIndex].reps);
+                    //console.log(overviewTwo[actIndex].reps);
                 }
 
                 for (task in overviewTwo) {
-                    console.log(overviewTwo[task].taskId);
-                    console.log(historyArray[task]);
+                    //console.log(overviewTwo[task].taskId);
+                    //console.log(historyArray[task]);
                     if (overviewTwo[task].taskId[3] == taskID[5]) {
-                        console.log(taskID);
+                        //console.log(taskID);
                     }
                 }
             }
@@ -129,6 +144,41 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
     //console.log(newnew);
     //if(workObject.id)
     ItIsDone();
+}
+let standardTaskArrayID = [];
+function makeReq(ID, checkID) {
+    let idArr = standardTaskArrayID;
+    //document.getElementById(ID.id).required = true;
+    for(let ele of idArr){
+        let validID = "valid" + ele;
+        let dropdown = document.getElementById(ele);
+        let checkbox = document.getElementById(validID);
+        if(checkbox.checked){dropdown.required = true;}
+        else if(!checkbox.checked){dropdown.required = false;}
+    }
+    
+}
+let validIDArr = [];
+function validTS(logFormTSObject, logTSForm) {
+    console.log(validIDArr[0].slice(5, 8));
+    let checks = 0;
+    let index = 0;
+    for (let ID of validIDArr) {
+        let element = document.getElementById(ID);
+        if (element.checked) {
+            console.log(element, element.checked);
+            //processActLogTS(logFormTSObject, logTSForm);
+            checks++;
+        }
+        index++;
+        console.log(index);
+    }
+    if(checks > 0){
+        processActLogTS(logFormTSObject, logTSForm);
+    }
+    else if (checks == 0) {
+        alert("Ingen er valgt, sjekk en eller flere bokser");
+    }
 }
 
 function processActLogTS(workObject, form) { //denne funksjonen tar i mot data om logget spontane aktiviteter
