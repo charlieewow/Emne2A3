@@ -1,16 +1,12 @@
 td {
-    border: 1px solid orange;
-
+    border: 1px solid rgba(0, 242, 255, 0.493);
     border-collapse: collapse;
 }
 
-table {
-    position: absolute;
-    border: 1px solid orange;
+table.logtable {
+    border: 1px solid rgba(0, 242, 255, 0.493);
     border-collapse: collapse;
-    top: 15dvh;
-    left: 1dvw;
-    width: 70dvw;
+    width: 80%;
     height: 40dvh;
 }
 
@@ -28,23 +24,26 @@ table {
 }
 
 .days {
+    border: none;
     background-color: inherit;
-    height: 9dvh;
-    width: 20dvw;
+    height: 100%;
+    width: 97%;
 }
 
 #weekBtn {
-    position: absolute;
-    top: 10dvh;
-    left: 1dvw;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+button.addbtnlog {
+    width: 20dvh;
+    height: 4dvh;
 }
 
 .addbtnlog {
     background-color: inherit;
     color: white;
-    border: 2px outset orange;
-    width: 20dvh;
-    height: 4dvh;
+    border: 2px outset rgba(0, 242, 255, 0.493);
     cursor: pointer;
 }
 
@@ -54,13 +53,13 @@ table {
     padding: 10px;
     margin: 10px;
     transition: 0.2s;
-    width: 70dvw;
+    width: 100%;
     height: 72dvh;
 }
 
 .AlogContainer {
     position: relative;
-    border: 1px solid orange;
+    border: 1px solid rgba(0, 242, 255, 0.493);
     color: white;
     padding: 10px;
     margin: 10px;
@@ -74,20 +73,18 @@ table {
 }
 
 .logInnercontainer {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.493);
     color: white;
     padding: 1dvh;
     transition: 0.2s;
-    height: 4dvh;
     display: flex;
-    justify-content: center;
     justify-content: space-evenly;
 }
 
 
 
 #logPlanIn {
-    border-right: 1px solid orange;
+    border-right: 1px solid rgba(0, 242, 255, 0.493);
     padding-top: 1dvh;
     padding-right: 0dvh;
     height: 50dvh;
@@ -100,7 +97,7 @@ table {
 }
 
 #logSpontanIn {
-    border-left: 1px solid orange;
+    border-left: 1px solid rgba(0, 242, 255, 0.493);
     padding-top: 1dvh;
     padding-left: 2dvh;
     padding-right: 1dvh;
@@ -120,7 +117,7 @@ table {
     width: 35dvw;
 }
 .logh3 {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.493);
     margin: 0dvh;
     position: relative;
     right: 0dvw;
@@ -130,7 +127,7 @@ table {
 .logBack {
     bottom: 12dvh;
     height: 78dvh;
-    width: fit-content;
+    width: 100%;
 }
 
 .logOption {
@@ -143,8 +140,6 @@ table {
     cursor: pointer;
 
 }
-
-
 
 .hideLogInfo{
     display: none;

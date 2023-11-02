@@ -10,43 +10,48 @@ function loadGoals() {
     let loadedGoals = '';
 
     if (selectedGoal == 'daily' || selectedGoal == 'all') {
-        for (let i = 1; i < goalsData.daily.length; i++) {
+        for (let i = 0; i < goalsData.daily.length; i++) {
             loadedGoals += `<div class="flex activitiesTheme border">
             <div><p> ${goalsData.daily[i].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"><progress class="prog border" id="" value="${goalsData.daily[i].progress}" max="100"></progress></div>
             </div>`;
+            console.log(1);
         }
     }
     if (selectedGoal == 'weekly' || selectedGoal == 'all') {
-        for (let i = 1; i < goalsData.weekly.length; i++) {
+        for (let i = 0; i < goalsData.weekly.length; i++) {
             loadedGoals += `<div class="flex activitiesTheme border">
             <div><p> ${goalsData.weekly[i].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"><progress class="prog border" id="" value="${goalsData.weekly[i].progress}" max="100"></progress></div>
             </div>`;
+            console.log(2);
         }
     }
     if (selectedGoal == 'monthly' || selectedGoal == 'all') {
-        for (let i = 1; i < goalsData.monthly.length; i++) {
+        for (let i = 0; i < goalsData.monthly.length; i++) {
             loadedGoals += `<div class="flex activitiesTheme border">
             <div><p> ${goalsData.monthly[i].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"><progress class="prog border" id="" value="${goalsData.monthly[i].progress}" max="100"></progress></div>
             </div>`;
+            console.log(3);
         }
     }
     if (selectedGoal == 'year' || selectedGoal == 'all') {
-        for (let i = 1; i < goalsData.year.length; i++) {
+        for (let i = 0; i < goalsData.year.length; i++) {
             loadedGoals += `<div class="flex activitiesTheme border">
             <div><p> ${goalsData.year[i].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"><progress class="prog border" id="" value="${goalsData.year[i].progress}" max="100"></progress></div>
             </div>`;
+            console.log(4);
         }
     }
     if (selectedGoal == 'fiveYearPlan' || selectedGoal == 'all') {
-        for (let i = 1; i < goalsData.fiveYearPlan.length; i++) {
+        for (let i = 0; i < goalsData.fiveYearPlan.length; i++) {
             loadedGoals +=`<div class="flex activitiesTheme border">
             <div><p> ${goalsData.fiveYearPlan[i].name}</p></div>
-            <div class="activityprog"><progress class="prog border" id="" value="50" max="100"></progress></div>
+            <div class="activityprog"><progress class="prog border" id="" value="${goalsData.fiveYearPlan[i].progress}" max="100"></progress></div>
             </div>`;
+            console.log(5);
         }
     }
 

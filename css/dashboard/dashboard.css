@@ -23,7 +23,7 @@
 }
 
 hr.dashHR {
-    border: orange 1px solid;
+    border: rgba(0, 242, 255, 0.493) 1px solid;
 }
 
 .logout {

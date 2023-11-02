@@ -267,19 +267,19 @@ function inputGen(td) {
         if (weekArr[i].includes(td.id)) {
             console.log("yoyo");
             if (i == 0) {
-                weekDay = "Monday"; //console.log(weekDay)
+                weekDay = "days"; //console.log(weekDay)
             }
             if (i == 1) {
-                weekDay = "Tuesday"; //console.log(weekDay)
+                weekDay = "days"; //console.log(weekDay)
             }
             if (i == 2) {
-                weekDay = "Wednesday"; //console.log(weekDay)
+                weekDay = "days"; //console.log(weekDay)
             }
             if (i == 3) {
-                weekDay = "Thursday"; //console.log(weekDay)
+                weekDay = "days"; //console.log(weekDay)
             }
             if (i == 4) {
-                weekDay = "Friday"; //console.log(weekDay)
+                weekDay = "days"; //console.log(weekDay)
             }
         }
 
@@ -289,7 +289,7 @@ function inputGen(td) {
     if (td.innerText) {
         //alert("hey");
         console.log(td.innerText);
-        document.getElementById(td.id).innerHTML = `<input type="text" class="logspace, ${weekDay}" id=${key} value=${loginfo} />`;
+        document.getElementById(td.id).innerHTML = `<input type="text" class="logspace writeonthis ${weekDay}" id=${key} value=${loginfo} />`;
 
     }
     else if (td.innerHTML) {
@@ -299,7 +299,7 @@ function inputGen(td) {
     }
     else {
         //alert("HMMM??")
-        document.getElementById(td.id).innerHTML = `<input type="text" class="logspace, ${weekDay}" id=${key} value="" />`;
+        document.getElementById(td.id).innerHTML = `<input type="text" class="logspace writeonthis ${weekDay}" id=${key} value="" />`;
     }
 
 }

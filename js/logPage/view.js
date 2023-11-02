@@ -16,55 +16,48 @@ function updateViewDiaryPage() {
     
     let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
-    
-    <div class="logBack border">
-    <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
-    <div class="logContainer">
-    <div class="logInnercontainer">
-    <button  class="addbtnlog" id="backtoAct" onclick="confirmQuit()">Avslutt</button>
-    <!--<button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>-->
-    <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>-->
-   <button class="addbtnlog" onclick="logProcess()">lagre logg</button>
-    </div>
-
-    <div id="logview">
-     <div id="weekBtn">
-    <button class="addbtn weekbtnheight" onclick="weekCounterDisplay(this)">⇦forrige uke</button>
-    <button class="addbtn weekbtnheight" onclick="weekCounterDisplay(this)">neste uke⇨</button></div>
-    <table id="diaryTable">
-    <tr id="y0">
-    <td>Uke ${weekNrDisplay}</td>
-    <td>${model.interface.logPage.diary.edges.dailyQuestNO[0]}</td>
-    <td>${model.interface.logPage.diary.edges.dailyQuestNO[1]}</td>
-    <td>${model.interface.logPage.diary.edges.dailyQuestNO[2]}</td>
-    </tr>
-    <tr id="y1">
-    <td>${model.interface.logPage.diary.edges.weekdayNO[0]}</td>
-    
-    </tr>
-    <tr id="y2">
-    <td>${model.interface.logPage.diary.edges.weekdayNO[1]}</td>
-    
-    </tr>
-    <tr id="y3">
-    <td>${model.interface.logPage.diary.edges.weekdayNO[2]}</td>
-    
-    </tr>
-    <tr id="y4">
-    <td>${model.interface.logPage.diary.edges.weekdayNO[3]}</td>
-    
-    </tr>
-    <tr id="y5">
-    <td>${model.interface.logPage.diary.edges.weekdayNO[4]}</td>
-    
-    </tr>
-    </table>
-    
-    
-    </div>
-    
-</div>
-</div>
+    <div class="logBack flex center">
+            <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
+            <div class="logContainer">
+                <div class="logInnercontainer">
+                    <button class="addbtnlog" id="backtoAct" onclick="confirmQuit()">Avslutt</button>
+                    <!--<button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>-->
+                    <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>-->
+                    <button class="addbtnlog" onclick="logProcess()">lagre logg</button>
+                </div>
+                <div id="logview flex center">
+                    <div id="weekBtn">
+                        <button class="addbtn weekbtnheight" onclick="weekCounterDisplay(this)">⇦forrige uke</button>
+                        <button class="addbtn weekbtnheight" onclick="weekCounterDisplay(this)">neste uke⇨</button>
+                    </div>
+                    <div class="flex center">
+                        <table class="logtable" id="diaryTable">
+                            <tr id="y0">
+                                <td>Uke ${weekNrDisplay}</td>
+                                <td>${model.interface.logPage.diary.edges.dailyQuestNO[0]}</td>
+                                <td>${model.interface.logPage.diary.edges.dailyQuestNO[1]}</td>
+                                <td>${model.interface.logPage.diary.edges.dailyQuestNO[2]}</td>
+                            </tr>
+                            <tr id="y1">
+                                <td>${model.interface.logPage.diary.edges.weekdayNO[0]}</td>
+                            </tr>
+                            <tr id="y2">
+                                <td>${model.interface.logPage.diary.edges.weekdayNO[1]}</td>
+                            </tr>
+                            <tr id="y3">
+                                <td>${model.interface.logPage.diary.edges.weekdayNO[2]}</td>
+                            </tr>
+                            <tr id="y4">
+                                <td>${model.interface.logPage.diary.edges.weekdayNO[3]}</td>
+                            </tr>
+                            <tr id="y5">
+                                <td>${model.interface.logPage.diary.edges.weekdayNO[4]}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
     let theDays = Object.keys(model.interface.logPage.diary.content);
     console.log(theDays);
@@ -78,7 +71,7 @@ function updateViewDiaryPage() {
             let state = [theMood, theProg, theNext];
             for (let x = 1; x <= 3; x++) {
                 let lock = "x" + x + key;
-                document.getElementById(key).innerHTML += `<td onclick="inputGen(this)" id=${lock}>${state[x - 1]}</td>`;
+                document.getElementById(key).innerHTML += `<td onclick="inputGen(this)" class="addbtnlog" id=${lock}>${state[x - 1]}</td>`;
 
             }
         }
@@ -89,7 +82,7 @@ function updateViewDiaryPage() {
             let state = [theMood, theProg, theNext];
             for (let x = 1; x <= 3; x++) {
                 let lock = "x" + x + key;
-                document.getElementById(key).innerHTML += `<td onclick="inputGen(this)" id=${lock}>${state[x - 1]}</td>`;
+                document.getElementById(key).innerHTML += `<td onclick="inputGen(this)" class="addbtnlog" id=${lock}>${state[x - 1]}</td>`;
 
             }
         }

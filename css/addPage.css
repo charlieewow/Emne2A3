@@ -3,10 +3,10 @@
 }
 
 #selector {
-    position: absolute;
-    left: 0;
-    display: flex;
-    justify-content: start;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
     color: white;
     top: 15dvh;
     transition: 0.2s;
@@ -18,12 +18,10 @@
     display: flex;
     justify-content: space-evenly;
     justify-self: center;
-    border-bottom: 1px solid orange;
     flex-flow: row;
     height: 5dvh;
     width: 120dvh;
     color: white;
-    background-color: rgb(37, 35, 46);
 
 }
 
@@ -43,7 +41,7 @@
 }
 
 #goalDes {
-    border-right: 1px solid orange;
+    border-right: 1px solid rgba(0, 242, 255, 0.493);
     height: 30dvh;
     width: 70dvh;
     margin-top: 0%;
@@ -55,7 +53,7 @@
 .timingG {
     display: flex;
     justify-content:end;
-    border: 1px solid orange;
+    border: 1px solid rgba(0, 242, 255, 0.493);
     color: white;
     padding-top: 3dvh;
     transition: 0.2s;
@@ -73,7 +71,7 @@ label {
     display: flex;
     justify-self: center;
     justify-content: space-evenly;
-    border: 1px solid orange;
+    border: 1px solid rgba(0, 242, 255, 0.493);
     color: white;
     padding: 10px;
     margin: 10px;
@@ -85,7 +83,7 @@ label {
 }
 
 #once {
-    border-right: 1px solid orange;
+    border-right: 1px solid rgba(0, 242, 255, 0.493);
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
@@ -118,7 +116,6 @@ label {
 .container {
     position: relative;
     bottom: 2dvh;
-    border: 1px solid orange;
     color: white;
     padding: 10px;
     margin: 10px;
@@ -128,7 +125,6 @@ label {
 }
 
 .innercontainer {
-    border-bottom: 1px solid orange;
     color: white;
     padding: 10px;
     transition: 0.2s;
@@ -172,8 +168,9 @@ input.innersubmitA:hover {
 .addbtn {
     background-color: inherit;
     color: white;
-    border: 2px outset orange;
-    width: 20dvh;
+    border: 2px outset rgba(0, 242, 255, 0.493);
+    width: 13dvh;
+    height: 35px;
     cursor: pointer;
 }
 

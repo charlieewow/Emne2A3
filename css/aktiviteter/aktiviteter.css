@@ -31,10 +31,8 @@
     top: 40dvh;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 1dvh;
-    
-    
-}*/
+    height: 1dvh; 
+} */
 
 .activitynavbar {
     padding: 7px;
@@ -70,13 +68,13 @@
     width: 35px;
     height: 35px;
     font-size: xx-large;
-    background-color: orange;
+    background-color: rgba(0, 242, 255, 0.493);
     transition: 0.2s;
 }
 
 .circleplus:hover {
     cursor: pointer;
-    background-color: rgb(167, 74, 3);
+    background-color: rgb(0, 80, 73);
     transition: 0.2s;
 }
 
@@ -92,7 +90,7 @@
 }
 
 .activitiesTheme {
-    background-color: rgb(167, 74, 3);
+    background-color: rgb(0, 80, 73);
     padding: 10px;
     border-radius: 10lh;
     position: relative;
@@ -109,12 +107,12 @@ progress.prog {
 }
 
 progress.prog::-webkit-progress-bar {
-    background-color: orange;
     border-radius: 10lh;
+    background-color: rgb(37, 35, 46);
 }
 
 progress.prog::-webkit-progress-value {
-    background-color: rgb(37, 35, 46);
+    background-color: rgb(0, 242, 255);
     border-radius: 10lh;
 }
 

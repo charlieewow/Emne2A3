@@ -121,9 +121,6 @@ function addGoalView() {
 }
 
 
-
-
-
 // View
 
 function addActView() {
@@ -167,7 +164,7 @@ function addActView() {
             </div>
             <!--<div id="timeframe"><div>-->
             <div id="submitA">
-                <input class="innersubmitA" type="submit" value="Submit">
+                <input class="innersubmitA" type="submit" value="Submit" onclick="saveLocalStorage(); updateViewAddTab()">
             <div>
         </form>
     `;

@@ -2,8 +2,7 @@
 function updateViewTaskPage() {
     let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
-    
-    <div class="logBack">
+    <div class="logBack border">
     <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
     <div class="logContainer">
     <div class="logInnercontainer">
@@ -17,8 +16,6 @@ function updateViewTaskPage() {
     
     </div>
     
-</div>
-</div>
     `;
     logActView();
 }
@@ -26,22 +23,30 @@ function updateViewTaskPage() {
 function logActView() {
     let logview = document.getElementById("logview");
     html = /*html*/`
-<div class="AlogContainer">
-    <div id="posOne">
-<form action="..." id="logTform">
-<div id="logPlan"><h3 class="logh3">planlagte aktiviteter</h3><div class="styled-scrollbars" id="logPlanIn">    
-</div><br></div>
-<input id="submitA" class="addbtnlog" type="submit" value="Submit planlagt"/>
-    
-    </form></div>
-<div id="posTwo">
-<form action="..." id="logTSform">
-<div id="logSpontan"><h3 class="logh3">spontane aktiviteter</h3> <div class="styled-scrollbars" id="logSpontanIn"></div><input id="submitAS" class="addbtnlog" type="submit" value="Submit spontan"/>    
-</div>
+        <div class="AlogContainer">
+            <div id="posOne">
+                <form action="..." id="logTform">
+                    <div id="logPlan">
+                        <h3 class="logh3">planlagte aktiviteter</h3>
+                        <div class="styled-scrollbars" id="logPlanIn">
+                        </div><br>
+                    </div>
+                    <input id="submitA" class="addbtnlog" type="submit" value="Submit planlagt" />
 
-    
-    </form></div>
-    </div>
+                </form>
+            </div>
+            <div id="posTwo">
+                <form action="..." id="logTSform">
+                    <div id="logSpontan">
+                        <h3 class="logh3">spontane aktiviteter</h3>
+                        <div class="styled-scrollbars" id="logSpontanIn"></div><input id="submitAS" class="addbtnlog"
+                            type="submit" value="Submit spontan" />
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
     `;
     if (logview != null) {
         logview.innerHTML = html;

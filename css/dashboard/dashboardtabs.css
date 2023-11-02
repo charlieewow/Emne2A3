@@ -8,14 +8,23 @@ div.dashbutton {
     background-color: inherit;
     border: none;
     color: white;
-    cursor: pointer;
     transition: 0.2s;
 
 }
 
-div.dashbutton:hover {
+.dashbutton:hover {
     background-color: white;
+    cursor: pointer;
     color: black;
     transition: 0.2s;
 }
 
+h1.dashbutton {
+    padding: 10px;
+    transition: 0.2s;
+}
+
+h1.dashbutton:hover {
+    transition: 0.2s;
+    background-color: rgba(0, 242, 255, 0.493);
+}

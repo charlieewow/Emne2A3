@@ -158,6 +158,7 @@ const model = {
                         taskText: "TestText",
                         reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                        progress: 25,
                     },
                     {
                         taskId: "G-D" + 1,
@@ -166,6 +167,7 @@ const model = {
                         taskText: "TestText2",
                         reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                        progress: 75,
                     },
 
                 ],
@@ -179,6 +181,7 @@ const model = {
                         taskText: undefined,
                         reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                        progress: 75,
                     },
 
                 ],
@@ -193,6 +196,7 @@ const model = {
                         taskText: undefined,
                         reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                        progress: 69,
                     },
 
                 ],
@@ -207,6 +211,7 @@ const model = {
                         taskText: undefined,
                         reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                        progress: 50,
                     },
 
                 ],
@@ -221,6 +226,7 @@ const model = {
                         taskText: undefined,
                         reps: {totalReps: '',repsDone: 0,repsLeft: '', },
                         frequency: { repeatsPr: undefined, from: undefined, to: undefined },
+                        progress: 33,
                     },
 
                 ],

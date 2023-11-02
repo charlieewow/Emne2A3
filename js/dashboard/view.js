@@ -6,7 +6,7 @@ function dashView() {
                     <div class="">
                         <div class="flex center">
                             <div class="dashtitle">
-                                <h1>Dashboard</h1>
+                                <h1 class="dashbutton" onclick="dashView()">Dashboard</h1>
                             </div>
                             <div class="flex center">
                                 <div class="dashbutton" onclick="activityView()">Activities</div>
