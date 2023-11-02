@@ -105,14 +105,13 @@ function logActView() {
                 validIDArr.push(validID);
                 standardTaskArrayID.push(passkey);
                 standardTaskArray.push(myStandardTasks[i].name);
-                document.getElementById('logSpontanIn').innerHTML += `<div class="flex border logOption">
-            <div><p>${myStandardTasks[i].name}</p></div> <label for="${passkey}">tema:</label>
-            <select class="dropdown" name='{"name":"NKTemaer"}' onclick="loadoptions(${i})"id=${passkey}>
- </select><input id="valid${passkey}" name='{"name":"${myStandardTasks[i].name}", "index":"${i + 1}", "type":"standard"}' class="logCheck" type="checkbox" onclick="makeReq(${passkey}, ${validID})"/>
-           
-            
-            </div>`;
-
+                document.getElementById('logSpontanIn').innerHTML += `
+                <div class="flex border logOption">
+                    <div><p>${myStandardTasks[i].name}</p></div> <label for="${passkey}">tema:</label>
+                    <select class="dropdown" name='{"name":"NKTemaer"}' onclick="loadoptions(${i})"id=${passkey}></select>
+                    <input id="valid${passkey}" name='{"name":"${myStandardTasks[i].name}", "index":"${i + 1}", "type":"standard"}' class="logCheck" type="checkbox" onclick="makeReq(${passkey}, ${validID})"/>
+                </div>
+                `;
             }
             
             /*if(i ==  myStandardTasks.length-1){
