@@ -10,7 +10,7 @@ function updateViewAddTab() {
         <div class="container">
             <div class="innercontainer">
                 <button  class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
-    <button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>
+    <!--<button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>-->
             </div>
             <div id="selector"></div>
         </div>
@@ -27,7 +27,7 @@ function updateViewAddTabG() {
         <div class="container">
             <div class="innercontainer">
                 <button  class="addbtn" id="backtoAct" onclick="goalsView()">Avslutt</button>
-    <button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>
+    <!--<button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTabG()">Lagre</button>-->
             </div>
             <div id="selector"></div>
         </div>
@@ -53,16 +53,16 @@ function addGoalView() {
     <form action="..." id="addGform">
             <div id="goalDes">
                 <label for="freeDesc">Beskriv målet ditt</label>
-                <input id="freeDesc" type="text" name="description" />
+                <input id="freeDesc" type="text" name="description" required/>
             </div>
             <div id="selectorG">
                 <label for="keyThemes">NK tema:</label>
-                <select class="dropdown" name="NKTemaer" id="keyThemes">
+                <select class="dropdown" name="NKTemaer" id="keyThemes" required>
 
                 </select>
 
                 <label for="selectTask">Aktivitet</label>
-                <select class="dropdown" name="NKActivity" id="selectTask">
+                <select class="dropdown" name="NKActivity" id="selectTask" required>
 
                 </select>
             </div>
@@ -72,16 +72,16 @@ function addGoalView() {
                 <h3>Gjentagelser:</h3>
                 <div id="repeating">
                     <label for="units">tidsenhet</label>
-                    <select id="units" class="dropdown" name="selectUnit">
+                    <select id="units" class="dropdown" name="selectUnit" required>
 
                     </select>
                     <label for="unitrep">repitisjoner</label>
 
-                    <input type="number" id="unitrep" name="unitReps" min="1" />
+                    <input type="number" id="unitrep" name="unitReps" min="1" required/>
                     <label for="fromDate">Fra Dato</label>
-                    <input id="fromDate" type="date" name="fromDate" />
+                    <input id="fromDate" type="date" name="fromDate" required/>
                     <label for="toDate">Frem til Dato</label>
-                    <input id="toDate" type="date" name="toDate" />
+                    <input id="toDate" type="date" name="toDate" required/>
                 </div>
             </div>
             <div id="submitG">
@@ -114,7 +114,7 @@ function addGoalView() {
         console.log(addFormGObject);
 
         //nå kan det brukes i modellen ()?
-        process(addFormGObject, addGForm);
+        processG(addFormGObject, addGForm);
 
 
     })
@@ -136,19 +136,19 @@ function addActView() {
     <form action="..." id="addTform">
             <div id="selectorA">
                 <label for="keyThemes">NK tema:</label>
-                <select class="dropdown" name="NKTemaer" id="keyThemes">
+                <select class="dropdown" name="NKTemaer" id="keyThemes" required>
 
                 </select>
                 <label for="selectTask">Aktivitet</label>
-                <select class="dropdown" name="NKActivity" id="selectTask">
+                <select class="dropdown" name="NKActivity" id="selectTask" required>
 
                 </select>
             </div>
             <div class="timingA">
                 <h3>én gang:</h3> <input type="checkbox" id="checkonce" value="unchecked" onclick="checkingbox(this)" />
                 <div id="once">
-                    <input type="date" name="date" />
-                    <input type="time" name="time" />
+                    <input id="onceDate" type="date" name="date" />
+                    <input id="onceTime" type="time" name="time" />
                 </div>
                 <h3>Gjentagende:</h3> <input type="checkbox" id="checkrep" value="unchecked"
                     onclick="checkingbox(this)" />
@@ -199,7 +199,8 @@ function addActView() {
 
 
         //nå kan det brukes i modellen ()?
-        process(addFormTObject, addTForm);
+        //processA(addFormTObject, addTForm);
+        validA(addFormTObject, addTForm);
 
 
     })

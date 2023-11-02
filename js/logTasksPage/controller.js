@@ -54,7 +54,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                         time: undefined,
                         reps: { totalReps: objects.reps.totalReps, repsDone: 1, repsLeft: objects.reps.totalReps - 1 },
                         isDone: 'False', //true/False 
-                        lastlogged: [rightNow], 
+                        lastlogged: [rightNow],
                         wasDone: { time: ' ', date: ' ' },
                     });
                     console.log(historyArray);
@@ -97,7 +97,7 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
                 if (overviewTwo[actIndex].reps.repsDone == 0) {
                     overviewTwo[actIndex].reps.repsDone += 1;
                     overviewTwo[actIndex].reps.repsLeft = overviewTwo[actIndex].reps.totalReps - overviewTwo[actIndex].repsDone;
-                console.log(overviewTwo[actIndex].reps);
+                    console.log(overviewTwo[actIndex].reps);
                 }
                 else {
                     overviewTwo[actIndex].reps.repsDone += 1;
@@ -128,9 +128,10 @@ function processActLog(workObject, form) {  //denne funksjonen tar i mot data fr
 
     //console.log(newnew);
     //if(workObject.id)
+    ItIsDone();
 }
 
-function processActLogTS(workObject, form) {
+function processActLogTS(workObject, form) { //denne funksjonen tar i mot data om logget spontane aktiviteter
     let theKeys = Object.keys(workObject);
     let entry = Object.entries(workObject);
     console.log(workObject);
@@ -160,6 +161,7 @@ function processActLogTS(workObject, form) {
     }
 
 
+    ItIsDone();
 }
 
 
@@ -192,4 +194,10 @@ function loadoptions(i) {
     }
 
 
+}
+
+
+function ItIsDone() {
+    saveLocalStorage();
+    dashView();
 }

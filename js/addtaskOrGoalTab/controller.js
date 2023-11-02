@@ -15,27 +15,56 @@ addForm.addEventListener('click', function(event){
 console.log("??");
 })*/
 
-function checkingbox(box) {
+function checkingbox(box) { //sørger for at begge boksene ikke kan være checked samtidig
     let repeatbox = document.getElementById("checkrep");
     let oncebox = document.getElementById("checkonce");
     let otherbox;
+    let idArrayOnce = ["onceDate", "onceTime"];
+    let idArrayRep = ["units", "unitrep", "fromDate", "toDate"];
     //box.value = "checked";
     if (box == repeatbox) {
         if (oncebox.checked == true) {
             //oncebox.value = "unchecked";
             oncebox.checked = false;
+            for (let IDF of idArrayOnce) {
+                let elementF = document.getElementById(IDF);
+                elementF.required = false;
+            }
+        }
+        for (let ID of idArrayRep) {
+            let element = document.getElementById(ID);
+            element.required = true;
         }
     }
     else if (box == oncebox) {
         if (repeatbox.checked == true) {
             //repeatbox.value = "unchecked";
             repeatbox.checked = false;
+            for (let IDF of idArrayRep) {
+                let elementF = document.getElementById(IDF);
+                elementF.required = false;
+            }
+        }
+        for (let ID of idArrayOnce) {
+            let element = document.getElementById(ID);
+            element.required = true;
         }
     }
 
 }
 
-function process(object, form) {
+function validA(addFormTObject, addTForm){ //om du har trykket på submit uten å fylle ut skjema, blir data ikke sendt videre til processA
+    
+    let idArr= ["checkonce","checkrep"]
+    let validOnce = document.getElementById(idArr[0]);
+    let validRep = document.getElementById(idArr[1]);
+    if(validOnce.checked || validRep.checked){
+        processA(addFormTObject, addTForm);
+    }
+    else{alert('velg "én gang" eller "gjentagende"');}
+}
+
+function processA(object, form) { //data fra legg til aktivitet
     console.log(form.id);
     console.log(object.date);
     let workObject = object;
@@ -52,10 +81,15 @@ function process(object, form) {
             proRep(workObject);
         }
     }
+}
+
+function processG(object, form) { //data fra legg til mål
+    let workObject = object;
+
     if (form.id == "addGform") {
         //model.data.goalList;
-        console.log("mål");
-        console.log(workObject.NKActivity);
+        //console.log("mål");
+        //console.log(workObject.NKActivity);
         let daily = model.data.goalList.daily;
         let weekly = model.data.goalList.weekly;
         let monthly = model.data.goalList.monthly;
@@ -98,8 +132,9 @@ function proOnce(newData) {
         time: newData.time,
 
     },);
-    loggedToModel();
+    loggedToModelA();
 }
+
 function proRep(newData) {
     console.log(newData);
     let repTime = model.data.plannedActList.repeat;
@@ -112,7 +147,7 @@ function proRep(newData) {
         frequency: { unit: newData.selectUnit, repeatsPr: newData.unitReps, from: newData.fromDate, to: newData.toDate },
 
     },);
-    loggedToModel();
+    loggedToModelA();
 }
 
 //disse hører til mål
@@ -129,7 +164,7 @@ function proDay(newData, daily) {
             to: newData.toDate
         }
     })
-    loggedToModel();
+    loggedToModelG();
 }
 function proWeek(newData, weekly) {
     let i = weekly.length + 1;
@@ -144,7 +179,7 @@ function proWeek(newData, weekly) {
             to: newData.toDate
         }
     })
-    loggedToModel();
+    loggedToModelG();
 }
 function proMonth(newData, monthly) {
     let i = monthly.length + 1;
@@ -159,7 +194,7 @@ function proMonth(newData, monthly) {
             to: newData.toDate
         }
     })
-    loggedToModel();
+    loggedToModelG();
 }
 function proYear(newData, yearly) {
     let i = yearly.length + 1;
@@ -174,7 +209,7 @@ function proYear(newData, yearly) {
             to: newData.toDate
         }
     })
-    loggedToModel();
+    loggedToModelG();
 }
 function pro5Year(newData, five) {
     let i = five.length + 1;
@@ -189,13 +224,20 @@ function pro5Year(newData, five) {
             to: newData.toDate
         }
     })
-    loggedToModel();
+    loggedToModelG();
 }
 
-function loggedToModel() {
+function loggedToModelA() {
     alert("new was logged!");
     countUp();
-    //saveLocalStorage();
+    saveLocalStorage();
+    activityView();
+}
+function loggedToModelG() {
+    alert("new was logged!");
+    countUp();
+    saveLocalStorage();
+    goalsView();
 }
 /*
 {

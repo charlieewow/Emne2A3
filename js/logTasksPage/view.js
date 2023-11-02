@@ -7,9 +7,9 @@ function updateViewTaskPage() {
     <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
     <div class="logContainer">
     <div class="logInnercontainer">
-    <button  class="addbtnlog" id="backtoAct" onclick="dashView()">Avslutt</button>
-    <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>-->
-   <button class="addbtnlog" onclick="saveLocalStorage()">lagre logg</button>
+   <button  class="addbtnlog" id="backtoAct" onclick="dashView()">Avslutt</button>
+    <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>
+   <button class="addbtnlog" onclick="saveLocalStorage()">lagre logg</button>-->
     </div>
 
     <div id="logview">
@@ -82,7 +82,7 @@ function logActView() {
             let passport = myRepeatTasks[i + 1].taskId;
             console.log(myRepeatTasks[i + 1].taskId);
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
-            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} <br> gjort ${myRepeatTasks[i+1].reps.repsDone} av ${myRepeatTasks[i+1].reps.totalReps}</p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
+            <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} <br> gjort ${myRepeatTasks[i + 1].reps.repsDone} av ${myRepeatTasks[i + 1].reps.totalReps}</p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox"/>
             
             </div>`;
 
