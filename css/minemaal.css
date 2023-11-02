@@ -40,8 +40,8 @@
     width: 20dvh;
     cursor: pointer;
     height: 4dvh;
-    position: absolute;
-    right: 70dvh;
+    position: fixed;
+    left: 60dvh;
 }
 
 .styled-scrollbars2 {
