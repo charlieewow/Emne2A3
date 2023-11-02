@@ -58,8 +58,10 @@
     width: 20dvh;
     cursor: pointer;
     height: 4dvh;
-    position: absolute;
-    right: 70dvh;
+    margin-bottom: 1dvh;
+    position: fixed;
+    left: 60dvh;
+    
 }
 
 .circleplus {
