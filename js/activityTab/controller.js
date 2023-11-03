@@ -1,6 +1,7 @@
 
 let selectedNK = 'all';
-
+let myOnceTasks = model.data.plannedActList.once;
+let myRepeatTasks = model.data.plannedActList.repeat;
 
 function chooseNK(ddmNK) {
     selectedNK = ddmNK.value;
@@ -8,8 +9,8 @@ function chooseNK(ddmNK) {
 }
 
 function loadActivity() {
-let myOnceTasks = model.data.plannedActList.once;
-let myRepeatTasks = model.data.plannedActList.repeat;
+myOnceTasks = model.data.plannedActList.once;
+myRepeatTasks = model.data.plannedActList.repeat;
     console.log('kjør');
     let onceList = '';
     let repeatList = '';
