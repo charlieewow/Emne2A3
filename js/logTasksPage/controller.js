@@ -3,7 +3,8 @@ function validAcheck(workObject, form){
 let count = 0;
 for( let U of validAArr){
     let options = document.getElementById(U);
-    if(options.checked){
+    console.log(options.checked);
+    if(options && options?.checked){
         count++;
     }
 }
