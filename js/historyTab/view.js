@@ -2,11 +2,26 @@
 
 //updateViewHistory();
 function updateViewHistory(){
+    
     document.getElementById("dashcontent").innerHTML = /*html*/ `
-    <button class="addbtn" onclick="dashView()">Avslutt</button>
-    <input type="date"/>
+    <div id="content" class="historyApp" >
+    <div id="topLeft" class="topLeft bar2"></div>
+    <div id="midColumn"></div>
+    <div id="topRight" class="topRight bar2"></div>
+  
+  
+    
+    
+    
+    
+    
+    
+    </div>
+    
     `;
+    loadNotDoneHistory();
+    loadDoneHistory();
+    barGraph();
     //app.innerHTML = html;
+    
 }
-
-
