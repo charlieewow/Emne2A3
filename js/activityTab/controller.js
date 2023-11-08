@@ -1,7 +1,6 @@
 
 let selectedNK = 'all';
-let myOnceTasks = model.data.plannedActList.once;
-let myRepeatTasks = model.data.plannedActList.repeat;
+
 
 function chooseNK(ddmNK) {
     selectedNK = ddmNK.value;
@@ -9,15 +8,15 @@ function chooseNK(ddmNK) {
 }
 
 function loadActivity() {
-myOnceTasks = model.data.plannedActList.once;
-myRepeatTasks = model.data.plannedActList.repeat;
+let myOnceTasks = model.data.plannedActList.once;
+let myRepeatTasks = model.data.plannedActList.repeat;
     console.log('kjør');
     let onceList = '';
     let repeatList = '';
     document.getElementById('keySkillAdd').innerHTML = '';
     for (let i = 1; i < myOnceTasks.length; i++) {
         let histArray = model.data.activityHistory.planned;
-        let taskId = myOnceTasks[i + 1]?.taskId; // replace this with your taskId
+        let taskId = myOnceTasks[i]?.taskId; // replace this with your taskId
         let histindex = histArray.findIndex(obj => obj.oldId === taskId);
         console.log(histindex);
         console.log(histArray[histindex]);
