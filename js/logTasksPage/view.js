@@ -4,7 +4,7 @@ function updateViewTaskPage() {
     document.getElementById("dashcontent").innerHTML = /*html*/ `
     <div class="logBack">
         <div class="logContainer">
-            <div id="logview" class="flex center"></div>
+            <div id="logview" class="flex center"></div></div></div>
     `;
     logActView();
 }
@@ -30,7 +30,7 @@ function logActView() {
                         <h3 class="logh3">spontane aktiviteter</h3>
                         <div class="styled-scrollbars" id="logSpontanIn"></div>
                     </div>
-                    <input id="submitAS" class="addbtnlog"type="submit" value="Submit spontan" />
+                    <input id="submitAS" class="addbtnlog" type="submit" value="Submit spontan" />
                 </form>
             </div>
         </div>
