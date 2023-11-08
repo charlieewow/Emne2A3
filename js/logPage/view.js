@@ -4,7 +4,6 @@ function updateViewLogTab() {
     
     html = /*html*/ `
     <button onclick="updateViewDash()">Tilbake til Dash</button>
-    
     `;
     app.innerHTML = html;
 }
@@ -18,9 +17,8 @@ function updateViewDiaryPage() {
     document.getElementById("dashcontent").innerHTML = /*html*/ `
     <div class="logBack flex center">
             <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
-            <div class="logContainer">
+            <div class="logContainer logContrainer2">
                 <div class="logInnercontainer">
-                    <button class="addbtnlog" id="backtoAct" onclick="confirmQuit()">Avslutt</button>
                     <!--<button class="addbtnlog" id="addAct" onclick="logActView()">Logg aktivitet</button>-->
                     <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>-->
                     <button class="addbtnlog" onclick="logProcess()">lagre logg</button>

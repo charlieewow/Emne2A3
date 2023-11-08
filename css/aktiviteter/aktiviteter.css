@@ -1,38 +1,33 @@
 .activitywrapper {
     height: 400px;
-    top:33dvh;
+    top: 33dvh;
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 600px;
 
-    
+
 }
 
 .styled-scrollbars {
     /* Foreground, Background */
     scrollbar-color: transparent transparent;
-  }
-  .styled-scrollbars::-webkit-scrollbar {
-    width: 10px; /* Mostly for vertical scrollbars */
-    
-  }
-  .styled-scrollbars::-webkit-scrollbar-thumb { /* Foreground */
-    background: transparent;
-  }
-  .styled-scrollbars::-webkit-scrollbar-track { /* Background */
-    background: transparent;
-  }
+}
 
-/*.inneractivitywrapper {
-    padding: 10px;
-    width: 90%;
-    position: absolute;
-    top: 40dvh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 1dvh; 
-} */
+.styled-scrollbars::-webkit-scrollbar {
+    width: 10px;
+    /* Mostly for vertical scrollbars */
+}
+
+.styled-scrollbars::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: transparent;
+}
+
+.styled-scrollbars::-webkit-scrollbar-track {
+    /* Background */
+    background: transparent;
+}
 
 .activitynavbar {
     padding: 7px;
@@ -40,16 +35,13 @@
     align-items: center;
     position: fixed;
     width: 600px;
-    
-   height: 150px;
-   bottom: 55dvh;
-   
-   overflow-x: hidden;
-   overflow-y: hidden;
-
-   
+    height: 150px;
+    bottom: 55dvh;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
-.addbtnA{
+
+.addbtnA {
     background-color: inherit;
     color: white;
     border: 2px outset orange;
@@ -59,12 +51,12 @@
     margin-bottom: 1dvh;
     position: fixed;
     left: 60dvh;
-    
+
 }
 
 .circleplus {
     position: absolute;
-    top: 3dvh;
+    top: 5px;
     right: 3%;
     border-radius: 100%;
     width: 35px;
@@ -104,7 +96,7 @@
     position: static;
 }
 
-progress.prog { 
+progress.prog {
     border-radius: 10lh;
 }
 
@@ -118,9 +110,9 @@ progress.prog::-webkit-progress-value {
     border-radius: 10lh;
 }
 
-#keySkillAdd{
+#keySkillAdd {
     position: relative;
-    bottom:3dvh;
+    bottom: 3dvh;
 }
 
 #keySkills {
@@ -130,7 +122,7 @@ progress.prog::-webkit-progress-value {
     text-transform: capitalize;
 }
 
-hr.activityhr{
+hr.activityhr {
     width: 600px;
     position: fixed;
     bottom: 66dvh;

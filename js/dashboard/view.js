@@ -15,43 +15,54 @@ function dashView() {
                         <div class="dashbutton" onclick="updateViewDiaryPage()">Daily Log</div>
                         <div class="dashbutton" onclick="updateViewTaskPage()">Log Activities</div>
                     </div>
-                    <div class="logout" onclick="backToLogin()">
-                        Log out
+                    <div class="dashcircle">
+                        <i class="dashcirlce fa-solid fa-user"></i>
+                        <div class="dashDrop">
+                            <div>${model.data.user.userName}</div>
+                            <div class="logout" onclick="backToLogin()">
+                                Log out
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr class="dashHR">
             </div>
         </div>
     </div>
-    <div class="dashmiddlesection textaligncenter">
+    <div class="dashmiddlesection  textaligncenter ">
         <div id="dashcontent">
-            <div class="dashgrid ">
+            <div class="dashgrid dashbackgroundimage">
                 <div class="dashside ">
                     <div>
                         <h1>Dagens mål</h1>
                     </div>
                     <div class="dashsideinnards">
-                        <div id="dashGoals" class="">
-                            
+                        <div id="dashGoals" class=""></div>
+                        <div class="flex center">
+                            <p class="semer" onclick="goalsView()">-- Se Mer --</p>
                         </div>
                     </div>
                     <h1>Nåværende uke:</h1>
                     <div class="dashsideinnards">
-                        <div id="" class="">
-                            <div>jogge</div>
-                            <div>jogge</div>
-                            <div>jogge</div>
-                            <div>jogge</div>
-                            <div>jogge</div>
+                        <div id="dashDiary" class=""></div>
+                        <div class="flex center">
+                            <p class="semer" onclick="updateViewHistory()">-- Se Mer --</p>
                         </div>
                     </div>
                 </div>
-                <div class="dashmain border">
-                    monkety
+                <div class="dashmain ">
+                    <div class="dashmainlogin">
+                        
+                    </div>
+                    <div class="dashinnermain">
+                        <p>Activity Tracker</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
     `;
+
+    loadDashContent(currentDate);
 }

@@ -2,12 +2,11 @@ function activityView() {
     loadLocalStorage();
 
     let activity = model.interface.activity.selectedNK;
-    document.getElementById("dashcontent").innerHTML = 
+    document.getElementById("dashcontent").innerHTML =
     /*HTML*/` 
-    <div class="activitywrapper styled-scrollbars">
+    <div class="activitywrapper styled-scrollbars2">
         <div class="inneractivitywrapper">
             <div class="activitynavbar">
-            <button class="addbtnA" onclick="dashView()">Avslutt</button>
                 <form action="...">
                     <label for="keySkills"></label>
                     <select name="nøkkelkompetanser" id="keySkills" onchange='chooseNK(this)'></select>
@@ -20,8 +19,8 @@ function activityView() {
         </div>
     </div>
     `;
-  
-    
+
+
     for (i in activity) {
         document.getElementById("keySkills").innerHTML += `<option  value="${activity[i]}">${activity[i]}</option>`;
     }

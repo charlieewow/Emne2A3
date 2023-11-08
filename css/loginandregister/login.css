@@ -87,3 +87,12 @@ p.forgotPW:hover {
     border-radius: 5%;
     background: rgba(0, 242, 255, 0.164);
 }
+
+#userField, #passField, #regiUserField, #regiEmailField, #regiPassField, #repeatPassField {
+    display: none;
+    color: rgb(240, 109, 109);
+    font-size: small;
+    text-align: left;
+    margin-left: 120px;
+}
+

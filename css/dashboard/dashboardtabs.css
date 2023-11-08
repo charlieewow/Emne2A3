@@ -1,6 +1,7 @@
 div.dashbutton {
     text-align: center;
-    font-size: small;
+    font-size: medium;
+    border-radius: 60px 30px;
     padding: 12px;
     width: 120px;
     margin-left: 5px;
@@ -21,6 +22,7 @@ div.dashbutton {
 
 h1.dashbutton {
     padding: 10px;
+    border-radius: 30px 30px;
     transition: 0.2s;
 }
 

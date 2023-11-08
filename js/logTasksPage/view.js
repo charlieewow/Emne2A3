@@ -2,20 +2,9 @@
 function updateViewTaskPage() {
     let logview = document.getElementById("logview");
     document.getElementById("dashcontent").innerHTML = /*html*/ `
-    <div class="logBack border">
-    <!--<img class="decor" id="loginimg" src="img/loginimage.png">-->
-    <div class="logContainer">
-    <div class="logInnercontainer">
-   <button  class="addbtnlog" id="backtoAct" onclick="dashView()">Avslutt</button>
-    <!--<button  class="addbtnlog" id="addGoal" onclick="logDiaryView(); loadLocalStorage()">Logg dagbok</button>
-   <button class="addbtnlog" onclick="saveLocalStorage()">lagre logg</button>-->
-    </div>
-
-    <div id="logview">
-    
-    
-    </div>
-    
+    <div class="logBack">
+        <div class="logContainer">
+            <div id="logview" class="flex center"></div>
     `;
     logActView();
 }
@@ -39,11 +28,9 @@ function logActView() {
                 <form action="..." id="logTSform">
                     <div id="logSpontan">
                         <h3 class="logh3">spontane aktiviteter</h3>
-                        <div class="styled-scrollbars" id="logSpontanIn"></div><input id="submitAS" class="addbtnlog"
-                            type="submit" value="Submit spontan" />
+                        <div class="styled-scrollbars" id="logSpontanIn"></div>
                     </div>
-
-
+                    <input id="submitAS" class="addbtnlog"type="submit" value="Submit spontan" />
                 </form>
             </div>
         </div>
@@ -106,8 +93,8 @@ function logActView() {
                 standardTaskArrayID.push(passkey);
                 standardTaskArray.push(myStandardTasks[i].name);
                 document.getElementById('logSpontanIn').innerHTML += `
-                <div class="flex border logOption">
-                    <div><p>${myStandardTasks[i].name}</p></div> <label for="${passkey}">tema:</label>
+                <div class="flex border logOption spontangrid">
+                    <div><p>${myStandardTasks[i].name}</p></div> <label for="${passkey}"></label>
                     <select class="dropdown" name='{"name":"NKTemaer"}' onclick="loadoptions(${i})"id=${passkey}></select>
                     <input id="valid${passkey}" name='{"name":"${myStandardTasks[i].name}", "index":"${i + 1}", "type":"standard"}' class="logCheck" type="checkbox" onclick="makeReq(${passkey}, ${validID})"/>
                 </div>

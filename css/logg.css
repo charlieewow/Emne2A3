@@ -4,12 +4,19 @@ td {
 }
 
 table.logtable {
-    border: 1px solid rgba(0, 242, 255, 0.493);
     border-collapse: collapse;
     width: 80%;
     height: 40dvh;
 }
 
+div.spontangrid {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+}
+
+.radius {
+    border-radius: 30px;
+}
 
 .logSpace {
     background-color: inherit;
@@ -43,23 +50,32 @@ button.addbtnlog {
 .addbtnlog {
     background-color: inherit;
     color: white;
-    border: 2px outset rgba(0, 242, 255, 0.493);
     cursor: pointer;
 }
 
+button.addbtnlog {
+    border: 2px outset rgba(0, 242, 255, 0.493);
+}
+
+input.addbtnlog {
+    border-radius: 30px;
+    padding: 8px;
+}
+
+.logContrainer2 {
+    width: 100%;
+}
+
 .logContainer {
-    position: relative;
     color: white;
     padding: 10px;
     margin: 10px;
     transition: 0.2s;
-    width: 100%;
     height: 72dvh;
 }
 
 .AlogContainer {
     position: relative;
-    border: 1px solid rgba(0, 242, 255, 0.493);
     color: white;
     padding: 10px;
     margin: 10px;
@@ -97,7 +113,6 @@ button.addbtnlog {
 }
 
 #logSpontanIn {
-    border-left: 1px solid rgba(0, 242, 255, 0.493);
     padding-top: 1dvh;
     padding-left: 2dvh;
     padding-right: 1dvh;
@@ -170,9 +185,6 @@ margin: 0%;
 #submitA{
     z-index: 1000;
     background-color: inherit;
-    margin-top: 5dvh;
-margin-right: 20dvh;
-
 }
 #posOne{
     

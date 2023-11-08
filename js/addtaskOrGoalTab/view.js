@@ -8,11 +8,11 @@ function updateViewAddTab() {
     <div class="back">
         <img class="decor" id="loginimg" src="">
         <div class="container">
-            <div class="innercontainer">
-                <button  class="addbtn" id="backtoAct" onclick="activityView()">Avslutt</button>
-    <!--<button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTab()">Lagre</button>-->
-            </div>
+            <div class="innercontainer"></div>
             <div id="selector"></div>
+            <div id="submitA">
+                <input class="innersubmit submit" type="submit" value="Submit" onclick="saveLocalStorage(); updateViewAddTab()">
+            <div>
         </div>
     </div>
     `;
@@ -25,11 +25,11 @@ function updateViewAddTabG() {
     <div class="back">
         <img class="decor" id="loginimg" src="">
         <div class="container">
-            <div class="innercontainer">
-                <button  class="addbtn" id="backtoAct" onclick="goalsView()">Avslutt</button>
-    <!--<button  class="addbtn" id="saveAdd" onclick="saveLocalStorage(); updateViewAddTabG()">Lagre</button>-->
-            </div>
+            <div class="innercontainer"></div>
             <div id="selector"></div>
+            <div id="submitG">
+                <input class="innersubmit submit" type="submit" value="Submit">
+            <div>
         </div>
     </div>
     `;
@@ -51,43 +51,44 @@ function addGoalView() {
     let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUnit;
     html = /*html*/ `
     <form action="..." id="addGform">
+        <div id="selectorG" class="flex center">
+            <div class="textaligncenter">
+                <div><label for="keyThemes">NK tema:</label></div>
+                <div><select class="dropdown" name="NKTemaer" id="keyThemes"></select>   </div>
+            </div>
+            <div class="textaligncenter">
+                <div><label for="selectTask">Aktivitet</label></div>
+                <div><select class="dropdown" name="NKActivity" id="selectTask"></select></div>
+            </div>
+        </div>
+        <div class="grid center">
             <div id="goalDes">
-                <label for="freeDesc">Beskriv målet ditt</label>
-                <input id="freeDesc" type="text" name="description" required/>
-            </div>
-            <div id="selectorG">
-                <label for="keyThemes">NK tema:</label>
-                <select class="dropdown" name="NKTemaer" id="keyThemes" required>
-
-                </select>
-
-                <label for="selectTask">Aktivitet</label>
-                <select class="dropdown" name="NKActivity" id="selectTask" required>
-
-                </select>
-            </div>
-            <!--<button class="addbtn" onclick="onceView(TGForm)">én gang</button>-->
-            <div class="timingG">
-                <!--<button class="addbtn" onclick="repeatView(TGform)">Gjentagende</button>-->
-                <h3>Gjentagelser:</h3>
-                <div id="repeating">
-                    <label for="units">tidsenhet</label>
-                    <select id="units" class="dropdown" name="selectUnit" required>
-
-                    </select>
-                    <label for="unitrep">repitisjoner</label>
-
-                    <input type="number" id="unitrep" name="unitReps" min="1" required/>
-                    <label for="fromDate">Fra Dato</label>
-                    <input id="fromDate" type="date" name="fromDate" required/>
-                    <label for="toDate">Frem til Dato</label>
-                    <input id="toDate" type="date" name="toDate" required/>
+                <div>
+                    <div><label for="freeDesc">Beskriv målet ditt</label></div>
+                    <div><input id="freeDesc" type="text" name="description" /></div>
                 </div>
             </div>
-            <div id="submitG">
-                <input type="submit" value="Submit">
-            <div>
-        </form>
+            <div class="timingG">
+                <h3>Gjentagelser:</h3>
+                <div id="repeating">
+                    <div class="grid">
+                        <div class="spacing">
+                            <div><label for="units">tidsenhet</label></div>
+                            <div><label for="unitrep">repitisjoner</label></div>
+                            <div><label for="fromDate">Fra Dato</label></div>
+                            <div><label for="toDate">Frem til Dato</label></div>
+                        </div>
+                        <div class="spacing center">
+                            <div><select id="units" class="dropdown" name="selectUnit"></select></div>
+                            <div><input type="number" id="unitrep" name="unitReps" min="1" /></div>
+                            <div><input id="fromDate" type="date" name="fromDate" /></div>
+                            <div><input id="toDate" type="date" name="toDate" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     `;
     selector.innerHTML = html;
     for (i in theme) {
@@ -131,42 +132,59 @@ function addActView() {
     let timeUnit = model.interface.addGoalAct.taskFrequency.repeats.taskFrequencyUnit;
     html = /*html*/ `
     <form action="..." id="addTform">
-            <div id="selectorA">
-                <label for="keyThemes">NK tema:</label>
-                <select class="dropdown" name="NKTemaer" id="keyThemes" required>
-
-                </select>
-                <label for="selectTask">Aktivitet</label>
-                <select class="dropdown" name="NKActivity" id="selectTask" required>
-
-                </select>
+        <div id="selectorA" class="flex center">
+            <div class="textaligncenter">
+                <div><label for="keyThemes">NK tema:</label></div>
+                <select class="dropdown" name="NKTemaer" id="keyThemes"></select>
             </div>
-            <div class="timingA">
-                <h3>én gang:</h3> <input type="checkbox" id="checkonce" value="unchecked" onclick="checkingbox(this)" />
-                <div id="once">
-                    <input id="onceDate" type="date" name="date" />
-                    <input id="onceTime" type="time" name="time" />
-                </div>
-                <h3>Gjentagende:</h3> <input type="checkbox" id="checkrep" value="unchecked"
-                    onclick="checkingbox(this)" />
-                <div id="repeating">
-                    <label for="units">tidsenhet</label>
-                    <select id="units" class="dropdown" name="selectUnit">
-                    </select>
-                    <label for="unitrep">repetisjoner</label>
-
-                    <input type="number" id="unitrep" name="unitReps" min="1" />
-                    <label for="fromDate">Fra Dato</label>
-                    <input id="fromDate" type="date" name="fromDate" />
-                    <label for="toDate">Frem til Dato</label>
-                    <input id="toDate" type="date" name="toDate" />
-                </div>
+            <div class="textaligncenter">
+                <div><label for="selectTask">Aktivitet</label></div>
+                <select class="dropdown" name="NKActivity" id="selectTask"></select>
             </div>
-            <!--<div id="timeframe"><div>-->
-            <div id="submitA">
-                <input class="innersubmitA" type="submit" value="Submit" onclick="saveLocalStorage(); updateViewAddTab()">
+        </div>
+        <div class="grid">
             <div>
-        </form>
+                <div class="flex alignright">
+                    <h3>én gang:</h3> 
+                    <input type="checkbox" id="checkonce" value="unchecked" onclick="checkingbox(this)" />
+                </div>
+                <div class="flex alignright">
+                    <h3>Gjentagende:</h3> 
+                    <input type="checkbox" id="checkrep" value="unchecked"onclick="checkingbox(this)"/>
+                </div>
+            </div>
+            <div class="checkedchoice">
+                <div id="once">
+                    <div class="grid">
+                        <div class="spacing">
+                            <div><label for="">Dato</label></div>
+                            <div><label for="">Tidsenhet</label></div>
+                        </div>
+                        <div class="spacing">
+                            <div><input type="date" name="date" /></div>
+                            <div><input type="time" name="time" /></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="repeating">
+                    <div class="grid">
+                        <div class="spacing">
+                            <div class="lol"><label for="units">tidsenhet</label></div>
+                            <div class="lol"><label for="unitrep">repetisjoner</label></div>
+                            <div class="lol"><label for="fromDate">Fra Dato</label></div>
+                            <div class="lol"><label for="toDate">Frem til Dato</label></div>
+                        </div>
+                        <div class="spacing">
+                            <div class="lol"><select id="units" name="selectUnit" class="inputsandselects"></select></div>
+                            <div class="lol"><input type="number" id="unitrep" name="unitReps" min="1" class="inputsandselects"/></div>
+                            <div class="lol"><input id="fromDate" type="date" name="fromDate" class="inputsandselects"/></div>
+                            <div class="lol"><input id="toDate" type="date" name="toDate" class="inputsandselects"/></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     `;
     selector.innerHTML = html;
     for (i in theme) {

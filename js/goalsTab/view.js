@@ -1,9 +1,8 @@
 function goalsView() {
     document.getElementById("dashcontent").innerHTML = /*HTML*/`
-        <div class="goalback styled-scrollbars">
+        <div class="goalback styled-scrollbars2">
             <div class="goalwrapper ">
                 <div class="goalnavbar">
-                    <button class="addbtnG" onclick="dashView()">Avslutt</button>
                     <div class="circleplus flex center" onclick="updateViewAddTabG()">+</div>
 
                     <h1>Mine Mål</h1>
