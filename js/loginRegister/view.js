@@ -21,7 +21,6 @@ function loginView(){
                 <button class="signUp" onclick="sendToRegisterUser()">Sign up</button>
             </div>
         </div>
-        <button onclick="dashView()">To Dash</button>
     `;
 
     loadLocalStorage();
