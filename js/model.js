@@ -399,14 +399,33 @@ function loadLocalStorage(){
     let storedArray = JSON.parse(localStorage.getItem('TaskArray'));
     //console.log(storedArray);
     taskList = storedArray;
-    updateModel();
+    updateModel(taskList);
     
 }
-function updateModel(){
+function updateModel(taskList){
     model.data = taskList;
+}
+function saveLocalStorageNewThemeAct(){
+    let saveData = model.interface.addGoalAct;
+    let stringArrayTA = JSON.stringify(saveData);
+    localStorage.setItem('ThemeActArray', stringArrayTA);
+    console.log(stringArrayTA);
+}
+
+function loadLocalStorageNewThemeAct(){
+    if(!localStorage.getItem('ThemeActArray'))return;
+    let storedArrayTA = JSON.parse(localStorage.getItem('ThemeActArray'));
+    //console.log(storedArray);
+    taskListTA = storedArrayTA;
+    updateModelTA(taskListTA);
+    
+}
+function updateModelTA(taskListTA){
+    model.interface.addGoalAct = taskListTA;
 }
 function clearLocalStorage(){
     localStorage.removeItem('TaskArray');
+    localStorage.removeItem('ThemeActArray');
 }
 
 /*

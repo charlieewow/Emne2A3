@@ -91,6 +91,18 @@ input.submit {
     cursor: pointer;
 }
 
+#addT{
+    position: relative;
+    
+}
+#addA{
+    position: relative;
+    
+}
+.addMore{
+    position: relative;
+    
+}
 .addbtn:hover {
     background-color: rgb(45, 43, 56);
     transition: 0.2s;
