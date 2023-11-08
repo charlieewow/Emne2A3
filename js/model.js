@@ -261,22 +261,54 @@ activityHistory: {
     {
         taskId: "A-H-P" +0,
         oldId: '',
-        name: undefined,
-        theme: undefined,
+        name: "Jogge",
+        theme: "vanedanning",
         reps: { totalReps: '', repsDone: 0, repsLeft: '' },
         date: {from: '', to:''},
         time: undefined,
-        isDone: 'False', //true/False
+        isDone: 'true', //true/False
+        lastlogged: [], 
+        wasDone: {time: ' ', date: ' '},
+    },
+    {
+        taskId: "A-H-P" +1,
+        oldId: '',
+        name: "Løpe",
+        theme: "vanedanning",
+        reps: { totalReps: '', repsDone: 0, repsLeft: '' },
+        date: {from: '', to:''},
+        time: undefined,
+        isDone: 'false', //true/False
+        lastlogged: [], 
+        wasDone: {time: ' ', date: ' '},
+    },
+    {
+        taskId: "A-H-P" +2,
+        oldId: '',
+        name: "Danse",
+        theme: "vanedanning",
+        reps: { totalReps: '', repsDone: 0, repsLeft: '' },
+        date: {from: '', to:''},
+        time: undefined,
+        isDone: 'true', //true/False
         lastlogged: [], 
         wasDone: {time: ' ', date: ' '},
     },
 ],
-    spontan: [{
+    spontan: [
+        {
         taskId: "A-H-S" +0,
-        name: undefined,
-        theme: undefined,
-        done: {time: ' ', date: ' '},
-            
+        name: 'Jogge',
+        theme: "vanedanning",
+        isDone: 'true',
+        done: {time: ' ', date: ' '},    
+    },
+        {
+        taskId: "A-H-S" +1,
+        name: 'Løpe',
+        theme: "vanedanning",
+        isDone: 'false',
+        done: {time: ' ', date: ' '},    
     },
 ],
 },

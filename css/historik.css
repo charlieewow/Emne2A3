@@ -1,0 +1,23 @@
+
+
+.historyApp {
+    
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    height: 700px;
+    width: 1000px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    
+
+
+}
+
+.bar2{
+    
+    height: 350px;
+    width: 500px;
+
+}
+
