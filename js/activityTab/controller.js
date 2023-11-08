@@ -14,7 +14,7 @@ let myRepeatTasks = model.data.plannedActList.repeat;
     let onceList = '';
     let repeatList = '';
     document.getElementById('keySkillAdd').innerHTML = '';
-    for (let i = 1; i < myOnceTasks.length; i++) {
+    for (let i = 0; i < myOnceTasks.length; i++) {
         let histArray = model.data.activityHistory.planned;
         let taskId = myOnceTasks[i]?.taskId; // replace this with your taskId
         let histindex = histArray.findIndex(obj => obj.oldId === taskId);
@@ -32,7 +32,7 @@ let myRepeatTasks = model.data.plannedActList.repeat;
             </div>`;
         }
     }
-    for (let y = 1; y < myRepeatTasks.length; y++) {
+    for (let y = 0; y < myRepeatTasks.length; y++) {
         let progValue = (myRepeatTasks[y].reps.repsDone / myRepeatTasks[y].reps.totalReps) * 100;
         if (myRepeatTasks[y].name && (selectedNK == myRepeatTasks[y].theme || selectedNK == 'all') && progValue < 100) {
             

@@ -10,7 +10,7 @@ function loadNotDoneHistory() {
 
   for (let i = 0; i < planned.length; i++) {
     if (!planned[i].isDone){
-      loadedHistory += `<div class="flex activitiesTheme border">
+      loadedHistory += `<div class="historygrid activitiesTheme border">
             <div><p> ${planned[i].name}</p></div>
             <div><p> ${planned[i].theme}</p></div>
             </div>`;
@@ -19,7 +19,7 @@ function loadNotDoneHistory() {
   }
   for (let i = 0; i < spontaneous.length; i++) {
     if (!spontaneous.isDone) {
-      loadedHistory += `<div class="flex activitiesTheme border"> 
+      loadedHistory += `<div class="historygrid activitiesTheme border">
       <div><p> ${spontaneous[i].name}</p></div>
       <div><p> ${spontaneous[i].theme}</p></div>
       </div>`;
@@ -36,7 +36,7 @@ function loadDoneHistory(){
   
   for (let i = 0; i < planned.length; i++) {
   if (planned[i].isDone){
-  lHistory += `<div class="flex activitiesTheme border">
+  lHistory += `<div class="historygrid activitiesTheme border">
             <div><p> ${planned[i].name}</p></div>
             <div><p> ${planned[i].theme}</p></div>
             </div>`;
@@ -45,7 +45,7 @@ function loadDoneHistory(){
   }
   for (let i = 0; i < spontaneous.length; i++) {
     if (spontaneous.isDone) {
-      lHistory += `<div class="flex activitiesTheme border">
+      lHistory += `<div class="historygrid activitiesTheme border">
       <div><p> ${spontaneous[i].name}</p></div>
       <div><p> ${spontaneous[i].theme}</p></div>
       </div>`;
