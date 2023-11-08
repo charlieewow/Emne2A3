@@ -19,7 +19,7 @@ function loadNotDoneHistory() {
   }
   for (let i = 0; i < spontaneous.length; i++) {
     if (!spontaneous.isDone) {
-      loadedHistory += `<div class="flex activitiesTheme border">
+      loadedHistory += `<div class="flex activitiesTheme border"> 
       <div><p> ${spontaneous[i].name}</p></div>
       <div><p> ${spontaneous[i].theme}</p></div>
       </div>`;
