@@ -1,5 +1,3 @@
-//model.data.diaryLogData[weekNrDisplay-1].diary
-
 const weekArray = [];
 const questArray = [];
 let weekNumber = 1;
@@ -8,7 +6,7 @@ let weekNrDisplay = 1;
 function logProcess() {
 
     if (model.data.diaryLogData[weekNrDisplay - 1] && weekNrDisplay -1 < model.data.diaryLogData.length) {
-        console.log(weekNrDisplay -1, model.data.diaryLogData.length);
+        
         if (document.getElementById("x1y1inp")) {
             model.data.diaryLogData[weekNrDisplay - 1].diary.monday.mood = document.getElementById("x1y1inp").value;
         }
@@ -61,8 +59,7 @@ function logProcess() {
 saveLocalStorage();
     }
     else if (weekNrDisplay > model.data.diaryLogData.length && weekNrDisplay < model.data.diaryLogData.length+2) {
-        console.log("MEG");
-        console.log(weekNrDisplay -1, model.data.diaryLogData.length);
+        
         model.data.diaryLogData[weekNrDisplay -1] =
             {
                 date: '',  // You can set a default date value here
@@ -127,99 +124,24 @@ saveLocalStorage();
             model.data.diaryLogData[weekNrDisplay - 1].diary.friday.nextStep = document.getElementById("x3y5inp").value;
         }
     }saveLocalStorage();
-    //console.log(document.getElementById())
-
-
     
 }
-
-/*
-function weekCounter(btn) {
-
-    if (btn.innerHTML == "neste uke⇨" && weekNrDisplay != model.data.diaryLogData.length) {
-        console.log("true")
-        weekNrDisplay++;
-        logDiaryView();
-    }
-    else if (btn.innerHTML == "neste uke⇨" && weekNrDisplay == model.data.diaryLogData.length) {
-        if (confirm("Ønsker du å oprette en ny ukeslogg?") === true) {
-            //logDiaryView();
-
-            console.log("hoho");
-            console.log(model.data.diaryLogData[weekNrDisplay - 1]);
-            model.data.diaryLogData[weekNrDisplay] =
-            {
-                date: '',  // You can set a default date value here
-                diary: {
-                    monday: { mood: '', progress: '', nextStep: '' },
-                    tuesday: { mood: '', progress: '', nextStep: '' },
-                    wednesday: { mood: '', progress: '', nextStep: '' },
-                    thursday: { mood: '', progress: '', nextStep: '' },
-                    friday: { mood: '', progress: '', nextStep: '' },
-                }
-            };
-            console.log(model.data.diaryLogData[weekNrDisplay]);
-            //saveLocalStorage();
-            weekNrDisplay++;
-            logDiaryView();
-
-        } else {
-
-            logDiaryView();
-        };
-
-    }
-    else {
-        console.log("Nope");
-        console.log(btn.innerHTML);
-    }
-    if (btn.innerHTML == "⇦forrige uke" && weekNrDisplay > 1) {
-        console.log("true")
-        weekNrDisplay--;
-        logDiaryView();
-    }
-    //checkAndGenerate(model.data.diaryLogData, weekNrDisplay)
-
-    logDiaryView();
-}*/
 
 function weekCounterDisplay(btn) {
 
     if (btn.innerHTML == "neste uke⇨") {
-        console.log("true")
+        
         weekNrDisplay++;
         updateViewDiaryPage();
     }
 
     if (btn.innerHTML == "⇦forrige uke" && weekNrDisplay != 1) {
-        console.log("true")
+        
         weekNrDisplay--;
         updateViewDiaryPage();
     }
 
-    console.log(btn.innerHTML);
-    console.log(weekNrDisplay);
-    //updateViewDiaryPage();
 }
-/*
-function checkAndGenerate(diaryLogData, index) {
-    // Check if the index is within the array bounds
-    if (weekNrDisplay >= model.data.diaryLogData.length) {
-        console.log("lang");
-        model.data.diaryLogData.push({
-            date: '',  // You can set a default date value here
-            diary: {
-                monday: { mood: '', progress: '', nextStep: '' },
-                tuesday: { mood: '', progress: '', nextStep: '' },
-                wednesday: { mood: '', progress: '', nextStep: '' },
-                thursday: { mood: '', progress: '', nextStep: '' },
-                friday: { mood: '', progress: '', nextStep: '' },
-            }
-        }); saveLocalStorage();
-    }
-
-
-}*/
 
 function confirmQuit() {
 
@@ -256,49 +178,40 @@ weekArr.push(fridayArr);
 
 function inputGen(td) {
     let key = td.id + "inp";
-    console.log(key);
+    
     let loginfo = td.innerText;
 
     let logvalue = document.getElementById(key);
 
     let weekDay;
-    console.log(loginfo)
+    
     for (let i = 0; i < 5; i++) {
         if (weekArr[i].includes(td.id)) {
-            console.log("yoyo");
+        
             if (i == 0) {
-                weekDay = "days"; //console.log(weekDay)
+                weekDay = "days"; 
             }
             if (i == 1) {
-                weekDay = "days"; //console.log(weekDay)
+                weekDay = "days"; 
             }
             if (i == 2) {
-                weekDay = "days"; //console.log(weekDay)
+                weekDay = "days"; 
             }
             if (i == 3) {
-                weekDay = "days"; //console.log(weekDay)
+                weekDay = "days"; 
             }
             if (i == 4) {
-                weekDay = "days"; //console.log(weekDay)
+                weekDay = "days"; 
             }
         }
 
 
     }
-    console.log(weekDay);
+    
     if (td.innerText) {
-        //alert("hey");
-        console.log(td.innerText);
         document.getElementById(td.id).innerHTML = `<input type="text" class="logspace writeonthis ${weekDay}" id=${key} value=${loginfo} />`;
-
-    }
-    else if (td.innerHTML) {
-        //alert("heyo"); 
-        console.log("yomama");
-        console.log(document.getElementById(key).value);
     }
     else {
-        //alert("HMMM??")
         document.getElementById(td.id).innerHTML = `<input type="text" class="logspace writeonthis ${weekDay}" id=${key} value="" />`;
     }
 
