@@ -1,5 +1,3 @@
-//const app = document.getElementById('app');
-//let activity=  model.interface.activity.selectedNK
 const model = {
     app: {
         loggedInUser: null,
@@ -38,7 +36,6 @@ const model = {
             summaryGraph: '',
             logDiary: {
                 datePicker: null,
-                //dataView: diaryLogData['datepicker']
             }
 
 
@@ -46,7 +43,7 @@ const model = {
         logPage: {
             checkOptions: {
                 plannedAct: ['taskList[1]', 'taskList[2]'],
-                standardAct: ['tasks'], //tenker å få til en måte å refferere denne 
+                standardAct: ['tasks'],  
             },
             diary: {
             edges:{
@@ -60,7 +57,6 @@ const model = {
                 thursday: { mood: '', progress: '', nextStep: '' },
                 friday: { mood: '', progress: '', nextStep: '' },
             },
-            /* logDataBtn: 'function diaryLog(){diaryLogData.push(logpage.diary)}',  //grov eksempel kode, den blir nok ikke å være her, men blir knytta til knappen på noe vis :p */
 
         }},
         addGoalAct: {
@@ -103,7 +99,7 @@ const model = {
             email: 'martin@123.no',
             password: '123',
         },
-        taskList: [{ //nono
+        taskList: [{ 
             name: "jog",
             theme: "habit",
             taskText: "joggetur",
@@ -302,7 +298,7 @@ activityHistory: {
         reps: { totalReps: '', repsDone: 0, repsLeft: '' },
         date: {from: '', to:''},
         time: undefined,
-        isDone: 'true', //true/False
+        isDone: 'true', 
         lastlogged: [], 
         wasDone: {time: ' ', date: ' '},
     },
@@ -314,7 +310,7 @@ activityHistory: {
         reps: { totalReps: '', repsDone: 0, repsLeft: '' },
         date: {from: '', to:''},
         time: undefined,
-        isDone: 'false', //true/False
+        isDone: 'false', 
         lastlogged: [], 
         wasDone: {time: ' ', date: ' '},
     },
@@ -326,7 +322,7 @@ activityHistory: {
         reps: { totalReps: '', repsDone: 0, repsLeft: '' },
         date: {from: '', to:''},
         time: undefined,
-        isDone: 'true', //true/False
+        isDone: 'true', 
         lastlogged: [], 
         wasDone: {time: ' ', date: ' '},
     },
@@ -391,13 +387,11 @@ function saveLocalStorage(){
     let saveData = model.data;
     let stringArray = JSON.stringify(saveData);
     localStorage.setItem('TaskArray', stringArray);
-    console.log(stringArray);
 }
 
 function loadLocalStorage(){
     if(!localStorage.getItem('TaskArray'))return;
     let storedArray = JSON.parse(localStorage.getItem('TaskArray'));
-    //console.log(storedArray);
     taskList = storedArray;
     updateModel(taskList);
     
@@ -409,13 +403,11 @@ function saveLocalStorageNewThemeAct(){
     let saveData = model.interface.addGoalAct;
     let stringArrayTA = JSON.stringify(saveData);
     localStorage.setItem('ThemeActArray', stringArrayTA);
-    console.log(stringArrayTA);
 }
 
 function loadLocalStorageNewThemeAct(){
     if(!localStorage.getItem('ThemeActArray'))return;
     let storedArrayTA = JSON.parse(localStorage.getItem('ThemeActArray'));
-    //console.log(storedArray);
     taskListTA = storedArrayTA;
     updateModelTA(taskListTA);
     
@@ -427,8 +419,3 @@ function clearLocalStorage(){
     localStorage.removeItem('TaskArray');
     localStorage.removeItem('ThemeActArray');
 }
-
-/*
-for(entry in model.data.plannedActList.repeat){
-    model.data.plannedActList.repeat[entry].repsLeft = model.data.plannedActList.repeat[entry].frequency.totalReps - model.data.plannedActList.repeat[entry].repsDone;
-}*/

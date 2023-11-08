@@ -115,7 +115,7 @@ function addGoalView() {
 
         //konverter form data til et object
         const addFormGObject = Object.fromEntries(addFormGData.entries());
-        console.log(addFormGObject);
+        
 
         //nå kan det brukes i modellen ()?
         processG(addFormGObject, addGForm);
@@ -195,7 +195,7 @@ function addActView() {
     selector.innerHTML = html;
     for (i in theme) {
         document.getElementById("keyThemes").innerHTML += `<option value="${theme[i]}">${theme[i]}</option>`;
-        console.log(theme[i]);
+        
     }
     for (i in task) {
         document.getElementById("selectTask").innerHTML += `<option value="${task[i]}">${task[i]}</option>`;
@@ -212,11 +212,11 @@ function addActView() {
 
         //bruk formData API til å fange data fra form
         const addFormTData = new FormData(this);
-        console.log(addFormTData.entries);
+        
 
         //konverter form data til et object
         const addFormTObject = Object.fromEntries(addFormTData.entries());
-        console.log(addFormTObject);
+        
 
 
         //nå kan det brukes i modellen ()?

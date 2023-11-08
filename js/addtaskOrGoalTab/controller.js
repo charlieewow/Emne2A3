@@ -1,77 +1,60 @@
-/*const addForm = document.querySelector("#addTform");
-
-addForm.addEventListener('click', function(event){
-    //forhindrer standard innsendelse av data fra form
-    event.preventDefault();
-
-    //bruk formData API til å fange data fra form
-    const addFormData = new FormData(this);
-
-    //konverter form data til et object
-    const addFormObject = Object.fromEntries(addFormData.entries());
-
-    //nå kan det brukes i modellen ()?
-
-console.log("??");
-})*/
-
 function checkingbox(box) { //sørger for at begge boksene ikke kan være checked samtidig
     let repeatbox = document.getElementById("checkrep");
     let oncebox = document.getElementById("checkonce");
     let otherbox;
     let idArrayOnce = ["onceDate", "onceTime"];
     let idArrayRep = ["units", "unitrep", "fromDate", "toDate"];
-    //box.value = "checked";
+    
     if (box == repeatbox) {
 
         if (oncebox.checked && box.checked) {
-            //oncebox.value = "unchecked";
+            
             console.log("hey");
             oncebox.checked = false;
             for (let IDF of idArrayOnce) {
                 let elementF = document.getElementById(IDF);
                 elementF.required = false;
-                //console.log(elementF);
+                
             }
         }
         if (box.checked) {
             for (let ID of idArrayRep) {
                 let element = document.getElementById(ID);
                 element.required = true;
-                //console.log(element);
+                
             }
         }
         if (!box.checked) {
             for (let ID of idArrayRep) {
                 let element = document.getElementById(ID);
                 element.required = false;
-                //console.log(element);
+                
             }
         }
 
     }
     else if (box == oncebox) {
         if (repeatbox.checked && box.checked) {
-            //repeatbox.value = "unchecked";
+            
             repeatbox.checked = false;
             for (let IDF of idArrayRep) {
                 let elementF = document.getElementById(IDF);
                 elementF.required = false;
-                //console.log(elementF);
+                
             }
         }
         if (box.checked) {
             for (let ID of idArrayOnce) {
                 let element = document.getElementById(ID);
                 element.required = true;
-                //console.log(element);
+                
             }
         }
         if (!box.checked) {
             for (let ID of idArrayOnce) {
                 let element = document.getElementById(ID);
                 element.required = false;
-                //console.log(element);
+                
             }
         }
 
@@ -113,9 +96,7 @@ function processG(object, form) { //data fra legg til mål
     let workObject = object;
 
     if (form.id == "addGform") {
-        //model.data.goalList;
-        //console.log("mål");
-        //console.log(workObject.NKActivity);
+        
         let daily = model.data.goalList.daily;
         let weekly = model.data.goalList.weekly;
         let monthly = model.data.goalList.monthly;
@@ -123,7 +104,6 @@ function processG(object, form) { //data fra legg til mål
         let five = model.data.goalList.fiveYearPlan;
         let vague = model.data.goalList;
         if (workObject.selectUnit == "Daglig") {
-            console.log("DAGLIG");
             proDay(workObject, daily);
         }
         else if (workObject.selectUnit == "Uke") {
@@ -162,7 +142,7 @@ function proOnce(newData) {
 }
 
 function proRep(newData) {
-    console.log(newData);
+    
     let repTime = model.data.plannedActList.repeat;
     let i = repTime.length;
     repTime.push({
@@ -265,30 +245,10 @@ function loggedToModelG() {
     saveLocalStorage();
     goalsView();
 }
-/*
-{
-    taskId: "D" + 1,
-    name: undefined,
-    theme: undefined,
-    taskText: undefined,
-    frequency: { repeatsPr: undefined, from: 'time', to: 'time' },
-},*/
-/*
-{description: 'ddd', NKTemaer: 'growth', NKActivity: 'Meditation', date: '', time: '', …}
-NKActivity: "Meditation"
-NKTemaer: "growth"
-date: ""
-description: "ddd"
-fromDate: "2023-10-10"
-selectUnit: "Daglig"
-time: ""
-toDate: "2023-10-18"
-[[Prototype]]
-: 
-Object*/
+
 function countUp() {
     for (ele in model.data.plannedActList.repeat) {
-        console.log(model.data.plannedActList.repeat[ele].frequency);
+        
         let startDate = new Date(model.data.plannedActList.repeat[ele].frequency.from);
         let endDate = new Date(model.data.plannedActList.repeat[ele].frequency.to);
         let startTime = startDate.getTime();
@@ -303,7 +263,7 @@ function countUp() {
             let totalRepsD = differenceInDays * repsPrDay
             differenceInDays = Math.round(differenceInDays);
             totalRepsD = Math.round(totalRepsD);
-            console.log("day", totalRepsD);
+            
             model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsD;
             if (model.data.activityHistory.planned[ele]) {
                 model.data.activityHistory.planned[ele].reps.totalReps = totalRepsD;
@@ -321,7 +281,7 @@ function countUp() {
             totalRepsU = differenceInWeeks * repsPrWeek;
             differenceInWeeks = Math.round(differenceInWeeks);
             totalRepsU = Math.round(totalRepsU);
-            console.log("week", totalRepsU);
+            
             model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsU;
             if (model.data.activityHistory.planned[ele]) {
                 model.data.activityHistory.planned[ele].reps.totalReps = totalRepsU;
@@ -337,7 +297,7 @@ function countUp() {
             totalRepsM = differenceInMonths * repsPrMonth;
             differenceInMonths = Math.round(differenceInMonths);
             totalRepsM = Math.round(totalRepsM);
-            console.log("Måned", totalRepsM);
+            
             model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsM;
             if (model.data.activityHistory.planned[ele]) {
                 model.data.activityHistory.planned[ele].reps.totalReps = totalRepsM;
@@ -351,7 +311,7 @@ function countUp() {
             totalRepsY = differenceInYears * repsPrYear;
             differenceInYears = Math.round(differenceInYears);
             totalRepsY = Math.round(totalRepsY);
-            console.log("År", totalRepsY);
+            
             model.data.plannedActList.repeat[ele].reps.totalReps = totalRepsY;
             if (model.data.activityHistory.planned[ele]) {
                 model.data.activityHistory.planned[ele].reps.totalReps = totalRepsY;
@@ -364,13 +324,13 @@ function countUp() {
             totalReps5Y = differenceIn5Years * repsPr5Year;
             differenceIn5Years = Math.round(differenceIn5Years);
             totalReps5Y = Math.round(totalReps5Y);
-            console.log("5 År", totalReps5Y);
+            
             model.data.plannedActList.repeat[ele].reps.totalReps = totalReps5Y;
             if (model.data.activityHistory.planned[ele]) {
                 model.data.activityHistory.planned[ele].reps.totalReps = totalReps5Y;
             }
         }
-        // console.log(totalRepsD)
+       
     }
 }
 
@@ -386,7 +346,7 @@ function addmoreA(act) {
 
 
         if (newInput.value) {
-            console.log(Boolean(newInput.value));
+            
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
@@ -413,7 +373,7 @@ function addmoreT(theme) {
     else if (goal.innerHTML) {
         let newInput = document.getElementById("moreTheme");
         if (newInput.value) {
-            console.log(newInput.value);
+            
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
@@ -442,7 +402,7 @@ function addmoreAG(act) {
 
 
         if (newInput.value) {
-            console.log(Boolean(newInput.value));
+            
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
@@ -469,7 +429,7 @@ function addmoreTG(theme) {
     else if (goal.innerHTML) {
         let newInput = document.getElementById("moreThemeG");
         if (newInput.value) {
-            console.log(newInput.value);
+            
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }

@@ -58,7 +58,7 @@ function updateViewDiaryPage() {
         </div>
     `;
     let theDays = Object.keys(model.interface.logPage.diary.content);
-    console.log(theDays);
+    
 
     for (let y = 1; y <= 5; y++) {
         let key = "y" + y;

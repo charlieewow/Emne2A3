@@ -8,7 +8,7 @@ function updateViewTaskPage() {
     `;
     logActView();
 }
- //let standardTaskArrayID = [];
+ 
 function logActView() {
     let logview = document.getElementById("logview");
     html = /*html*/`
@@ -51,18 +51,17 @@ function logActView() {
     let onceArrayName = [];
     let repeatArrayName = [];
     //disse for løkkene printer ut informasjon om aktiviteter fra model.data
-    //console.log(myOnceTasks?.length)
+    
     for (let i = 0; i < myOnceTasks?.length; i++) {
         let histArray = model.data.activityHistory.planned;
         let taskId = myOnceTasks[i + 1]?.taskId; // replace this with your taskId
         let histindex = histArray.findIndex(obj => obj.oldId === taskId);
-        console.log(histindex);
-        console.log(histArray[histindex]);
+        
         if (myOnceTasks[i + 1]?.name && !histArray[histindex]) {
             let thisID = myOnceTasks[i + 1].taskId;
             validAArr.push(thisID);
             onceArrayName.push(myOnceTasks[i + 1].name);
-            console.log(myOnceTasks[i + 1].taskId);
+            
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption">
             <div ><p>${myOnceTasks[i + 1].name}</p></div><input id="${myOnceTasks[i + 1].taskId}" name='{"name":"${myOnceTasks[i + 1].name}", "id":"${myOnceTasks[i + 1].taskId}", "index":${i + 1}, "type":"once"}' class="logCheck"  type="checkbox"/>
            
@@ -71,12 +70,12 @@ function logActView() {
     }
     for (let i = 0; i < myRepeatTasks?.length; i++) {
         if (myRepeatTasks[i + 1]?.name && myRepeatTasks[i + 1].reps.repsDone < myRepeatTasks[i + 1].reps.totalReps) {
-            console.log(myRepeatTasks[i + 1].reps);
+            
             repeatArrayName.push(myRepeatTasks[i + 1].name);
             let passport = myRepeatTasks[i + 1].taskId;
             let checkID = passport + "check";
             validAArr.push(checkID);
-            console.log(myRepeatTasks[i + 1].taskId);
+            
             document.getElementById('logPlanIn').innerHTML += `<div class="flex  border logOption" onclick="toggleHideInfo(${i + 1})">
             <div><p>${myRepeatTasks[i + 1].name} ↑ ↓</p><p id=${passport} class="hideLogInfo">${myRepeatTasks[i + 1].frequency.unit}  gjentagelser: ${myRepeatTasks[i + 1].frequency.repeatsPr} <br> aktiv fra ${myRepeatTasks[i + 1].frequency.from} til ${myRepeatTasks[i + 1].frequency.to} <br> gjort ${myRepeatTasks[i + 1].reps.repsDone} av ${myRepeatTasks[i + 1].reps.totalReps}</p></div><input  name='{"name":"${myRepeatTasks[i + 1].name}", "theme":"${myRepeatTasks[i + 1].theme}", "id":"${myRepeatTasks[i + 1].taskId}", "index": ${i + 1}, "type":"repeat"}' class="logCheck" type="checkbox" id="${checkID}"/>
             
@@ -100,17 +99,6 @@ function logActView() {
                 </div>
                 `;
             }
-            
-            /*if(i ==  myStandardTasks.length-1){
-                console.log("confirm");
-                for(let i=0; i<=4; i++){
-                    let theme = model.interface.addGoalAct.themeSelector;  
-                    let keyRing = "id" + i;
-                    for (let T of theme) {
-                      document.getElementById(keyRing).innerHTML += `<option value=${theme[T]}>${theme[T]}</option>`;
-                  }
-                  }  
-            }*/
         }
     }
 
@@ -128,7 +116,6 @@ function logActView() {
 
         //konverter form data til et object
         const logFormTObject = Object.fromEntries(logFormTData.entries());
-        console.log(logFormTObject);
 
         //nå kan det brukes i modellen ()?
         //processActLog(logFormTObject, logTForm);
@@ -146,7 +133,6 @@ function logActView() {
 
         //konverter form data til et object
         const logFormTSObject = Object.fromEntries(logFormTSData.entries());
-        console.log(logFormTSObject);
 
         //nå kan det brukes i modellen ()?
 
@@ -159,14 +145,12 @@ function logActView() {
 
 
     document.getElementById('logSpontanIn').addEventListener("load", function () {
-        console.log("loaded");
         for (let i = 0; i <= 4; i++) {
             let theme = model.interface.addGoalAct.themeSelector;
             let keyRing = "id" + i;
             for (let T of theme) {
                 let element = document.getElementById(keyRing);
                 if (element) {
-                    //element.innerHTML += `<option value=${T}>${T}</option>`;
                     document.getElementById(keyRing).innerHTML += `<option value=${theme[T]}>${theme[T]}</option>`;
                 }
 
