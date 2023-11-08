@@ -128,7 +128,7 @@ function logActView() {
 
         //konverter form data til et object
         const logFormTObject = Object.fromEntries(logFormTData.entries());
-        //console.log(logFormTObject);
+        console.log(logFormTObject);
 
         //nå kan det brukes i modellen ()?
         //processActLog(logFormTObject, logTForm);

@@ -10,9 +10,9 @@ function updateViewAddTab() {
         <div class="container">
             <div class="innercontainer"></div>
             <div id="selector"></div>
-            <div id="submitA">
+           <!-- <div id="submitA">
                 <input class="innersubmit submit" type="submit" value="Submit" onclick="saveLocalStorage(); updateViewAddTab()">
-            <div>
+            </div>-->
         </div>
     </div>
     `;
@@ -27,9 +27,9 @@ function updateViewAddTabG() {
         <div class="container">
             <div class="innercontainer"></div>
             <div id="selector"></div>
-            <div id="submitG">
+            <!--<div id="submitG">
                 <input class="innersubmit submit" type="submit" value="Submit">
-            <div>
+            <div>-->
         </div>
     </div>
     `;
@@ -88,6 +88,9 @@ function addGoalView() {
                 </div>
             </div>
         </div>
+        <div id="submitG">
+                <input class="innersubmit submit" type="submit" value="Submit">
+            <div>
     </form>
     `;
     selector.innerHTML = html;
@@ -157,12 +160,12 @@ function addActView() {
                 <div id="once">
                     <div class="grid">
                         <div class="spacing">
-                            <div><label for="">Dato</label></div>
-                            <div><label for="">Tidsenhet</label></div>
+                            <div><label for="onceDate">Dato</label></div>
+                            <div><label for="units">Klokkeslett</label></div>
                         </div>
                         <div class="spacing">
-                            <div><input type="date" name="date" /></div>
-                            <div><input type="time" name="time" /></div>
+                            <div><input id="onceDate" type="date" name="date" /></div>
+                            <div><input id="onceTime" type="time" name="time" /></div>
                         </div>
                     </div>
                 </div>
@@ -184,6 +187,9 @@ function addActView() {
                 </div>
             </div>
         </div>
+        <div id="submitA">
+        <input class="innersubmit submit" type="submit" value="Submit" >
+   </div>
     </form>
     `;
     selector.innerHTML = html;
