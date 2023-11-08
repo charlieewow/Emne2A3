@@ -53,13 +53,13 @@ function addGoalView() {
     <form action="..." id="addGform">
         <div id="selectorG" class="flex center">
             <div class="textaligncenter">
-                <div><label for="keyThemes">NK tema:</label></div>
+                <div><label for="keyThemes">NK tema:</label></div><button type="button" onclick=""></button>
                 <div><select class="dropdown" name="NKTemaer" id="keyThemes"></select>   </div>
-            </div>
+            </div><div id="addT" class="circleplus flex center" onclick="addmoreTG(this)">+</div><div id="putMoreTG"></div>
             <div class="textaligncenter">
                 <div><label for="selectTask">Aktivitet</label></div>
                 <div><select class="dropdown" name="NKActivity" id="selectTask"></select></div>
-            </div>
+            </div><div id="addA" class="circleplus flex center" onclick="addmoreAG(this)">+</div><div id="putMoreAG"></div>
         </div>
         <div class="grid center">
             <div id="goalDes">
@@ -139,11 +139,11 @@ function addActView() {
             <div class="textaligncenter">
                 <div><label for="keyThemes">NK tema:</label></div>
                 <select class="dropdown" name="NKTemaer" id="keyThemes"></select>
-            </div>
+            </div><div id="addT" class="circleplus flex center" onclick="addmoreT(this)">+</div><div id="putMoreT"></div>
             <div class="textaligncenter">
                 <div><label for="selectTask">Aktivitet</label></div>
                 <select class="dropdown" name="NKActivity" id="selectTask"></select>
-            </div>
+            </div><div id="addA" class="circleplus flex center" onclick="addmoreA(this)">+</div><div id="putMoreA"></div>
         </div>
         <div class="grid">
             <div>

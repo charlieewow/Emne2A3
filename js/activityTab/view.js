@@ -1,6 +1,6 @@
 function activityView() {
     loadLocalStorage();
-
+    loadLocalStorageNewThemeAct();
     let activity = model.interface.activity.selectedNK;
     document.getElementById("dashcontent").innerHTML =
     /*HTML*/` 
