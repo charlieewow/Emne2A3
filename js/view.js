@@ -13,9 +13,3 @@ function updateViewDash(){
     `;
     app.innerHTML = html;
 }
-
-/*
-updateViewAddTab()
-updateViewTaskPage()
-loginView()
-registerUserView() */
