@@ -379,52 +379,39 @@ function addmoreA(act) {
     let goal = document.getElementById("putMoreA");
     if (!goal.innerHTML) {
         goal.innerHTML = `<input id="moreAct" class="addMore" value="" type="text"/>`;
-
     }
     else if (goal.innerHTML) {
         let newInput = document.getElementById("moreAct");
-
-
         if (newInput.value) {
-            console.log(Boolean(newInput.value));
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
-
         goal.innerHTML = null;
     }
     if (act.innerHTML == '+') {
         act.innerHTML = "enter";
-
     } else {
-
         act.innerHTML = '+';
         updateViewAddTab();
     }
-
 }
 function addmoreT(theme) {
     let task = model.interface.addGoalAct.themeSelector;
     let goal = document.getElementById("putMoreT");
     if (!goal.innerHTML) {
         goal.innerHTML = `<input id="moreTheme" class="addMore" value="" type="text"/>`;
-
     }
     else if (goal.innerHTML) {
         let newInput = document.getElementById("moreTheme");
         if (newInput.value) {
-            console.log(newInput.value);
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
-
         goal.innerHTML = null;
     }
     if (theme.innerHTML == '+') {
         theme.innerHTML = "enter";
-
     } else {
-
         theme.innerHTML = '+';
         updateViewAddTab();
     }
@@ -435,25 +422,18 @@ function addmoreAG(act) {
     let goal = document.getElementById("putMoreAG");
     if (!goal.innerHTML) {
         goal.innerHTML = `<input id="moreActG" class="addMore" value="" type="text"/>`;
-
     }
     else if (goal.innerHTML) {
         let newInput = document.getElementById("moreActG");
-
-
         if (newInput.value) {
-            console.log(Boolean(newInput.value));
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
-
         goal.innerHTML = null;
     }
     if (act.innerHTML == '+') {
         act.innerHTML = "enter";
-
     } else {
-
         act.innerHTML = '+';
         updateViewAddTab();
     }
@@ -464,23 +444,19 @@ function addmoreTG(theme) {
     let goal = document.getElementById("putMoreTG");
     if (!goal.innerHTML) {
         goal.innerHTML = `<input id="moreThemeG" class="addMore" value="" type="text"/>`;
-
     }
     else if (goal.innerHTML) {
         let newInput = document.getElementById("moreThemeG");
         if (newInput.value) {
-            console.log(newInput.value);
             task.push(newInput.value);
             saveLocalStorageNewThemeAct();
         }
-
         goal.innerHTML = null;
     }
     if (theme.innerHTML == '+') {
         theme.innerHTML = "enter";
 
     } else {
-
         theme.innerHTML = '+';
         updateViewAddTab();
     }
