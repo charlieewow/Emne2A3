@@ -398,7 +398,7 @@ function addmoreAG(act) {
         act.innerHTML = "enter";
     } else {
         act.innerHTML = '+';
-        updateViewAddTab();
+        updateViewAddTabG();
     }
 
 }
@@ -422,7 +422,7 @@ function addmoreTG(theme) {
 
     } else {
         theme.innerHTML = '+';
-        updateViewAddTab();
+        updateViewAddTabG();
     }
 
 }

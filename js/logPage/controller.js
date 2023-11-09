@@ -178,9 +178,9 @@ weekArr.push(fridayArr);
 
 function inputGen(td) {
     let key = td.id + "inp";
-    
+    console.log(key);
     let loginfo = td.innerText;
-
+    console.log(Boolean(loginfo));
     let logvalue = document.getElementById(key);
 
     let weekDay;
@@ -211,6 +211,7 @@ function inputGen(td) {
     if (td.innerText) {
         document.getElementById(td.id).innerHTML = `<input type="text" class="logspace writeonthis ${weekDay}" id=${key} value=${loginfo} />`;
     }
+    else if (td.innerHTML){console.log("hei");}
     else {
         document.getElementById(td.id).innerHTML = `<input type="text" class="logspace writeonthis ${weekDay}" id=${key} value="" />`;
     }
